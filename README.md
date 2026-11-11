@@ -4,6 +4,7 @@ Building an AI-assisted, faceless YouTube documentary business.
 
 ## Documents
 - [`docs/01-business-strategy.md`](docs/01-business-strategy.md): the full strategy (opportunities, rankings, financials, tool stack, policy, operating models, 90-day plan, long-term model).
+- [`docs/02-ai-video-tools.md`](docs/02-ai-video-tools.md): research on the AI tools that produce the videos, voiceover and editing, plus the recommended production setup.
 
 ## Current recommendation (summary)
 - **Channel:** long-form faceless business documentaries ("how companies really make money / why they failed").
