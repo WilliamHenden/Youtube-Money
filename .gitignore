@@ -1,0 +1,11 @@
+node_modules/
+pipeline/voice/models/
+__pycache__/
+*.pyc
+.venv/
+pipeline/video/build/
+pipeline/video/.remotion/
+out/tmp/
+projects/*/build/
+.DS_Store
+out/*-raw.mp4

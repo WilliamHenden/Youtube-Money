@@ -1,0 +1,116 @@
+{
+  "id": "costco-demo",
+  "title": "How Costco Actually Makes Money",
+  "voice": "af_heart",
+  "lang": "en-us",
+  "speed": 1.0,
+  "leadIn": 0.5,
+  "tail": 2.2,
+  "lineGap": 0.32,
+  "sceneGap": 0.62,
+  "notes": "say = what the narrator speaks. show = caption text. '|' splits caption chunks (same count in say and show). {name} marks a cue at the start of the next spoken word. *text* in show is highlighted.",
+  "scenes": [
+    {
+      "id": "hook",
+      "lines": [
+        {
+          "say": "In nineteen eighty-five, {hotdog}a hot dog and a soda | at Costco cost {price}one dollar fifty.",
+          "show": "In 1985, a hot dog and a soda | at Costco cost *$1.50.*"
+        },
+        {
+          "say": "{today}Today? | {still}Still one dollar fifty.",
+          "show": "Today? | Still *$1.50.*"
+        },
+        {
+          "say": "{inflation}Adjusted for inflation, | it should cost {four}more than four dollars.",
+          "show": "Adjusted for inflation, | it should cost *more than $4.*"
+        },
+        {
+          "say": "But Costco has {refused}refused to raise that price | for {forty}over forty years. | And that tells you everything | about {title}how this company really makes money.",
+          "show": "But Costco has refused to raise that price | for *over 40 years.* | And that tells you everything | about how this company *really* makes money."
+        }
+      ]
+    },
+    {
+      "id": "revenue",
+      "lines": [
+        {
+          "say": "Last year, {sold}Costco sold almost | {num}three hundred billion dollars' worth of stuff.",
+          "show": "Last year, Costco sold almost | *$300 billion* worth of stuff."
+        },
+        {
+          "say": "{strange}But here's the strange part. | It kept only about {cents}three cents | of every dollar as profit.",
+          "show": "But here's the strange part. | It kept only about *3 cents* | of every dollar as profit."
+        }
+      ]
+    },
+    {
+      "id": "markup",
+      "lines": [
+        {
+          "say": "{deliberate}That's deliberate.",
+          "show": "That's *deliberate.*"
+        },
+        {
+          "say": "{cap}Costco famously caps its markup | at around {fourteen}fourteen percent, | {fifteen}fifteen for its own Kirkland brand.",
+          "show": "Costco famously caps its markup | at around *14 percent,* | *15* for its own Kirkland brand."
+        },
+        {
+          "say": "{low}So prices stay low, | and {back}shoppers keep coming back.",
+          "show": "So prices stay low, | and shoppers keep *coming back.*"
+        }
+      ]
+    },
+    {
+      "id": "membership",
+      "lines": [
+        {
+          "say": "{where}So where does the money | actually come from?",
+          "show": "So where does the money | *actually* come from?"
+        },
+        {
+          "say": "{this}This.",
+          "show": "*This.*"
+        },
+        {
+          "say": "To shop at Costco, | {need}you need a membership. | It starts at {fee}sixty-five dollars a year | in the U.S., | and {members}more than eighty-four million members | pay for one.",
+          "show": "To shop at Costco, | you need a *membership.* | It starts at *$65 a year* | in the U.S., | and more than *84 million members* | pay for one."
+        },
+        {
+          "say": "{adds}That adds up to {fees}nearly six billion dollars | a year in fees. | {nocost}And unlike groceries, | those fees cost Costco very little to collect.",
+          "show": "That adds up to *nearly $6 billion* | a year in fees. | And unlike groceries, | those fees cost Costco *very little* to collect."
+        }
+      ]
+    },
+    {
+      "id": "compare",
+      "lines": [
+        {
+          "say": "{side}Put it side by side: | those fees are worth {twothirds}nearly two-thirds | of Costco's entire annual profit.",
+          "show": "Put it side by side: | those fees are worth *nearly two-thirds* | of Costco's entire annual profit."
+        },
+        {
+          "say": "{renew}And around {nine}nine in ten members renew, | every single year.",
+          "show": "And around *9 in 10* members renew, | every single year."
+        }
+      ]
+    },
+    {
+      "id": "payoff",
+      "lines": [
+        {
+          "say": "{groc}The cheap groceries. | {fuel}The cheap fuel. | {dog}The one-fifty hot dog.",
+          "show": "The cheap groceries. | The cheap fuel. | The *$1.50* hot dog."
+        },
+        {
+          "say": "{bait}That's the bait.",
+          "show": "That's the *bait.*"
+        },
+        {
+          "say": "{membership}The membership | {business}is the business.",
+          "show": "The membership | is the *business.*"
+        }
+      ]
+    }
+  ]
+}
