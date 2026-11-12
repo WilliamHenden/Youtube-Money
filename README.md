@@ -5,6 +5,7 @@ Building an AI-assisted, faceless YouTube documentary business.
 ## Documents
 - [`docs/01-business-strategy.md`](docs/01-business-strategy.md): the full strategy (opportunities, rankings, financials, tool stack, policy, operating models, 90-day plan, long-term model).
 - [`docs/02-ai-video-tools.md`](docs/02-ai-video-tools.md): research on the AI tools that produce the videos, voiceover and editing, plus the recommended production setup.
+- [`docs/05-production-standards.md`](docs/05-production-standards.md): the rules every video follows (story structure, sound, voice, calls to action, visuals), built from feedback on the demo.
 - [`docs/04-demo-review.md`](docs/04-demo-review.md): honest review of the finished demo video, and what to improve next.
 - [`docs/03-demo-plan.md`](docs/03-demo-plan.md): plan and ready-to-paste prompt for the 60–90s proof-of-concept video (made only with code and free assets).
 

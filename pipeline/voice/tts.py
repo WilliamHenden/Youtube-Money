@@ -23,8 +23,21 @@ OUT_SR = 48000
 PUNCT = ",.;:?!—"
 
 
+# Written forms the narrator reads badly, mapped to what it should say.
+# Dotted abbreviations make the voice pause as if a sentence ended ("U. ... S.").
+SAY_AS = {"U.S.A.": "U S A", "U.S.": "U S", "U.K.": "U K", "E.U.": "E U", "vs.": "versus", "e.g.": "for example", "i.e.": "that is"}
+
+
+def normalise_for_speech(text):
+    for written, spoken in SAY_AS.items():
+        text = re.sub(re.escape(written) + r"(?=[\s,;:!?]|$)", spoken, text)
+    # any other dotted initialism, e.g. "C.E.O." -> "C E O"
+    return re.sub(r"\b((?:[A-Za-z]\.){2,})", lambda m: " ".join(m.group(1).replace(".", " ").split()), text)
+
+
 def parse_line(say, show):
     """Return words[], chunks[(first_word, last_word, show_text)], cues{name: word_index}."""
+    say = normalise_for_speech(say)
     say_chunks = [c.strip() for c in say.split("|")]
     show_chunks = [c.strip() for c in show.split("|")]
     assert len(say_chunks) == len(show_chunks), f"chunk mismatch: {say!r}"
@@ -192,6 +205,10 @@ def main():
             text = " ".join(words)
             x, sr = k.create(text, voice=voice, speed=speed, lang=lang)
             x = np.asarray(x, dtype=np.float32)
+            _, _, gaps = speech_bounds_and_gaps(x, sr, min_gap=0.2)
+            marks = sum(1 for w in words[:-1] if w[-1] in PUNCT)
+            if len(gaps) > marks:
+                print(f"  ! check pacing: {len(gaps)} long pauses but {marks} punctuation marks in: {text}")
             wt = align_words(words, x, sr)
             anchored = wt is not None
             if wt is None:
