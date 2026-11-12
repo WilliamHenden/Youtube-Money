@@ -6,8 +6,8 @@
 
 - **Theme:** business explainers. Self-improvement comes in as the takeaway of each video ("what this teaches you about money, work or decisions"), not as standalone motivation videos.
 - **Format:** long-form videos of 8+ minutes, each also producing vertical Shorts.
-- **Name:** undecided. "Business Made Easy" is the idea, but the handles @BusinessMadeEasy, @BizMadeEasy and @BusinessMadeSimple are taken on YouTube.
-- **Mascot:** undecided between three sketches in `design/mascots/` (ghost, pocket watch, hourglass). Claude's recommendation is the ghost.
+- **Name:** undecided. "Business Made Easy" is the idea, but the handles @BusinessMadeEasy, @BizMadeEasy and @BusinessMadeSimple are taken on YouTube. Shortlist with free YouTube handles (checked 12 Nov 2026): The Eight Minute MBA, Sofa MBA / Couch MBA, Business Makes Cents, Business Bitesized, Easy Business Stories, The Profit Fable, Flip Side of Money, Story of Profit.
+- **Mascot: parked.** The owner didn't like the three sketches in `design/mascots/` (too clunky). No mascot runs through the videos. If one returns later, with a better design, it is only for the intro, the outro and the short subscribe moment. The first 8-minute video is made without one.
 - **AI-generated cinematic clips:** not for now. Revisit only if the first 8-minute video feels flat.
 - **Quality bar:** nobody who watched the demo suspected it was AI-made. Keep it that way.
 
@@ -43,11 +43,24 @@ The demo's weakness was the story, not the look. Viewers said "I already knew th
 - **Every section ends on an open loop** that the next section closes.
 - **Something new every 20–40 seconds:** a fact, a turn, a visual mode change.
 - **Specifics beat generalities:** names, dates, exact numbers.
-- **One idea per sentence.** Written to be spoken, not read.
+- **One main idea per sentence,** but sentences flow into each other. Written to be spoken, not read.
 - **Cut anything that doesn't serve the central question.**
 - **No abbreviations with dots** ("the US", never "the U.S."), and numbers written the way they're spoken.
 
-### 2.5 Process
+### 2.5 Sound like a person telling a story
+
+Owner feedback: AI-written narration is often too sharp and clipped, as if an AI is talking to itself. The audience is ordinary people who want a story, not eight minutes of facts thrown at them.
+
+- **Full, flowing sentences.** No strings of clipped fragments. The demo's "The cheap groceries. The cheap fuel. The one-fifty hot dog." is the style to avoid.
+- **Talk to one person.** Say "you", use contractions and everyday words, the way you'd explain it to a friend.
+- **Carry the facts inside the story.** Who did what, why they did it, and what happened next. People and decisions first, figures second.
+- **Go easy on numbers:** one or two per passage, each one given a moment to land.
+- **Vary the rhythm.** Mostly medium-length sentences. A short one for emphasis is fine when it's rare.
+- **No stock AI phrases:** "here's the thing", "but here's the strange part", "let that sink in", "it's not X, it's Y", and lists of three punchy items.
+- **Read-aloud test:** every script is checked line by line. If a line wouldn't sound natural said out loud to a friend, it's rewritten.
+- **The voice follows the writing:** natural pace, commas where a person would breathe, and no rushing between sentences.
+
+### 2.6 Process
 1. Claude proposes ideas with the three statements from 2.1. The owner picks one.
 2. Claude writes **five hook options** and an outline against the blueprint. The owner picks a hook.
 3. Claude writes the full script and fact sheet (every claim sourced). The owner approves or edits.
@@ -90,9 +103,9 @@ Owner feedback: the sounds worked as emphasis, but the same few were repeated un
 ## 5. Calls to action and the outro
 
 - **No ask in the first 30 seconds.**
-- **One subscribe ritual per video,** under five seconds, after the first payoff (about a third of the way in). The mascot delivers the same line every time. A different voice is fine here, including the owner's own.
+- **One subscribe moment per video,** under five seconds, after the first payoff (about a third of the way in). The same short line and the same look every time. A different voice is fine here, including the owner's own. A mascot could deliver it later if a design the owner likes is found.
 - **No "press the bell".**
-- **The ending sells the next video.** Narration runs to the end and teases a specific video over YouTube's end screen (next video + subscribe button). The end-card layout is identical in every video.
+- **The ending sells the next video.** Narration runs to the end and teases a specific video ("Tomorrow: how … became …") over YouTube's end screen (next video + subscribe button). The end-card layout is identical in every video.
 - Check the retention graph at the ritual's timestamp after the first few videos, and shorten or move it if viewers drop there.
 
 ## 6. Visuals
@@ -101,8 +114,8 @@ Owner feedback: the sounds worked as emphasis, but the same few were repeated un
   1. Data graphics (charts, counters, comparisons)
   2. Maps and timelines
   3. Real photos, cut out and animated with depth
-  4. Mascot moments
-- **The mascot is an actor, not a permanent corner fixture.** It appears at the hook, at reactions, at transitions, for the subscribe ritual, and in costume when playing a role. It also appears in every thumbnail.
+  4. Bold text moments (the question, the answer, a key quote)
+- **No mascot in the body of the video** (see section 1).
 - **Scene templates first.** Most scenes come from reusable templates filled in from the script. Custom scenes are saved for the two or three key moments.
 - **Every template has a vertical layout** so Shorts are rendered properly for phones, not cropped.
 - Style guide (colours, fonts, motion) stays as built in `pipeline/video/src/lib/theme.ts`.
