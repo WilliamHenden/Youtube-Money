@@ -42,7 +42,8 @@ Pattern: the owner's ideas are about **how money really works** (debt, wealth, n
 | Mascot | Parked. The owner didn't like the first three designs. If it returns, intro, outro and subscribe moment only. |
 | AI cinematic clips | Not for now. Revisit only if the first long video feels flat. The owner is willing to pay a few pounds per video if needed. |
 | Channel name | Undecided, and not a priority. Shortlist in `05-production-standards.md`. |
-| Narrator voice | Undecided. Side-by-side test in session 1; the owner chooses by ear. Open to paying for a better voice. |
+| Narrator voice | Undecided. Four free clips are in `out/voice-tests/`. On 13 November the owner asked to look harder at ElevenLabs and at "speech-to-speech" (a person records the narration and AI re-voices it, keeping the human emphasis). Next step: add both to the voice test once the owner provides an ElevenLabs key. Open to paying for a better voice. |
+| Real imagery | At least 4 to 6 real photos or clips per 8-minute video (owner, 13 November). Stock video from Pexels and Pixabay to be added. |
 | Affiliate links | Only for products genuinely used or relevant to a video, clearly labelled. No false "we use this" claims. |
 | Spending | Avoid new subscriptions and hardware unless they clearly earn their place |
 
