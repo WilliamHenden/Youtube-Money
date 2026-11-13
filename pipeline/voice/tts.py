@@ -406,7 +406,7 @@ def main():
             elif not (last_line and last_scene):
                 silence(line.get("pause", line.get("gapAfter", scene_gap if last_line else line_gap)))
         entry = {"id": scene["id"], "firstWord": round(s_first, 3), "lastWord": round(s_last, 3), "lateCut": late_cut}
-        for k in ("template", "tone", "props", "major", "enter", "sound", "sounds"):
+        for k in ("template", "tone", "props", "major", "enter", "sound", "sounds", "tag", "bugIn"):
             if k in scene:
                 entry[k] = scene[k]
         scenes.append(entry)
@@ -434,6 +434,9 @@ def main():
     cpath = os.path.join(pdir, "photos", "credits.json")
     if os.path.exists(cpath):
         photos = json.load(open(cpath))
+    vpath = os.path.join(pdir, "clips", "credits.json")  # video clips carry credits the same way
+    if os.path.exists(vpath):
+        photos.update(json.load(open(vpath)))
     timings = {"project": a.project, "cut": a.cut, "title": script["title"], "channel": script.get("channel", ""),
                "voice": v, "fps": 30, "format": fmt, "width": w, "height": h, "duration": round(total, 3),
                "scenes": scenes, "lines": lines, "cues": all_cues, "beats": beats, "photos": photos}

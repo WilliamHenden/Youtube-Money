@@ -308,19 +308,19 @@
         "title": "Why Phillips drilled one more",
         "items": [
           {
-            "icon": "page-facing-up",
+            "icon": "draw:contract",
             "label": "The licence",
             "text": "One more well required",
             "cue": "licence"
           },
           {
-            "icon": "money-with-wings",
+            "icon": "draw:fine",
             "label": "The penalty",
             "text": "Paid for walking away",
             "cue": "penalty"
           },
           {
-            "icon": "building-construction",
+            "icon": "draw:rig",
             "label": "The rig",
             "text": "Already hired",
             "cue": "rig"
@@ -575,6 +575,109 @@
               "show": "But finding oil | turned out to be *the easy part.*"
             }
           ]
+        }
+      ]
+    },
+    "thumbnails": {
+      "format": "wide",
+      "about": "Three thumbnail options. Rendered as stills, not as a video: see pipeline/README.md.",
+      "music": {
+        "track": null
+      },
+      "tail": 0.5,
+      "scenes": [
+        {
+          "id": "thumb-a",
+          "template": "thumb",
+          "sound": "none",
+          "enter": "cut",
+          "hold": 1.5,
+          "props": {
+            "layout": "flags",
+            "top": "SAME OIL"
+          }
+        },
+        {
+          "id": "thumb-b",
+          "template": "thumb",
+          "sound": "none",
+          "enter": "cut",
+          "hold": 1.5,
+          "props": {
+            "layout": "photo",
+            "photo": "ekofisk",
+            "line1": "NORWAY SAVED",
+            "big": "$2.3T",
+            "line2": "SAVED £0"
+          }
+        },
+        {
+          "id": "thumb-c",
+          "template": "thumb",
+          "sound": "none",
+          "enter": "cut",
+          "hold": 1.5,
+          "props": {
+            "layout": "map",
+            "map": {
+              "center": [
+                2.6,
+                58.3
+              ],
+              "span": 30,
+              "countries": [
+                {
+                  "name": "United Kingdom",
+                  "color": "blue"
+                },
+                {
+                  "name": "Norway",
+                  "color": "red"
+                }
+              ],
+              "lines": [
+                {
+                  "points": [
+                    [
+                      3.25,
+                      56.087
+                    ],
+                    [
+                      2.613,
+                      56.595
+                    ],
+                    [
+                      1.965,
+                      57.905
+                    ],
+                    [
+                      1.483,
+                      58.43
+                    ],
+                    [
+                      1.712,
+                      59.29
+                    ],
+                    [
+                      2.077,
+                      59.897
+                    ],
+                    [
+                      1.79,
+                      61.357
+                    ],
+                    [
+                      1.56,
+                      61.737
+                    ]
+                  ]
+                }
+              ]
+            },
+            "left": "£0",
+            "right": "$2.3T",
+            "bottom": "SAME OIL"
+          }
         }
       ]
     }

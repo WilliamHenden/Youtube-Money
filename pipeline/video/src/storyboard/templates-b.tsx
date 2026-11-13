@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { AbsoluteFill, Img, staticFile } from "remotion";
+import { AbsoluteFill, Img, OffthreadVideo, Sequence, staticFile } from "remotion";
 import { geoBounds, geoMercator, geoPath } from "d3-geo";
 import { feature } from "topojson-client";
 import world from "world-atlas/countries-50m.json";
@@ -118,14 +118,15 @@ export const MapScene: Template = ({ s }) => {
 };
 
 /* =====================================================================================
-   7. PHOTO SCENE       props: photo (key from the script's "photos"), kicker, title, titleCue, caption,
+   7. PHOTO or CLIP     props: photo (key from the script's "photos") or clip (key from "clips", with start and rate),
+                               kicker, title, titleCue, caption,
                                move "in" | "out" | "left" | "right", focus [x, y] 0..1
    The photo drifts slowly; the title and a soft foreground haze move at a different rate, which gives depth.
    The credit comes from the photo's licence record automatically.
    ===================================================================================== */
 export const Photo: Template = ({ s }) => {
   const l = useL();
-  const { t } = useT();
+  const { t, fps } = useT();
   const p = s.props;
   const dur = Math.max(s.t1 - s.t0, 1);
   const k = clamp01((t - s.t0 + 0.4) / (dur + 0.8));
@@ -133,11 +134,17 @@ export const Photo: Template = ({ s }) => {
   const move = p.move ?? "in";
   const sc = move === "in" ? lerp(1.06, 1.2, k) : move === "out" ? lerp(1.2, 1.06, k) : 1.14;
   const dx = move === "left" ? lerp(3, -3, k) : move === "right" ? lerp(-3, 3, k) : 0;
-  const credit = s.photos[p.photo]?.credit;
+  const credit = s.photos[p.clip ?? p.photo]?.credit;
   const titleAt = p.titleCue ? when(s, p.titleCue) : s.t0 + 0.5;
   return (
     <AbsoluteFill style={{ background: C.navy, overflow: "hidden" }}>
-      <Img src={staticFile(`photos/${p.photo}.jpg`)} style={{ position: "absolute", width: "100%", height: "100%", objectFit: "cover", objectPosition: `${fx * 100}% ${fy * 100}%`, transform: `scale(${sc}) translateX(${dx}%)`, transformOrigin: `${fx * 100}% ${fy * 100}%`, filter: "saturate(0.92) contrast(1.04)" }} />
+      {p.clip ? (
+        <Sequence from={Math.round(s.t0 * fps)} layout="none">
+          <OffthreadVideo muted src={staticFile(`clips/${p.clip}.mp4`)} startFrom={Math.round((p.start ?? 0) * fps)} playbackRate={p.rate ?? 1} style={{ position: "absolute", width: "100%", height: "100%", objectFit: "cover", objectPosition: `${fx * 100}% ${fy * 100}%`, transform: `scale(${1 + (sc - 1) * 0.4})`, transformOrigin: `${fx * 100}% ${fy * 100}%`, filter: "saturate(0.92) contrast(1.04)" }} />
+        </Sequence>
+      ) : (
+        <Img src={staticFile(`photos/${p.photo}.jpg`)} style={{ position: "absolute", width: "100%", height: "100%", objectFit: "cover", objectPosition: `${fx * 100}% ${fy * 100}%`, transform: `scale(${sc}) translateX(${dx}%)`, transformOrigin: `${fx * 100}% ${fy * 100}%`, filter: "saturate(0.92) contrast(1.04)" }} />
+      )}
       <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(9,18,30,0.55) 0%, rgba(9,18,30,0) 26%, rgba(9,18,30,0) 46%, rgba(9,18,30,0.88) 100%)" }} />
       <AbsoluteFill style={{ background: `radial-gradient(900px 700px at ${20 + k * 18}% ${l.tall ? 30 : 24}%, rgba(245,184,61,0.14), transparent 70%)`, mixBlendMode: "screen" }} />
       <AbsoluteFill style={{ boxShadow: "inset 0 0 260px rgba(0,0,0,0.55)" }} />
@@ -151,7 +158,7 @@ export const Photo: Template = ({ s }) => {
       </div>
       <div style={{ position: "absolute", right: l.tall ? undefined : 60, left: l.tall ? 0 : undefined, width: l.tall ? l.W : undefined, top: l.tall ? 200 : 50, textAlign: l.tall ? "center" : "right", opacity: prog(t, s.t0 + 0.7, 0.5) * 0.92, fontFamily: F.body, fontWeight: 600, fontSize: l.tall ? 26 : 23, color: "rgba(255,255,255,0.86)", textShadow: "0 2px 8px rgba(0,0,0,0.7)", lineHeight: 1.35 }}>
         {p.caption && <div>{p.caption}</div>}
-        {credit && <div style={{ fontWeight: 500, opacity: 0.85 }}>Photo: {credit}</div>}
+        {credit && <div style={{ fontWeight: 500, opacity: 0.85 }}>{p.clip ? "Footage" : "Photo"}: {credit}</div>}
       </div>
     </AbsoluteFill>
   );
@@ -307,12 +314,12 @@ export const Subscribe: Template = ({ s }) => {
   const w = l.tall ? 620 : 700;
   return (
     <Stage style={{ gap: l.tall ? 50 : 44 }}>
-      <Rise at={s.t0 + 0.15} from="down"><Head tone={s.tone} size={l.tall ? 60 : 64} style={{ textAlign: "center", maxWidth: l.tall ? 860 : 1300 }}>{s.props.line ?? "More stories like this one, every week"}</Head></Rise>
+      <Rise at={s.t0 + 0.15} from="down"><Head tone={s.tone} size={l.tall ? 60 : 64} style={{ textAlign: "center", maxWidth: l.tall ? 860 : 1300 }}>{s.props.line ?? "Enjoying this one?"}</Head></Rise>
       <div style={{ width: w, height: l.tall ? 170 : 180, borderRadius: 90, background: pressed ? (s.tone === "navy" ? C.navy3 : C.cream3) : C.red, display: "flex", alignItems: "center", justifyContent: "center", gap: 26, transform: `scale(${g * (1 - dip)})`, boxShadow: pressed ? "0 8px 20px rgba(0,0,0,0.2)" : "0 22px 50px rgba(227,70,59,0.42)" }}>
         {pressed && <svg viewBox="0 0 24 24" width={76} height={76}><path d="M4 12.5 L9.5 18 L20 6.5" fill="none" stroke={C.green} strokeWidth={4} strokeLinecap="round" strokeLinejoin="round" strokeDasharray="30" strokeDashoffset={30 * (1 - prog(t, press + 0.05, 0.3))} /></svg>}
         <div style={{ fontFamily: F.head, fontWeight: 900, fontSize: l.tall ? 78 : 84, color: pressed ? ink(s.tone) : C.white, letterSpacing: -1 }}>{pressed ? "Subscribed" : "Subscribe"}</div>
       </div>
-      <Rise at={s.t0 + 0.6}><Body tone={s.tone} size={l.tall ? 40 : 38}>{s.props.sub ?? "It's free, and it helps the channel."}</Body></Rise>
+      <Rise at={s.t0 + 0.6}><Body tone={s.tone} size={l.tall ? 40 : 38}>{s.props.sub ?? "Subscribing is free, and it helps the channel."}</Body></Rise>
     </Stage>
   );
 };

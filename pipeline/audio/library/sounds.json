@@ -269,6 +269,46 @@
    "under_voice_db": -3,
    "source": "SFX Kit by Wyzowl 1.0.0",
    "licence": "CC0 1.0"
+  },
+  "sting-warm-short": {
+   "file": "sfx/sting-warm-short.wav",
+   "description": "A warm marimba sting: a quick roll up into a rich, rounded chord.",
+   "duration": 1.672,
+   "sync": 0.107,
+   "lufs": -23,
+   "under_voice_db": -6,
+   "source": "SFX Kit by Wyzowl 1.0.0",
+   "licence": "CC0 1.0"
+  },
+  "sting-bright-short": {
+   "file": "sfx/sting-bright-short.wav",
+   "description": "A bright sting: glass glints into a bell chord, with a shimmer trailing off.",
+   "duration": 1.53,
+   "sync": 0.139,
+   "lufs": -22,
+   "under_voice_db": -6,
+   "source": "SFX Kit by Wyzowl 1.0.0",
+   "licence": "CC0 1.0"
+  },
+  "sting-airy-short": {
+   "file": "sfx/sting-airy-short.wav",
+   "description": "An airy sting: a breath into a soft bell over hanging glass tones.",
+   "duration": 3.14,
+   "sync": 0.148,
+   "lufs": -24,
+   "under_voice_db": -6,
+   "source": "SFX Kit by Wyzowl 1.0.0",
+   "licence": "CC0 1.0"
+  },
+  "sting-minimal-long": {
+   "file": "sfx/sting-minimal-long.wav",
+   "description": "A minimal sting: a breath of air into a single bell over a soft low note.",
+   "duration": 2.222,
+   "sync": 0.797,
+   "lufs": -24,
+   "under_voice_db": -6,
+   "source": "SFX Kit by Wyzowl 1.0.0",
+   "licence": "CC0 1.0"
   }
  },
  "roles": {
@@ -312,6 +352,12 @@
   "riser": [
    "riser-1s-soft",
    "riser-2s-soft"
+  ],
+  "sting": [
+   "sting-warm-short",
+   "sting-bright-short",
+   "sting-airy-short",
+   "sting-minimal-long"
   ]
  }
 }

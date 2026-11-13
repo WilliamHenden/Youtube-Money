@@ -3,87 +3,690 @@
   "title": "Template gallery",
   "channel": "MONEY MECHANICS",
   "about": "Every scene template once, with made-up example figures. It is the test that a project builds from a script and storyboard alone, and the reference for writing new storyboards. Build it wide: pipeline/build.sh template-gallery. Build it tall: pipeline/build.sh template-gallery --cut tall",
-  "voice": { "engine": "kokoro", "voice": "af_heart", "speed": 1.0 },
-  "music": { "track": "thinking-music", "underVoice": 22 },
-  "pauses": { "line": 0.3, "scene": 0.6, "beat": 1.1 },
-  "photos": { "rig": { "file": "File:Ekofisk 2-4 K (DEX KF 000635).jpg" } },
+  "voice": {
+    "engine": "kokoro",
+    "voice": "af_heart",
+    "speed": 1.0
+  },
+  "music": {
+    "track": "thinking-music",
+    "underVoice": 22
+  },
+  "pauses": {
+    "line": 0.3,
+    "scene": 0.6,
+    "beat": 1.1
+  },
+  "photos": {
+    "rig": {
+      "file": "File:Ekofisk 2-4 K (DEX KF 000635).jpg"
+    }
+  },
   "scenes": [
-    { "id": "g-title", "template": "title", "tone": "navy", "major": true, "sound": "none", "hold": 2.6,
-      "props": { "kicker": "Example only", "lines": ["Every template", "in one video", "with made-up numbers"], "accent": 1 } },
-    { "id": "g-chapter", "template": "chapter", "tone": "cream",
-      "props": { "number": 1, "kicker": "Part one", "title": "The chapter card" },
-      "lines": [ { "say": "This is the chapter card.", "show": "This is the *chapter card.*" } ] },
-    { "id": "g-number", "template": "number", "tone": "navy",
-      "props": { "label": "Example sales last year", "value": 48.6, "prefix": "$", "decimals": 1, "unit": "billion", "caption": "A big number counts up without a sound", "cue": "gnum", "source": "Made-up figure" },
-      "lines": [ { "say": "A big number {gnum}counts up to its value, | and the counter stays silent.", "show": "A big number counts up to its value, | and the counter stays *silent.*" } ] },
-    { "id": "g-bars", "template": "bars", "tone": "cream",
-      "props": { "title": "A bar comparison", "bars": [
-          { "label": "Shop A", "value": 12, "display": "12%", "cue": "gb1" },
-          { "label": "Shop B", "value": 21, "display": "21%", "cue": "gb2" },
-          { "label": "Shop C", "value": 34, "display": "34%", "cue": "gb3", "highlight": true } ],
-        "note": "Example figures" },
-      "lines": [ { "say": "Bars can {gb1}compare two, | {gb2}three | or {gb3}four things.", "show": "Bars can compare two, | three | or *four things.*" } ] },
-    { "id": "g-chart", "template": "chart", "tone": "navy",
-      "props": { "title": "A line chart over time", "points": [[1990, 0], [1996, 2], [2002, 9], [2008, 14], [2014, 38], [2020, 62], [2026, 100]], "xTicks": [1990, 2002, 2014, 2026], "yTicks": [25, 50, 75, 100], "ySuffix": "%", "cue": "gline",
-        "annotations": [ { "x": 1996, "label": "A first note" }, { "x": 2014, "label": "A second note", "anchor": "end" } ] },
-      "lines": [ { "say": "A {gline}line chart draws itself over time, | with notes that appear along the way.", "show": "A line chart draws itself over time, | with *notes* that appear along the way." } ] },
-    { "id": "g-timeline", "template": "timeline", "tone": "cream",
-      "props": { "title": "A timeline", "events": [
-          { "label": "1965", "text": "The first event", "cue": "gt1" },
-          { "label": "1975", "text": "The second event", "cue": "gt2" },
-          { "label": "1985", "text": "The one that matters", "cue": "gt3", "highlight": true } ] },
-      "lines": [ { "say": "On a timeline, | {gt1}the first event appears, | then {gt2}the second, | and then {gt3}the one that matters.", "show": "On a timeline, | the first event appears, | then the second, | and then *the one that matters.*" } ] },
-    { "id": "g-map", "template": "map", "tone": "navy",
-      "props": { "kicker": "A map", "center": [3.0, 57.9], "span": 34,
-        "countries": [ { "name": "United Kingdom", "label": "BRITAIN", "color": "blue", "labelAt": [-3.6, 56.6] }, { "name": "Norway", "label": "NORWAY", "color": "red", "labelAt": [8.9, 60.9] } ],
-        "lines": [ { "cue": "gmline", "label": "A drawn border", "labelAt": 0.6, "points": [[3.25, 56.087], [2.613, 56.595], [1.965, 57.905], [1.483, 58.43], [1.712, 59.29], [2.077, 59.897], [1.79, 61.357], [1.56, 61.737]] } ],
-        "points": [ { "lon": 3.21, "lat": 56.55, "cue": "gmpoint", "kind": "oil", "label": "A labelled point" } ],
-        "zoomTo": { "center": [2.6, 57.3], "span": 16, "cue": "gmpoint", "dur": 1.6 },
-        "tall": { "center": [2.4, 58.4], "span": 16, "zoomTo": { "center": [2.8, 57.4], "span": 10, "cue": "gmpoint", "dur": 1.6 },
-          "countries": [ { "name": "United Kingdom", "label": "BRITAIN", "color": "blue", "labelAt": [-2.9, 54.4] }, { "name": "Norway", "label": "NORWAY", "color": "red", "labelAt": [8.0, 61.2] } ] } },
-      "sounds": [ { "cue": "gmline", "role": "draw" } ],
-      "lines": [ { "say": "A map can highlight countries, | {gmline}draw a border, | and {gmpoint}zoom in on a labelled point.", "show": "A map can highlight countries, | draw a border, | and *zoom in* on a labelled point." } ] },
-    { "id": "g-photo", "template": "photo", "tone": "navy", "enter": "fade",
-      "props": { "photo": "rig", "kicker": "A real photo", "title": "With a credit", "caption": "The caption says what the photo shows", "move": "in", "focus": [0.42, 0.45] },
-      "lines": [ { "say": "A real photo drifts slowly, | and its credit is added for you.", "show": "A real photo drifts slowly, | and its *credit* is added for you." } ] },
-    { "id": "g-split", "template": "split", "tone": "navy",
-      "props": { "kicker": "A split screen",
-        "left": { "flag": "norway", "label": "One side", "value": 75, "suffix": "%", "caption": "kept", "cue": "gs1", "color": "green" },
-        "right": { "flag": "uk", "label": "The other side", "text": "Nothing", "caption": "kept", "cue": "gs2", "color": "muted" } },
-      "sounds": [ { "cue": "gs2", "role": "impact" } ],
-      "lines": [ { "say": "A split screen sets {gs1}one side | against {gs2}the other.", "show": "A split screen sets one side | against *the other.*" } ] },
-    { "id": "g-icons", "template": "icons", "tone": "cream",
-      "props": { "title": "An icon row", "items": [
-          { "icon": "page-facing-up", "label": "First", "text": "A rule", "cue": "gi1" },
-          { "icon": "money-bag", "label": "Second", "text": "Some money", "cue": "gi2" },
-          { "icon": "hourglass-done", "label": "Third", "text": "A deadline", "cue": "gi3" },
-          { "icon": "light-bulb", "label": "Fourth", "text": "An idea", "cue": "gi4" } ] },
-      "lines": [ { "say": "Icons arrive in turn: | {gi1}a rule, | {gi2}some money, | {gi3}a deadline | and {gi4}an idea.", "show": "Icons arrive in turn: | a rule, | some money, | a deadline | and *an idea.*" } ] },
-    { "id": "g-question", "template": "question", "tone": "cream",
-      "props": { "kicker": "The question card", "text": "So what happens after the pause?", "accent": "pause", "cue": "gq" },
-      "lines": [ { "say": "{gq}So what happens after the pause?", "show": "So what happens after the pause?", "beat": 1.2 } ] },
-    { "id": "g-answer", "template": "answer", "tone": "navy", "major": true, "sound": "reveal",
-      "props": { "kicker": "The answer card", "text": "This.", "sub": "The reveal sound is saved for moments like this one.", "cue": "ga" },
-      "lines": [ { "say": "{ga}This. | The answer lands after the silence.", "show": "*This.* | The answer lands after the silence." } ] },
-    { "id": "g-quote", "template": "quote", "tone": "cream",
-      "props": { "kicker": "A quote or a rule", "text": "Spend what the money earns, and leave the money alone.", "accent": "leave the money alone", "by": "An example rule", "cue": "gquote" },
-      "lines": [ { "say": "A {gquote}quote card holds one sentence, | with the key words marked.", "show": "A quote card holds one sentence, | with the *key words* marked." } ] },
-    { "id": "g-names", "template": "names", "tone": "navy",
-      "props": { "title": "A name wall",
-        "names": ["Alder & Co", "Birch Bank", "Cedar Foods", "Dune Motors", "Elm Energy", "Fern Retail", "Gorse Air", "Hazel Pharma", "Iris Media", "Juniper Tech", "Kelp Shipping", "Larch Steel", "Maple Homes", "Nettle Games", "Oak Insurance", "Pine Telecom", "Quince Drinks", "Rowan Tools", "Sedge Rail", "Thistle Hotels", "Ulex Chemicals", "Vetch Fashion", "Willow Water", "Yarrow Health", "Zinnia Travel", "Aspen Software", "Beech Mining", "Clover Dairy", "Dahlia Cinema", "Erica Paper", "Flax Textiles", "Ginkgo Labs", "Holly Freight", "Ivy Security", "Jasmine Tea", "Kale Farms", "Lotus Cars", "Moss Batteries", "Nutmeg Spices", "Olive Oil Co", "Peony Beauty", "Reed Audio"],
-        "resolve": { "label": "All owned by", "text": "One fund", "caption": "Example names, not real companies", "cue": "gowner" } },
-      "lines": [ { "say": "A wall of names fills the screen, | and then {gowner}resolves into one owner.", "show": "A wall of names fills the screen, | and then resolves into *one owner.*" } ] },
-    { "id": "g-flow", "template": "flow", "tone": "cream",
-      "props": { "title": "A simple diagram", "links": ["goes into", "pays for"], "nodes": [
-          { "icon": "oil-drum", "label": "The source", "sub": "Money comes in", "cue": "gf1", "color": "amber" },
-          { "icon": "bank", "label": "The pot", "sub": "It is saved", "cue": "gf2", "color": "blue" },
-          { "icon": "house", "label": "The spending", "sub": "Only the earnings", "cue": "gf3", "color": "green" } ] },
-      "lines": [ { "say": "A diagram shows money moving | from {gf1}a source, | into {gf2}a pot, | and out to {gf3}spending.", "show": "A diagram shows money moving | from a source, | into a pot, | and out to *spending.*" } ] },
-    { "id": "g-subscribe", "template": "subscribe", "tone": "navy", "sound": "pop", "hold": 4.6, "props": {} },
-    { "id": "g-end", "template": "end", "tone": "navy", "hold": 5.0,
-      "props": { "kicker": "Next", "title": "The end card leaves room for YouTube's buttons" } }
+    {
+      "id": "g-title",
+      "template": "title",
+      "tone": "navy",
+      "major": true,
+      "sound": "none",
+      "hold": 2.6,
+      "props": {
+        "kicker": "Example only",
+        "lines": [
+          "Every template",
+          "in one video",
+          "with made-up numbers"
+        ],
+        "accent": 1
+      }
+    },
+    {
+      "id": "g-ident",
+      "template": "ident",
+      "tone": "navy",
+      "major": true,
+      "sound": "sting",
+      "hold": 3.0,
+      "props": {
+        "name": "MONEY MECHANICS",
+        "tagline": "How money really works"
+      }
+    },
+    {
+      "id": "g-chapter",
+      "template": "chapter",
+      "tone": "cream",
+      "props": {
+        "number": 1,
+        "kicker": "Part one",
+        "title": "The chapter card"
+      },
+      "lines": [
+        {
+          "say": "This is the chapter card.",
+          "show": "This is the *chapter card.*"
+        }
+      ]
+    },
+    {
+      "id": "g-number",
+      "template": "number",
+      "tone": "navy",
+      "props": {
+        "label": "Example sales last year",
+        "value": 48.6,
+        "prefix": "$",
+        "decimals": 1,
+        "unit": "billion",
+        "caption": "A big number counts up without a sound",
+        "cue": "gnum",
+        "source": "Made-up figure"
+      },
+      "lines": [
+        {
+          "say": "A big number {gnum}counts up to its value, | and the counter stays silent.",
+          "show": "A big number counts up to its value, | and the counter stays *silent.*"
+        }
+      ]
+    },
+    {
+      "id": "g-bars",
+      "template": "bars",
+      "tone": "cream",
+      "props": {
+        "title": "A bar comparison",
+        "bars": [
+          {
+            "label": "Shop A",
+            "value": 12,
+            "display": "12%",
+            "cue": "gb1"
+          },
+          {
+            "label": "Shop B",
+            "value": 21,
+            "display": "21%",
+            "cue": "gb2"
+          },
+          {
+            "label": "Shop C",
+            "value": 34,
+            "display": "34%",
+            "cue": "gb3",
+            "highlight": true
+          }
+        ],
+        "note": "Example figures"
+      },
+      "lines": [
+        {
+          "say": "Bars can {gb1}compare two, | {gb2}three | or {gb3}four things.",
+          "show": "Bars can compare two, | three | or *four things.*"
+        }
+      ]
+    },
+    {
+      "id": "g-chart",
+      "template": "chart",
+      "tone": "navy",
+      "props": {
+        "title": "A line chart over time",
+        "points": [
+          [
+            1990,
+            0
+          ],
+          [
+            1996,
+            2
+          ],
+          [
+            2002,
+            9
+          ],
+          [
+            2008,
+            14
+          ],
+          [
+            2014,
+            38
+          ],
+          [
+            2020,
+            62
+          ],
+          [
+            2026,
+            100
+          ]
+        ],
+        "xTicks": [
+          1990,
+          2002,
+          2014,
+          2026
+        ],
+        "yTicks": [
+          25,
+          50,
+          75,
+          100
+        ],
+        "ySuffix": "%",
+        "cue": "gline",
+        "annotations": [
+          {
+            "x": 1996,
+            "label": "A first note"
+          },
+          {
+            "x": 2014,
+            "label": "A second note",
+            "anchor": "end"
+          }
+        ]
+      },
+      "lines": [
+        {
+          "say": "A {gline}line chart draws itself over time, | with notes that appear along the way.",
+          "show": "A line chart draws itself over time, | with *notes* that appear along the way."
+        }
+      ]
+    },
+    {
+      "id": "g-timeline",
+      "template": "timeline",
+      "tone": "cream",
+      "props": {
+        "title": "A timeline",
+        "events": [
+          {
+            "label": "1965",
+            "text": "The first event",
+            "cue": "gt1"
+          },
+          {
+            "label": "1975",
+            "text": "The second event",
+            "cue": "gt2"
+          },
+          {
+            "label": "1985",
+            "text": "The one that matters",
+            "cue": "gt3",
+            "highlight": true
+          }
+        ]
+      },
+      "lines": [
+        {
+          "say": "On a timeline, | {gt1}the first event appears, | then {gt2}the second, | and then {gt3}the one that matters.",
+          "show": "On a timeline, | the first event appears, | then the second, | and then *the one that matters.*"
+        }
+      ]
+    },
+    {
+      "id": "g-map",
+      "template": "map",
+      "tone": "navy",
+      "props": {
+        "kicker": "A map",
+        "center": [
+          3.0,
+          57.9
+        ],
+        "span": 34,
+        "countries": [
+          {
+            "name": "United Kingdom",
+            "label": "BRITAIN",
+            "color": "blue",
+            "labelAt": [
+              -3.6,
+              56.6
+            ]
+          },
+          {
+            "name": "Norway",
+            "label": "NORWAY",
+            "color": "red",
+            "labelAt": [
+              8.9,
+              60.9
+            ]
+          }
+        ],
+        "lines": [
+          {
+            "cue": "gmline",
+            "label": "A drawn border",
+            "labelAt": 0.6,
+            "points": [
+              [
+                3.25,
+                56.087
+              ],
+              [
+                2.613,
+                56.595
+              ],
+              [
+                1.965,
+                57.905
+              ],
+              [
+                1.483,
+                58.43
+              ],
+              [
+                1.712,
+                59.29
+              ],
+              [
+                2.077,
+                59.897
+              ],
+              [
+                1.79,
+                61.357
+              ],
+              [
+                1.56,
+                61.737
+              ]
+            ]
+          }
+        ],
+        "points": [
+          {
+            "lon": 3.21,
+            "lat": 56.55,
+            "cue": "gmpoint",
+            "kind": "oil",
+            "label": "A labelled point"
+          }
+        ],
+        "zoomTo": {
+          "center": [
+            2.6,
+            57.3
+          ],
+          "span": 16,
+          "cue": "gmpoint",
+          "dur": 1.6
+        },
+        "tall": {
+          "center": [
+            2.4,
+            58.4
+          ],
+          "span": 16,
+          "zoomTo": {
+            "center": [
+              2.8,
+              57.4
+            ],
+            "span": 10,
+            "cue": "gmpoint",
+            "dur": 1.6
+          },
+          "countries": [
+            {
+              "name": "United Kingdom",
+              "label": "BRITAIN",
+              "color": "blue",
+              "labelAt": [
+                -2.9,
+                54.4
+              ]
+            },
+            {
+              "name": "Norway",
+              "label": "NORWAY",
+              "color": "red",
+              "labelAt": [
+                8.0,
+                61.2
+              ]
+            }
+          ]
+        }
+      },
+      "sounds": [
+        {
+          "cue": "gmline",
+          "role": "draw"
+        }
+      ],
+      "lines": [
+        {
+          "say": "A map can highlight countries, | {gmline}draw a border, | and {gmpoint}zoom in on a labelled point.",
+          "show": "A map can highlight countries, | draw a border, | and *zoom in* on a labelled point."
+        }
+      ]
+    },
+    {
+      "id": "g-photo",
+      "template": "photo",
+      "tone": "navy",
+      "enter": "fade",
+      "props": {
+        "photo": "rig",
+        "kicker": "A real photo",
+        "title": "With a credit",
+        "caption": "The caption says what the photo shows",
+        "move": "in",
+        "focus": [
+          0.42,
+          0.45
+        ]
+      },
+      "lines": [
+        {
+          "say": "A real photo drifts slowly, | and its credit is added for you.",
+          "show": "A real photo drifts slowly, | and its *credit* is added for you."
+        }
+      ]
+    },
+    {
+      "id": "g-split",
+      "template": "split",
+      "tone": "navy",
+      "props": {
+        "kicker": "A split screen",
+        "left": {
+          "flag": "norway",
+          "label": "One side",
+          "value": 75,
+          "suffix": "%",
+          "caption": "kept",
+          "cue": "gs1",
+          "color": "green"
+        },
+        "right": {
+          "flag": "uk",
+          "label": "The other side",
+          "text": "Nothing",
+          "caption": "kept",
+          "cue": "gs2",
+          "color": "muted"
+        }
+      },
+      "sounds": [
+        {
+          "cue": "gs2",
+          "role": "impact"
+        }
+      ],
+      "lines": [
+        {
+          "say": "A split screen sets {gs1}one side | against {gs2}the other.",
+          "show": "A split screen sets one side | against *the other.*"
+        }
+      ]
+    },
+    {
+      "id": "g-clip",
+      "template": "clip",
+      "tone": "navy",
+      "enter": "fade",
+      "props": {
+        "clip": "sea",
+        "kicker": "Real footage",
+        "title": "A video clip",
+        "caption": "Clips play silently under the narration"
+      },
+      "lines": [
+        {
+          "say": "A video clip plays silently, | with its credit added the same way.",
+          "show": "A video clip plays silently, | with its *credit* added the same way."
+        }
+      ]
+    },
+    {
+      "id": "g-icons",
+      "template": "icons",
+      "tone": "cream",
+      "props": {
+        "title": "An icon row",
+        "items": [
+          {
+            "icon": "draw:contract",
+            "label": "First",
+            "text": "A rule",
+            "cue": "gi1"
+          },
+          {
+            "icon": "money-bag",
+            "label": "Second",
+            "text": "Some money",
+            "cue": "gi2"
+          },
+          {
+            "icon": "draw:clock",
+            "label": "Third",
+            "text": "A deadline",
+            "cue": "gi3"
+          },
+          {
+            "icon": "light-bulb",
+            "label": "Fourth",
+            "text": "An idea",
+            "cue": "gi4"
+          }
+        ]
+      },
+      "lines": [
+        {
+          "say": "Icons arrive in turn: | {gi1}a rule, | {gi2}some money, | {gi3}a deadline | and {gi4}an idea.",
+          "show": "Icons arrive in turn: | a rule, | some money, | a deadline | and *an idea.*"
+        }
+      ]
+    },
+    {
+      "id": "g-question",
+      "template": "question",
+      "tone": "cream",
+      "props": {
+        "kicker": "The question card",
+        "text": "So what happens after the pause?",
+        "accent": "pause",
+        "cue": "gq"
+      },
+      "lines": [
+        {
+          "say": "{gq}So what happens after the pause?",
+          "show": "So what happens after the pause?",
+          "beat": 1.2
+        }
+      ]
+    },
+    {
+      "id": "g-answer",
+      "template": "answer",
+      "tone": "navy",
+      "major": true,
+      "sound": "reveal",
+      "props": {
+        "kicker": "The answer card",
+        "text": "This.",
+        "sub": "The reveal sound is saved for moments like this one.",
+        "cue": "ga"
+      },
+      "lines": [
+        {
+          "say": "{ga}This. | The answer lands after the silence.",
+          "show": "*This.* | The answer lands after the silence."
+        }
+      ]
+    },
+    {
+      "id": "g-quote",
+      "template": "quote",
+      "tone": "cream",
+      "props": {
+        "kicker": "A quote or a rule",
+        "text": "Spend what the money earns, and leave the money alone.",
+        "accent": "leave the money alone",
+        "by": "An example rule",
+        "cue": "gquote"
+      },
+      "lines": [
+        {
+          "say": "A {gquote}quote card holds one sentence, | with the key words marked.",
+          "show": "A quote card holds one sentence, | with the *key words* marked."
+        }
+      ]
+    },
+    {
+      "id": "g-names",
+      "template": "names",
+      "tone": "navy",
+      "props": {
+        "title": "A name wall",
+        "names": [
+          "Alder & Co",
+          "Birch Bank",
+          "Cedar Foods",
+          "Dune Motors",
+          "Elm Energy",
+          "Fern Retail",
+          "Gorse Air",
+          "Hazel Pharma",
+          "Iris Media",
+          "Juniper Tech",
+          "Kelp Shipping",
+          "Larch Steel",
+          "Maple Homes",
+          "Nettle Games",
+          "Oak Insurance",
+          "Pine Telecom",
+          "Quince Drinks",
+          "Rowan Tools",
+          "Sedge Rail",
+          "Thistle Hotels",
+          "Ulex Chemicals",
+          "Vetch Fashion",
+          "Willow Water",
+          "Yarrow Health",
+          "Zinnia Travel",
+          "Aspen Software",
+          "Beech Mining",
+          "Clover Dairy",
+          "Dahlia Cinema",
+          "Erica Paper",
+          "Flax Textiles",
+          "Ginkgo Labs",
+          "Holly Freight",
+          "Ivy Security",
+          "Jasmine Tea",
+          "Kale Farms",
+          "Lotus Cars",
+          "Moss Batteries",
+          "Nutmeg Spices",
+          "Olive Oil Co",
+          "Peony Beauty",
+          "Reed Audio"
+        ],
+        "resolve": {
+          "label": "All owned by",
+          "text": "One fund",
+          "caption": "Example names, not real companies",
+          "cue": "gowner"
+        }
+      },
+      "lines": [
+        {
+          "say": "A wall of names fills the screen, | and then {gowner}resolves into one owner.",
+          "show": "A wall of names fills the screen, | and then resolves into *one owner.*"
+        }
+      ]
+    },
+    {
+      "id": "g-flow",
+      "template": "flow",
+      "tone": "cream",
+      "props": {
+        "title": "A simple diagram",
+        "links": [
+          "goes into",
+          "pays for"
+        ],
+        "nodes": [
+          {
+            "icon": "oil-drum",
+            "label": "The source",
+            "sub": "Money comes in",
+            "cue": "gf1",
+            "color": "amber"
+          },
+          {
+            "icon": "bank",
+            "label": "The pot",
+            "sub": "It is saved",
+            "cue": "gf2",
+            "color": "blue"
+          },
+          {
+            "icon": "house",
+            "label": "The spending",
+            "sub": "Only the earnings",
+            "cue": "gf3",
+            "color": "green"
+          }
+        ]
+      },
+      "lines": [
+        {
+          "say": "A diagram shows money moving | from {gf1}a source, | into {gf2}a pot, | and out to {gf3}spending.",
+          "show": "A diagram shows money moving | from a source, | into a pot, | and out to *spending.*"
+        }
+      ]
+    },
+    {
+      "id": "g-subscribe",
+      "template": "subscribe",
+      "tone": "navy",
+      "sound": "pop",
+      "hold": 4.6,
+      "props": {}
+    },
+    {
+      "id": "g-end",
+      "template": "end",
+      "tone": "navy",
+      "hold": 5.0,
+      "props": {
+        "kicker": "Next",
+        "title": "The end card leaves room for YouTube's buttons"
+      }
+    }
   ],
   "cuts": {
-    "tall": { "format": "tall", "scenes": ["g-title", "g-chapter", "g-number", "g-bars", "g-chart", "g-timeline", "g-map", "g-photo", "g-split", "g-icons", "g-question", "g-answer", "g-quote", "g-names", "g-flow", "g-subscribe", "g-end"] }
+    "tall": {
+      "format": "tall",
+      "scenes": [
+        "g-title",
+        "g-ident",
+        "g-chapter",
+        "g-number",
+        "g-bars",
+        "g-chart",
+        "g-timeline",
+        "g-map",
+        "g-photo",
+        "g-split",
+        "g-clip",
+        "g-icons",
+        "g-question",
+        "g-answer",
+        "g-quote",
+        "g-names",
+        "g-flow",
+        "g-subscribe",
+        "g-end"
+      ]
+    }
   }
 }
