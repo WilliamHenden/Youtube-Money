@@ -2,7 +2,7 @@ import React from "react";
 import { AbsoluteFill, Img, staticFile } from "remotion";
 import { glide, lerp, pop, useT } from "../lib/anim";
 import { Burst, Rays } from "../components/ui";
-import { C, F, Flag, Template, clamp01, ease, ink, prog, sub, useL } from "./kit";
+import { C, F, Flag, Heading, Kicker, Template, clamp01, ease, headingSpace, ink, prog, sub, useL, when } from "./kit";
 import { MapScene } from "./templates-b";
 
 /* The channel's mark: the yellow tile with a dollar sign, at any size. */
@@ -91,6 +91,58 @@ export const Thumb: Template = ({ s }) => {
       <div style={{ position: "absolute", left: 120, top: 400 }}><Huge size={300} color={C.white}>{p.left ?? "£0"}</Huge></div>
       <div style={{ position: "absolute", right: 70, top: 250, textAlign: "right" }}><Huge size={250} color={C.yellow}>{p.right ?? "$2.3T"}</Huge></div>
       <div style={{ position: "absolute", left: 0, right: 0, bottom: 50, textAlign: "center" }}><span style={{ fontFamily: F.head, fontWeight: 900, fontSize: 104, color: C.navy, background: C.yellow, padding: "10px 44px", borderRadius: 22, letterSpacing: 2 }}>{p.bottom ?? "SAME OIL"}</span></div>
+    </AbsoluteFill>
+  );
+};
+
+/* =====================================================================================
+   TANK AND TAP         props: title, kicker, inLabel, tankLabel, outLabel, rate (the big figure on the tap, e.g. "3%"),
+                               fillCue (money starts arriving), tapCue (the tap opens), startLevel, endLevel (0..1)
+   A pot that keeps filling while only a thin stream is let out: saving the capital and spending the return.
+   ===================================================================================== */
+export const Tank: Template = ({ s }) => {
+  const l = useL();
+  const { t, fps } = useT();
+  const p = s.props;
+  const fillAt = p.fillCue ? when(s, p.fillCue) : s.t0 + 0.6;
+  const tapAt = p.tapCue ? when(s, p.tapCue) : s.t0 + Math.max((s.t1 - s.t0) * 0.5, 1.5);
+  const dur = Math.max(s.t1 - fillAt, 2);
+  const level = lerp(p.startLevel ?? 0.18, p.endLevel ?? 0.78, clamp01((t - fillAt) / dur));
+  const open = glide(t, fps, tapAt);
+  const top = headingSpace(s, l);
+  const W = l.tall ? 500 : 540, H = l.tall ? 430 : 430;
+  const cx = l.tall ? l.cx : l.cx - 40, y0 = l.y0 + top + (l.tall ? 110 : 50);
+  const x0 = cx - W / 2, liquidH = (H - 24) * level;
+  const wave = Math.sin(t * 2.2) * 5;
+  const drops = [0, 1, 2, 3, 4];
+  const tapY = y0 + H - 70, tapX = x0 + W;
+  return (
+    <AbsoluteFill>
+      <Heading s={s} />
+      {/* money arriving */}
+      <div style={{ position: "absolute", left: x0 + W * 0.3 - 330, top: y0 - (l.tall ? 76 : 70), width: 270, textAlign: "right", opacity: prog(t, fillAt - 0.2, 0.4) }}>
+        <Kicker size={l.tall ? 32 : 30}>{p.inLabel ?? "Money in"}</Kicker>
+      </div>
+      {t >= fillAt && drops.map((k) => {
+        const f = ((t - fillAt) * 0.9 + k / drops.length) % 1;
+        const yy = lerp(y0 - 90, y0 + H - 24 - liquidH, f * f);
+        return <div key={k} style={{ position: "absolute", left: x0 + W * 0.3 + Math.sin(k * 2.4) * 26 - 17, top: yy - 17, width: 34, height: 34, borderRadius: "50%", background: C.yellow, border: `4px solid ${C.amber}`, boxSizing: "border-box", opacity: f < 0.92 ? 1 : 0 }} />;
+      })}
+      {/* the tank */}
+      <div style={{ position: "absolute", left: x0, top: y0, width: W, height: H, borderRadius: "0 0 44px 44px", border: `12px solid ${ink(s.tone)}`, borderTop: "none", boxSizing: "border-box", overflow: "hidden", background: s.tone === "navy" ? "rgba(14,26,43,0.5)" : "rgba(255,255,255,0.5)" }}>
+        <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: liquidH, background: `linear-gradient(180deg, ${C.yellow}, ${C.amber})` }}>
+          <svg width={W} height={30} style={{ position: "absolute", top: -14, left: 0 }}><path d={`M0,15 Q${W * 0.25},${15 - wave} ${W * 0.5},15 T${W},15 V30 H0 Z`} fill={C.yellow} /></svg>
+        </div>
+        <div style={{ position: "absolute", left: 0, right: 0, top: H * 0.36, textAlign: "center", fontFamily: F.head, fontWeight: 900, fontSize: l.tall ? 64 : 68, color: C.navy, textShadow: "0 2px 0 rgba(255,255,255,0.35)" }}>{p.tankLabel ?? "The fund"}</div>
+      </div>
+      {/* the tap */}
+      <div style={{ position: "absolute", left: tapX - 6, top: tapY, width: l.tall ? 110 : 150, height: 30, background: ink(s.tone), borderRadius: "0 10px 10px 0" }} />
+      <div style={{ position: "absolute", left: tapX + (l.tall ? 74 : 112), top: tapY - 40, width: 22, height: 44, background: C.red, borderRadius: 8, transform: `rotate(${open * 80}deg)`, transformOrigin: "50% 100%" }} />
+      {open > 0.05 && <div style={{ position: "absolute", left: tapX + (l.tall ? 84 : 122), top: tapY + 30, width: 9 * open, height: (y0 + H + 40 - tapY - 30) * clamp01((t - tapAt) * 2.4), background: C.yellow, borderRadius: 5 }} />}
+      <div style={{ position: "absolute", left: l.tall ? x0 : tapX + 190, top: l.tall ? y0 + H + 56 : tapY - 200, width: l.tall ? W : 470, textAlign: l.tall ? "center" : "left", opacity: clamp01((t - tapAt - 0.2) * 5), transform: `scale(${0.8 + 0.2 * pop(t, fps, tapAt + 0.2)})`, transformOrigin: l.tall ? "center" : "left center" }}>
+        <div style={{ fontFamily: F.head, fontWeight: 900, fontSize: l.tall ? 190 : 230, lineHeight: 0.95, color: C.yellow, letterSpacing: -6 }}>{p.rate ?? "3%"}</div>
+        <div style={{ fontFamily: F.head, fontWeight: 800, fontSize: l.tall ? 48 : 52, color: ink(s.tone), lineHeight: 1.1, marginTop: 10 }}>{p.outLabel ?? "let out each year"}</div>
+      </div>
     </AbsoluteFill>
   );
 };

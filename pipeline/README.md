@@ -114,6 +114,7 @@ Each has a 16:9 and a 9:16 layout. Code: `video/src/storyboard/`.
 | `clip` | Real video footage, silent, under the narration | `clip` (key from the script's `clips`), `start`, `rate`, plus the same settings as `photo` |
 | `ident` | The three-second channel sting | `name`, `tagline` |
 | `thumb` | A thumbnail, rendered as a still | `layout` (`flags`, `photo` or `map`) and its words |
+| `tank` | A pot that fills while a tap lets out a little: saving the capital, spending the return | `title`, `inLabel`, `tankLabel`, `rate`, `outLabel`, `fillCue`, `tapCue` |
 | `subscribe` | The five-second subscribe moment | `line`, `sub`, `cue` (same design every time) |
 | `end` | End card with room for YouTube's end-screen elements | `kicker`, `title` |
 

@@ -645,6 +645,26 @@
       ]
     },
     {
+      "id": "g-tank",
+      "template": "tank",
+      "tone": "navy",
+      "props": {
+        "title": "A tank and a tap",
+        "inLabel": "Money in",
+        "tankLabel": "The pot",
+        "rate": "3%",
+        "outLabel": "let out each year",
+        "fillCue": "gtfill",
+        "tapCue": "gttap"
+      },
+      "lines": [
+        {
+          "say": "A {gtfill}pot keeps filling | while the tap {gttap}lets out only a little each year.",
+          "show": "A pot keeps filling | while the tap lets out *only a little* each year."
+        }
+      ]
+    },
+    {
       "id": "g-subscribe",
       "template": "subscribe",
       "tone": "navy",
@@ -684,6 +704,7 @@
         "g-quote",
         "g-names",
         "g-flow",
+        "g-tank",
         "g-subscribe",
         "g-end"
       ]
