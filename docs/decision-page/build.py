@@ -16,11 +16,14 @@ body = brief[brief.index("### Hook"): brief.index("## 4. Notes for the owner")]
 TIMES = {"Hook": "0:00 to 0:25", "Context": "0:25 to 1:20", "Act 1: who owns the oil": "1:20 to 2:50", "Subscribe moment": "2:50 to 3:00",
          "Re-hook": "3:00 to 3:15", "Act 2: spend or save": "3:15 to 5:20", "Act 3: the payoff": "5:20 to 7:00", "Takeaway": "7:00 to 7:40", "Lead-out": "7:40 to 8:00"}
 
-# The two lines with a suggested rewording. Shown inline with a choice.
+# The lines with a suggested rewording. Shown inline with a choice.
 SWAPS = {
     "There was just one problem. Its licence required one more well, and walking away meant paying a penalty.":
         ("line1", "But its licence still required one more well, and walking away meant paying a penalty.",
          "The original opens with a stock phrase your writing rules ask me to avoid. The sample already uses the new wording."),
+    "In nineteen eighty-two alone, oil brought in eight billion pounds, which was about eight pounds fifty of every hundred the taxman collected.":
+        ("line3", "In nineteen eighty-two alone, oil brought in close to eight billion pounds, which was about eight pounds of every hundred the taxman collected.",
+         "I checked this against official figures: £7.8 billion, and between 7 and 10 percent of tax depending on what is counted. The new wording is safer."),
     "In other words, Norway doesn't spend its oil money. It spends what the oil money earns.":
         ("line2", "In other words, Norway only ever spends what its oil money earns.",
          "The original is the \"it's not X, it's Y\" pattern your writing rules rule out. It is also the heart of the video, so this one is your call."),
