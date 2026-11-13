@@ -4,6 +4,7 @@ A faceless YouTube business channel made with a code-based video pipeline. The o
 
 ## Read first
 - `docs/05-production-standards.md`: the rules every video follows (story, writing, sound, voice, visuals). Follow it exactly and update it when the owner changes a decision.
+- `docs/09-roadmap-and-decisions.md`: where the project stands, what's next, every decision the owner has made, and known risks.
 - `docs/08-build-plan.md`: the current build plan and what each session should do.
 - `projects/norway-fund/brief.md`: the first real video (script, fact sheet, status).
 - `pipeline/README.md`: how the video pipeline works and how to build a video.
@@ -28,4 +29,5 @@ A faceless YouTube business channel made with a code-based video pipeline. The o
 - Use the **youtube-money** cloud environment. It installs the pipeline tools at session start and allows the stock-photo, voice-model and YouTube sites.
 - Files over 100 MB can't go in the repo. Save finished long videos to the Google Drive folder "YouTube Business - Videos" (ID `1LdoEe4r0zkBtsIfB1xwNxtO8sE35HYvY`) and commit only small previews.
 - Render with the default graphics setting in `pipeline/video/scripts/render.mjs`. The "swangle" setting is about ten times slower on this machine.
+- Research tools: `tools/yt_search.py` (YouTube view counts for a topic) and `tools/yt_handle_check.sh` (handle availability).
 - Undecided: channel name, narrator voice engine. Parked: mascot, AI-generated cinematic clips.

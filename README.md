@@ -5,6 +5,7 @@ Building an AI-assisted, faceless YouTube documentary business.
 ## Documents
 - [`docs/01-business-strategy.md`](docs/01-business-strategy.md): the full strategy (opportunities, rankings, financials, tool stack, policy, operating models, 90-day plan, long-term model).
 - [`docs/02-ai-video-tools.md`](docs/02-ai-video-tools.md): research on the AI tools that produce the videos, voiceover and editing, plus the recommended production setup.
+- [`docs/09-roadmap-and-decisions.md`](docs/09-roadmap-and-decisions.md): where the project stands, the roadmap, the video queue and every decision made so far.
 - [`projects/norway-fund/brief.md`](projects/norway-fund/brief.md): **first real video.** Title, five hooks, outline, script draft and fact sheet for the Norway oil fund video. Waiting for script approval.
 - [`docs/08-build-plan.md`](docs/08-build-plan.md): plan and ready-to-paste prompts for building the template system and making the video in two sessions.
 - [`docs/07-first-video-shortlist.md`](docs/07-first-video-shortlist.md): topic ideas for the first 8-minute video, with YouTube view-count evidence and a recommendation.

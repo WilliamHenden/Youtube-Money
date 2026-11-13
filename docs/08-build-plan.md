@@ -82,7 +82,7 @@ Only after the owner has approved the script (`brief.md` status) and given feedb
 - Check stills, not full renders, while building. No more than two full renders of the long video.
 - Review with one contact sheet per pass, not many separate images.
 - Don't re-research what is already in the docs.
-- If the session limit is close, commit and push, write what's left in `docs/09-progress.md`, and stop cleanly.
+- If the session limit is close, commit and push, write what's left in `docs/10-progress.md`, and stop cleanly.
 
 ## Acceptance checks
 
