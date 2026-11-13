@@ -1,0 +1,317 @@
+{
+ "sounds": {
+  "whoosh-medium-soft": {
+   "file": "sfx/whoosh-medium-soft.wav",
+   "description": "A smooth, gentle sweep of air that rises and fades without an edge.",
+   "duration": 0.543,
+   "sync": 0.229,
+   "lufs": -24,
+   "under_voice_db": -2,
+   "source": "SFX Kit by Wyzowl 1.0.0",
+   "licence": "CC0 1.0"
+  },
+  "whoosh-slow-soft": {
+   "file": "sfx/whoosh-slow-soft.wav",
+   "description": "A long, soft breath of air drifting past.",
+   "duration": 1.049,
+   "sync": 0.452,
+   "lufs": -24,
+   "under_voice_db": -2,
+   "source": "SFX Kit by Wyzowl 1.0.0",
+   "licence": "CC0 1.0"
+  },
+  "reverse-whoosh-medium-soft": {
+   "file": "sfx/reverse-whoosh-medium-soft.wav",
+   "description": "A soft reverse whoosh: air drawn in, building to a sudden stop.",
+   "duration": 0.861,
+   "sync": 0.679,
+   "lufs": -24,
+   "under_voice_db": -3,
+   "source": "SFX Kit by Wyzowl 1.0.0",
+   "licence": "CC0 1.0"
+  },
+  "whoosh-medium-medium": {
+   "file": "sfx/whoosh-medium-medium.wav",
+   "description": "A balanced swish of air: a clear rise, a defined peak and a smooth fade.",
+   "duration": 0.517,
+   "sync": 0.209,
+   "lufs": -20.5,
+   "under_voice_db": -3,
+   "source": "SFX Kit by Wyzowl 1.0.0",
+   "licence": "CC0 1.0"
+  },
+  "swish-soft": {
+   "file": "sfx/swish-soft.wav",
+   "description": "A soft, thin swish: something light flicked past.",
+   "duration": 0.223,
+   "sync": 0.085,
+   "lufs": -24,
+   "under_voice_db": -2,
+   "source": "SFX Kit by Wyzowl 1.0.0",
+   "licence": "CC0 1.0"
+  },
+  "pop-medium-in": {
+   "file": "sfx/pop-medium-in.wav",
+   "description": "A round, friendly pop that lifts into place.",
+   "duration": 0.06,
+   "sync": 0.011,
+   "lufs": -22.5,
+   "under_voice_db": -2,
+   "source": "SFX Kit by Wyzowl 1.0.0",
+   "licence": "CC0 1.0"
+  },
+  "pop-small-in": {
+   "file": "sfx/pop-small-in.wav",
+   "description": "A tiny, bright pop that lifts as it appears.",
+   "duration": 0.04,
+   "sync": 0.01,
+   "lufs": -25,
+   "under_voice_db": -2,
+   "source": "SFX Kit by Wyzowl 1.0.0",
+   "licence": "CC0 1.0"
+  },
+  "pop-medium-bubble": {
+   "file": "sfx/pop-medium-bubble.wav",
+   "description": "A clean bubble plip with a small one after it.",
+   "duration": 0.126,
+   "sync": 0.011,
+   "lufs": -22.5,
+   "under_voice_db": -2,
+   "source": "SFX Kit by Wyzowl 1.0.0",
+   "licence": "CC0 1.0"
+  },
+  "impact-light-firm": {
+   "file": "sfx/impact-light-firm.wav",
+   "description": "A light wooden tap: a small object set down on a table.",
+   "duration": 0.099,
+   "sync": 0.011,
+   "lufs": -25,
+   "under_voice_db": -2,
+   "source": "SFX Kit by Wyzowl 1.0.0",
+   "licence": "CC0 1.0"
+  },
+  "zip-in-soft": {
+   "file": "sfx/zip-in-soft.wav",
+   "description": "Something small zipping gently into place.",
+   "duration": 0.414,
+   "sync": 0.294,
+   "lufs": -24,
+   "under_voice_db": -2,
+   "source": "SFX Kit by Wyzowl 1.0.0",
+   "licence": "CC0 1.0"
+  },
+  "impact-medium-soft": {
+   "file": "sfx/impact-medium-soft.wav",
+   "description": "A soft, padded thud: something landing on fabric.",
+   "duration": 0.21,
+   "sync": 0.013,
+   "lufs": -22,
+   "under_voice_db": -3,
+   "source": "SFX Kit by Wyzowl 1.0.0",
+   "licence": "CC0 1.0"
+  },
+  "impact-medium-firm": {
+   "file": "sfx/impact-medium-firm.wav",
+   "description": "A solid knock: a medium-sized object landing on wood.",
+   "duration": 0.175,
+   "sync": 0.012,
+   "lufs": -22,
+   "under_voice_db": -3,
+   "source": "SFX Kit by Wyzowl 1.0.0",
+   "licence": "CC0 1.0"
+  },
+  "impact-heavy-soft": {
+   "file": "sfx/impact-heavy-soft.wav",
+   "description": "A heavy, muffled thump: weight landing on something soft.",
+   "duration": 0.32,
+   "sync": 0.018,
+   "lufs": -19,
+   "under_voice_db": -4,
+   "source": "SFX Kit by Wyzowl 1.0.0",
+   "licence": "CC0 1.0"
+  },
+  "boom-hit-soft": {
+   "file": "sfx/boom-hit-soft.wav",
+   "description": "A soft, deep boom: a big drum struck gently in a hall.",
+   "duration": 1.02,
+   "sync": 0.031,
+   "lufs": -27,
+   "under_voice_db": -8,
+   "source": "SFX Kit by Wyzowl 1.0.0",
+   "licence": "CC0 1.0"
+  },
+  "shimmer-medium-bright": {
+   "file": "sfx/shimmer-medium-bright.wav",
+   "description": "A shimmer: a bright cloud of glassy glints.",
+   "duration": 1.109,
+   "sync": 0.011,
+   "lufs": -23.5,
+   "under_voice_db": -3,
+   "source": "SFX Kit by Wyzowl 1.0.0",
+   "licence": "CC0 1.0"
+  },
+  "boom-hit-medium": {
+   "file": "sfx/boom-hit-medium.wav",
+   "description": "A deep, rounded boom with a warm hall.",
+   "duration": 1.301,
+   "sync": 0.038,
+   "lufs": -24.5,
+   "under_voice_db": -8,
+   "source": "SFX Kit by Wyzowl 1.0.0",
+   "licence": "CC0 1.0"
+  },
+  "sting-minimal-short": {
+   "file": "sfx/sting-minimal-short.wav",
+   "description": "A minimal sting: two kalimba notes, rising.",
+   "duration": 1.263,
+   "sync": 0.1,
+   "lufs": -24,
+   "under_voice_db": -6,
+   "source": "SFX Kit by Wyzowl 1.0.0",
+   "licence": "CC0 1.0"
+  },
+  "tone-ding-mid": {
+   "file": "sfx/tone-ding-mid.wav",
+   "description": "A small bell's clear ding (C, middle).",
+   "duration": 1.064,
+   "sync": 0,
+   "lufs": -23,
+   "under_voice_db": -3,
+   "source": "SFX Kit by Wyzowl 1.0.0",
+   "licence": "CC0 1.0"
+  },
+  "data-number-land": {
+   "file": "sfx/data-number-land.wav",
+   "description": "A woody knock with a small, bright ping: a number landing.",
+   "duration": 0.233,
+   "sync": 0.011,
+   "lufs": -22,
+   "under_voice_db": -2,
+   "source": "SFX Kit by Wyzowl 1.0.0",
+   "licence": "CC0 1.0"
+  },
+  "writing-pen-tick": {
+   "file": "sfx/writing-pen-tick.wav",
+   "description": "A pen on paper, ticking a box.",
+   "duration": 0.242,
+   "sync": 0.155,
+   "lufs": -27,
+   "under_voice_db": -1,
+   "source": "SFX Kit by Wyzowl 1.0.0",
+   "licence": "CC0 1.0"
+  },
+  "click-tap-firm": {
+   "file": "sfx/click-tap-firm.wav",
+   "description": "A firm, definite tap with a crisp tick.",
+   "duration": 0.024,
+   "sync": 0.009,
+   "lufs": -25,
+   "under_voice_db": -1,
+   "source": "SFX Kit by Wyzowl 1.0.0",
+   "licence": "CC0 1.0"
+  },
+  "impact-light-hard": {
+   "file": "sfx/impact-light-hard.wav",
+   "description": "A light, crisp tick: a small, hard object landing on stone.",
+   "duration": 0.087,
+   "sync": 0.01,
+   "lufs": -25,
+   "under_voice_db": -2,
+   "source": "SFX Kit by Wyzowl 1.0.0",
+   "licence": "CC0 1.0"
+  },
+  "writing-marker-draw": {
+   "file": "sfx/writing-marker-draw.wav",
+   "description": "A marker on a whiteboard, drawing a few long strokes.",
+   "duration": 1.063,
+   "sync": 0,
+   "lufs": -25,
+   "under_voice_db": -1,
+   "source": "SFX Kit by Wyzowl 1.0.0",
+   "licence": "CC0 1.0"
+  },
+  "zip-in-medium": {
+   "file": "sfx/zip-in-medium.wav",
+   "description": "A quick zip in: rising to a stop.",
+   "duration": 0.349,
+   "sync": 0.233,
+   "lufs": -21,
+   "under_voice_db": -3,
+   "source": "SFX Kit by Wyzowl 1.0.0",
+   "licence": "CC0 1.0"
+  },
+  "swish-medium": {
+   "file": "sfx/swish-medium.wav",
+   "description": "A quick, clean swish through the air, with a little whistle.",
+   "duration": 0.201,
+   "sync": 0.076,
+   "lufs": -21,
+   "under_voice_db": -3,
+   "source": "SFX Kit by Wyzowl 1.0.0",
+   "licence": "CC0 1.0"
+  },
+  "riser-1s-soft": {
+   "file": "sfx/riser-1s-soft.wav",
+   "description": "A 1-second soft, airy rise that builds to its peak at the end.",
+   "duration": 1.19,
+   "sync": 0.982,
+   "lufs": -24,
+   "under_voice_db": -3,
+   "source": "SFX Kit by Wyzowl 1.0.0",
+   "licence": "CC0 1.0"
+  },
+  "riser-2s-soft": {
+   "file": "sfx/riser-2s-soft.wav",
+   "description": "A 2-second soft, airy rise that builds to its peak at the end.",
+   "duration": 2.189,
+   "sync": 1.994,
+   "lufs": -24,
+   "under_voice_db": -3,
+   "source": "SFX Kit by Wyzowl 1.0.0",
+   "licence": "CC0 1.0"
+  }
+ },
+ "roles": {
+  "transition": [
+   "whoosh-medium-soft",
+   "whoosh-slow-soft",
+   "reverse-whoosh-medium-soft",
+   "whoosh-medium-medium",
+   "swish-soft"
+  ],
+  "pop": [
+   "pop-medium-in",
+   "pop-small-in",
+   "pop-medium-bubble",
+   "impact-light-firm",
+   "zip-in-soft"
+  ],
+  "impact": [
+   "impact-medium-soft",
+   "impact-medium-firm",
+   "impact-heavy-soft",
+   "boom-hit-soft"
+  ],
+  "reveal": [
+   "shimmer-medium-bright",
+   "boom-hit-medium",
+   "sting-minimal-short",
+   "tone-ding-mid"
+  ],
+  "tick": [
+   "data-number-land",
+   "writing-pen-tick",
+   "click-tap-firm",
+   "impact-light-hard"
+  ],
+  "draw": [
+   "writing-marker-draw",
+   "zip-in-medium",
+   "swish-medium"
+  ],
+  "riser": [
+   "riser-1s-soft",
+   "riser-2s-soft"
+  ]
+ }
+}

@@ -2,7 +2,7 @@ import React, { createContext, useContext } from "react";
 
 export type Chunk = { show: string; start: number; end: number };
 export type Line = { id: string; scene: string; text: string; start: number; end: number; chunks: Chunk[] };
-export type SceneT = { id: string; start: number; end: number; firstWord: number; lastWord: number };
+export type SceneT = { id: string; start: number; end: number; firstWord: number; lastWord: number; template?: string; tone?: "navy" | "cream"; props?: any; major?: boolean; enter?: "wipe" | "fade" | "cut" };
 export type Timings = {
   project: string;
   title: string;
@@ -11,6 +11,12 @@ export type Timings = {
   scenes: SceneT[];
   lines: Line[];
   cues: Record<string, number>;
+  cut?: string;
+  channel?: string;
+  width?: number;
+  height?: number;
+  beats?: { start: number; end: number }[];
+  photos?: Record<string, { credit: string; title: string }>;
 };
 
 const Ctx = createContext<Timings | null>(null);
