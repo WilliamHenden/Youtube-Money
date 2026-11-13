@@ -1,0 +1,219 @@
+{
+  "id": "intro-outro",
+  "title": "Intro and outro options",
+  "channel": "MONEY MECHANICS",
+  "about": "A demo reel for the owner to choose from: three ways into the title, the subscribe moment, and two endings. The channel name and tagline are placeholders.",
+  "voice": {
+    "engine": "kokoro",
+    "voice": "af_heart",
+    "speed": 0.95
+  },
+  "music": {
+    "track": "deliberate-thought",
+    "underVoice": 22
+  },
+  "pauses": {
+    "line": 0.38,
+    "scene": 0.75,
+    "beat": 1.2
+  },
+  "leadIn": 0.5,
+  "tail": 2.0,
+  "scenes": [
+    {
+      "id": "a-question",
+      "template": "question",
+      "tone": "cream",
+      "sound": "none",
+      "tag": "Intro A: question, pause, title",
+      "props": {
+        "kicker": "The same sea and the same oil",
+        "text": "So what did Norway do that Britain didn't?",
+        "accent": "Norway",
+        "cue": "ioq1"
+      },
+      "lines": [
+        {
+          "say": "{ioq1}So what did Norway do | that Britain didn't?",
+          "show": "So what did Norway do | that Britain didn't?",
+          "beat": 1.3
+        }
+      ]
+    },
+    {
+      "id": "a-title",
+      "template": "title",
+      "tone": "navy",
+      "major": true,
+      "sound": "reveal",
+      "hold": 3.2,
+      "tag": "Intro A: question, pause, title",
+      "props": {
+        "lines": [
+          "How Norway saved",
+          "$2.3 trillion",
+          "and Britain saved nothing"
+        ],
+        "accent": 1
+      }
+    },
+    {
+      "id": "b-question",
+      "template": "question",
+      "tone": "cream",
+      "tag": "Intro B: a three-second channel sting first",
+      "props": {
+        "kicker": "The same sea and the same oil",
+        "text": "So what did Norway do that Britain didn't?",
+        "accent": "Norway",
+        "cue": "ioq2"
+      },
+      "lines": [
+        {
+          "say": "{ioq2}So what did Norway do | that Britain didn't?",
+          "show": "So what did Norway do | that Britain didn't?",
+          "beat": 1.3
+        }
+      ],
+      "sound": "none"
+    },
+    {
+      "id": "b-ident",
+      "template": "ident",
+      "tone": "navy",
+      "major": true,
+      "sound": "sting",
+      "hold": 3.0,
+      "tag": "Intro B: a three-second channel sting first",
+      "props": {
+        "name": "MONEY MECHANICS",
+        "tagline": "How money really works"
+      }
+    },
+    {
+      "id": "b-title",
+      "template": "title",
+      "tone": "navy",
+      "sound": "none",
+      "hold": 3.0,
+      "tag": "Intro B: a three-second channel sting first",
+      "props": {
+        "lines": [
+          "How Norway saved",
+          "$2.3 trillion",
+          "and Britain saved nothing"
+        ],
+        "accent": 1
+      }
+    },
+    {
+      "id": "c-question",
+      "template": "question",
+      "tone": "cream",
+      "tag": "Intro C: the logo lands as the title appears",
+      "props": {
+        "kicker": "The same sea and the same oil",
+        "text": "So what did Norway do that Britain didn't?",
+        "accent": "Norway",
+        "cue": "ioq3"
+      },
+      "lines": [
+        {
+          "say": "{ioq3}So what did Norway do | that Britain didn't?",
+          "show": "So what did Norway do | that Britain didn't?",
+          "beat": 1.3
+        }
+      ],
+      "sound": "none"
+    },
+    {
+      "id": "c-title",
+      "template": "title",
+      "tone": "navy",
+      "major": true,
+      "sound": "sting",
+      "bugIn": true,
+      "hold": 3.6,
+      "tag": "Intro C: the logo lands as the title appears",
+      "props": {
+        "lines": [
+          "How Norway saved",
+          "$2.3 trillion",
+          "and Britain saved nothing"
+        ],
+        "accent": 1
+      }
+    },
+    {
+      "id": "sub",
+      "template": "subscribe",
+      "tone": "navy",
+      "sound": "none",
+      "tag": "The subscribe moment, about a third of the way in",
+      "props": {
+        "line": "Enjoying this one?",
+        "sub": "Subscribing is free, and it helps the channel.",
+        "cue": "subpress"
+      },
+      "lines": [
+        {
+          "say": "If you're enjoying this, | {subpress}subscribing is free, | and it really helps the channel.",
+          "show": "If you're enjoying this, | subscribing is free, | and it really helps the channel."
+        }
+      ]
+    },
+    {
+      "id": "oa-end",
+      "template": "end",
+      "tone": "navy",
+      "sound": "none",
+      "tag": "Outro A: straight to the next video",
+      "props": {
+        "kicker": "Next",
+        "title": "Who does America owe $40 trillion to?"
+      },
+      "lines": [
+        {
+          "say": "So who exactly does America owe all that money to, | and why hasn't it gone bust? | That's the next video.",
+          "show": "So who exactly does America owe all that money to, | and why hasn't it gone bust? | That's the *next video.*",
+          "pause": 2.5
+        }
+      ]
+    },
+    {
+      "id": "ob-lesson",
+      "template": "quote",
+      "tone": "cream",
+      "tag": "Outro B: the lesson in one line, then the next video",
+      "props": {
+        "kicker": "The lesson",
+        "text": "Decide the rule before the money arrives.",
+        "accent": "before the money arrives",
+        "cue": "oblesson"
+      },
+      "lines": [
+        {
+          "say": "{oblesson}Decide on the rule before the money arrives, | put it somewhere that grows, | and spend only what it earns.",
+          "show": "Decide on the rule before the money arrives, | put it somewhere that grows, | and spend only what it earns."
+        }
+      ]
+    },
+    {
+      "id": "ob-end",
+      "template": "end",
+      "tone": "navy",
+      "tag": "Outro B: the lesson in one line, then the next video",
+      "props": {
+        "kicker": "Next",
+        "title": "Who does America owe $40 trillion to?"
+      },
+      "lines": [
+        {
+          "say": "Norway, though, is the exception. | The biggest economy on earth went the opposite way. | That's the next video.",
+          "show": "Norway, though, is the exception. | The biggest economy on earth went the opposite way. | That's the *next video.*",
+          "pause": 2.0
+        }
+      ]
+    }
+  ]
+}

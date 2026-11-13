@@ -54,6 +54,10 @@ figure { margin: 0; display: flex; flex-direction: column; gap: 8px; min-width: 
 video { width: 100%; max-width: 100%; border-radius: 12px; background: #000; display: block; }
 .short video { max-height: 70vh; width: auto; margin: 0 auto; }
 figcaption { font-size: 14px; color: var(--soft); }
+.thumbs { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+.thumbs img { width: 100%; height: auto; border-radius: 10px; display: block; }
+.chips.stack { flex-direction: column; align-items: flex-start; }
+.chips.stack span { border-radius: 14px; }
 .clips { display: flex; flex-direction: column; gap: 14px; }
 .clip { display: flex; flex-direction: column; gap: 6px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
 .clip:last-child { border-bottom: 0; padding-bottom: 0; }
@@ -104,7 +108,7 @@ button.primary { background: var(--accent-fill); color: var(--accent-ink); borde
   <div class="sec-head"><p class="eyebrow">Start here</p><h2>Watch the sample and the Short</h2>
   <p class="help">Sound on. These are smaller copies for your phone; the full-quality files are in the project's <code>out</code> folder.</p></div>
   <div class="media">
-    <figure><video controls preload="metadata" playsinline poster="sample-poster.jpg" src="sample.mp4"></video><figcaption>The sample: the first 77 seconds of the video.</figcaption></figure>
+    <figure><video controls preload="metadata" playsinline poster="sample-poster.jpg" src="sample.mp4"></video><figcaption>The sample: the first 77 seconds of the video. Updated since you first saw it: drawn icons and a livelier timeline.</figcaption></figure>
     <figure class="short"><video controls preload="metadata" playsinline poster="short-poster.jpg" src="short.mp4"></video><figcaption>The vertical Short, 46 seconds.</figcaption></figure>
   </div>
 </section>
@@ -169,13 +173,13 @@ button.primary { background: var(--accent-fill); color: var(--accent-ink); borde
   </div>
 </section>
 
-<section id="script" data-need="line1 line2 length approve">
+<section id="script" data-need="line1 line2 line3 length approve">
   <div class="sec-head"><p class="eyebrow">Decision 3</p><h2>Approve the script</h2>
-  <p class="help">This is the full narration. Read it aloud if you can: anything that sounds stiff, note it in the box underneath. Two lines have a suggested change for you to accept or refuse.</p></div>
+  <p class="help">This is the full narration. Read it aloud if you can: anything that sounds stiff, note it in the box underneath. Three lines have a suggested change for you to accept or refuse. Since the first version of this page I have checked the facts that were flagged: all but one are now confirmed with sources (the open one is whether Norway still owns its share of Regent Street today).</p></div>
   <div class="script">
     <p class="title">How Norway Saved $2.3 Trillion and Britain Saved Nothing</p>
     <p class="meta">Draft 1 · about <!--WORDS--> words · times are the plan, not measured</p>
-    <div class="key"><span><span class="beat">pause</span> a held silence before a payoff</span><span><span class="check">to check</span> a fact I verify before recording</span></div>
+    <div class="key"><span><span class="beat">pause</span> a held silence before a payoff</span></div>
 <!--SCRIPT-->
   </div>
   <div class="q"><p class="label">Length</p><p class="hint">With the Heart voice this script runs about 7 to 7½ minutes. Adverts in the middle of a video need 8 minutes. A slower voice (George) would get there without new words.</p>
@@ -201,6 +205,56 @@ button.primary { background: var(--accent-fill); color: var(--accent-ink); borde
     <label><input type="radio" name="shortline" id="shortline-1" value="Fine to use"><span>Fine to use</span></label>
     <label><input type="radio" name="shortline" id="shortline-2" value="Change it (see my notes)"><span>Change it</span></label>
   </div>
+</section>
+
+<section id="intro" data-need="intro outro subline">
+  <div class="sec-head"><p class="eyebrow">Decision 5</p><h2>Intro, subscribe moment and outro</h2>
+  <p class="help">One reel, 55 seconds, with a label in the corner saying which option you're watching. Your rules already say: no logo before the hook, one short subscribe moment, and an ending that sells the next video. These options all follow that. The channel name and the line under it are placeholders.</p></div>
+  <figure><video controls preload="metadata" playsinline poster="reel-poster.jpg" src="reel.mp4"></video><figcaption>Intro A, B and C, then the subscribe moment, then Outro A and B.</figcaption></figure>
+  <div class="q"><p class="label">The intro</p><p class="hint">All three come after the opening question, never before it.</p>
+    <div class="chips" role="radiogroup" aria-label="Intro choice">
+      <label><input type="radio" name="intro" id="intro-a" value="A: question, pause, title (as in the sample)"><span>A: straight to the title</span></label>
+      <label><input type="radio" name="intro" id="intro-b" value="B: three-second channel sting, then the title"><span>B: channel sting first</span></label>
+      <label><input type="radio" name="intro" id="intro-c" value="C: the logo lands in its corner as the title appears"><span>C: logo lands with the title</span></label>
+      <label><input type="radio" name="intro" id="intro-d" value="None of these (see my notes)"><span>None of these</span></label>
+    </div></div>
+  <div class="q"><p class="label">The subscribe moment</p><p class="hint">Spoken line in the reel: "If you're enjoying this, subscribing is free, and it really helps the channel." You could also record this one line yourself.</p>
+    <div class="chips" role="radiogroup" aria-label="Subscribe line">
+      <label><input type="radio" name="subline" id="subline-1" value="Fine as it is"><span>Fine as it is</span></label>
+      <label><input type="radio" name="subline" id="subline-2" value="Shorter"><span>Make it shorter</span></label>
+      <label><input type="radio" name="subline" id="subline-3" value="I'll record it in my own voice"><span>I'll record it myself</span></label>
+      <label><input type="radio" name="subline" id="subline-4" value="Change the wording (see my notes)"><span>Change the wording</span></label>
+    </div></div>
+  <div class="q"><p class="label">The outro</p>
+    <div class="chips" role="radiogroup" aria-label="Outro choice">
+      <label><input type="radio" name="outro" id="outro-a" value="A: straight to the next-video tease"><span>A: straight to the next video</span></label>
+      <label><input type="radio" name="outro" id="outro-b" value="B: the lesson in one line, then the next video"><span>B: one-line lesson first</span></label>
+      <label><input type="radio" name="outro" id="outro-c" value="None of these (see my notes)"><span>Neither</span></label>
+    </div></div>
+  <div class="q"><label class="label" for="ionotes">Notes on the intro and outro</label><textarea id="ionotes" placeholder="For example: I like B but without the line under the name."></textarea></div>
+</section>
+
+<section id="pack" data-need="thumb title">
+  <div class="sec-head"><p class="eyebrow">Decision 6</p><h2>Thumbnail and title</h2>
+  <p class="help">YouTube lets you test up to three thumbnails against each other once the channel is live, so this is a first pick, not a final one.</p></div>
+  <div class="thumbs">
+    <figure><img src="thumb-a.jpg" alt="Thumbnail A: Norway's flag with $2.3 trillion beside Britain's flag with £0" width="1280" height="720"><figcaption>A: the two flags</figcaption></figure>
+    <figure><img src="thumb-b.jpg" alt="Thumbnail B: an oil platform with the words Norway saved $2.3T, saved £0" width="1280" height="720"><figcaption>B: the oil platform</figcaption></figure>
+    <figure><img src="thumb-c.jpg" alt="Thumbnail C: a map of the North Sea with £0 on Britain and $2.3T on Norway" width="1280" height="720"><figcaption>C: the map</figcaption></figure>
+  </div>
+  <div class="chips" role="radiogroup" aria-label="Thumbnail choice">
+    <label><input type="radio" name="thumb" id="thumb-a" value="A: flags"><span>A: flags</span></label>
+    <label><input type="radio" name="thumb" id="thumb-b" value="B: oil platform"><span>B: oil platform</span></label>
+    <label><input type="radio" name="thumb" id="thumb-c" value="C: map"><span>C: map</span></label>
+    <label><input type="radio" name="thumb" id="thumb-d" value="Test all three"><span>Test all three</span></label>
+    <label><input type="radio" name="thumb" id="thumb-e" value="None of these (see my notes)"><span>None of these</span></label>
+  </div>
+  <div class="q"><p class="label">The title</p>
+    <div class="chips stack" role="radiogroup" aria-label="Title choice">
+      <label><input type="radio" name="title" id="title-1" value="How Norway Saved $2.3 Trillion and Britain Saved Nothing"><span>How Norway Saved $2.3 Trillion and Britain Saved Nothing</span></label>
+      <label><input type="radio" name="title" id="title-2" value="Why Norway Refuses to Spend Its $2.3 Trillion"><span>Why Norway Refuses to Spend Its $2.3 Trillion</span></label>
+      <label><input type="radio" name="title" id="title-3" value="Same Sea, Same Oil: Why Norway Got Rich and Britain Didn't"><span>Same Sea, Same Oil: Why Norway Got Rich and Britain Didn't</span></label>
+    </div></div>
 </section>
 
 <section id="extras">
@@ -229,13 +283,14 @@ button.primary { background: var(--accent-fill); color: var(--accent-ink); borde
 
 <script>
 (function () {
-  var RADIOS = ["sounds", "music", "musiclevel", "pace", "nofund", "voice", "line1", "line2", "length", "approve", "shortline", "photos"];
-  var TEXTS = ["look", "edits", "channel", "other"];
+  var RADIOS = ["sounds", "music", "musiclevel", "pace", "nofund", "voice", "line1", "line2", "line3", "length", "approve", "shortline", "intro", "subline", "outro", "thumb", "title", "photos"];
+  var TEXTS = ["look", "edits", "ionotes", "channel", "other"];
   var LABELS = { sounds: "Sound effects", music: "Music", musiclevel: "Music level", pace: "Pace", nofund: "\"No fund\" line", look: "Notes on the sample",
-    voice: "Narrator", line1: "\"There was just one problem\" line", line2: "\"Doesn't spend its oil money\" line", length: "Length", approve: "Script",
+    voice: "Narrator", line1: "\"There was just one problem\" line", line2: "\"Doesn't spend its oil money\" line", line3: "\"Eight billion pounds\" line", intro: "Intro", subline: "Subscribe line", outro: "Outro", ionotes: "Intro and outro notes", thumb: "Thumbnail", title: "Title", length: "Length", approve: "Script",
     edits: "Script edits", shortline: "Short's opening line", channel: "Channel name", photos: "Photo keys", other: "Anything else" };
-  var ORDER = ["sounds", "music", "musiclevel", "pace", "nofund", "look", "voice", "line1", "line2", "length", "approve", "edits", "shortline", "channel", "photos", "other"];
-  var SECTIONS = [["sample", "The sample"], ["voice", "Narrator"], ["script", "Script"], ["short", "Short's first line"]];
+  var ORDER = ["sounds", "music", "musiclevel", "pace", "nofund", "look", "voice", "line1", "line2", "line3", "length", "approve", "edits", "shortline", "intro", "subline", "outro", "ionotes", "thumb", "title", "channel", "photos", "other"];
+  var SECTIONS = [["sample", "The sample"], ["voice", "Narrator"], ["script", "Script"], ["short", "Short's first line"], ["intro", "Intro and outro"], ["pack", "Thumbnail and title"]];
+  var N = SECTIONS.length;
   var DOC = "decisions/norway-video", DRAFT = "norway-decisions-draft";
   var db = null, dirty = false;
   var $ = function (id) { return document.getElementById(id); };
@@ -278,7 +333,7 @@ button.primary { background: var(--accent-fill); color: var(--accent-ink); borde
   function say(html) { status.innerHTML = html; }
   function draft() { try { localStorage.setItem(DRAFT, JSON.stringify(collect())); } catch (e) {} }
 
-  document.addEventListener("change", function () { dirty = true; var left = progress(); draft(); say(left ? "<b>" + left + " of 4</b> decisions still open. Not saved yet." : "<b>All four answered.</b> Press Save."); });
+  document.addEventListener("change", function () { dirty = true; var left = progress(); draft(); say(left ? "<b>" + left + " of " + N + "</b> decisions still open. Not saved yet." : "<b>All answered.</b> Press Save."); });
   document.addEventListener("input", function (e) { if (e.target.tagName === "TEXTAREA" || e.target.type === "text") { dirty = true; draft(); } });
 
   $("savebtn").addEventListener("click", async function () {
@@ -291,7 +346,7 @@ button.primary { background: var(--accent-fill); color: var(--accent-ink); borde
       await db.doc(DOC).set(a);
       dirty = false;
       var left = progress();
-      say("<b>Saved.</b> " + (left ? left + " of 4 decisions still open. " : "") + "Tell Claude \"I've answered\" and it will read them from here.");
+      say("<b>Saved.</b> " + (left ? left + " of " + N + " decisions still open. " : "") + "Tell Claude \"I've answered\" and it will read them from here.");
     } catch (e) {
       showCopy(a);
       say("<b>Couldn't save</b> (" + ((e && e.code) || "error") + "). Your answers are below as text: paste them into the chat.");

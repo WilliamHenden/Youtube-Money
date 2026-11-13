@@ -28,6 +28,7 @@ if ! grep -q '"template"' "projects/$ID/script.json"; then
 fi
 
 echo "== 1/5 photos";     $PY pipeline/media/commons.py fetch "$ID"
+grep -q '"pexels"' "projects/$ID/script.json" && $PY pipeline/media/pexels.py fetch "$ID"
 echo "== 2/5 narration";  $PY pipeline/voice/tts.py "$ID" --cut "$CUT" "${TTS[@]}" 2>&1 | grep -vi warn
 echo "== 3/5 sound";      $PY pipeline/audio/director.py "$ID" --cut "$CUT"
 cp "projects/$ID/build/$CUT/sound-report.txt" "out/$NAME-sound-report.txt"

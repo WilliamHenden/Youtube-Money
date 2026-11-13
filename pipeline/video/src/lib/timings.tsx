@@ -2,7 +2,7 @@ import React, { createContext, useContext } from "react";
 
 export type Chunk = { show: string; start: number; end: number };
 export type Line = { id: string; scene: string; text: string; start: number; end: number; chunks: Chunk[] };
-export type SceneT = { id: string; start: number; end: number; firstWord: number; lastWord: number; template?: string; tone?: "navy" | "cream"; props?: any; major?: boolean; enter?: "wipe" | "fade" | "cut" };
+export type SceneT = { id: string; start: number; end: number; firstWord: number; lastWord: number; template?: string; tone?: "navy" | "cream"; props?: any; major?: boolean; enter?: "wipe" | "fade" | "cut"; tag?: string; bugIn?: boolean };
 export type Timings = {
   project: string;
   title: string;

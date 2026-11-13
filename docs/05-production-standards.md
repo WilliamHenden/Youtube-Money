@@ -107,6 +107,8 @@ Owner feedback: the sounds worked as emphasis, but the same few were repeated un
 - **No ask in the first 30 seconds.**
 - **One subscribe moment per video,** under five seconds, after the first payoff (about a third of the way in). The same short line and the same look every time. A different voice is fine here, including the owner's own. A mascot could deliver it later if a design the owner likes is found.
 - **No "press the bell".**
+- **Intro: options made, owner to choose (13 November 2026).** Three options are in `out/intro-outro.mp4`: (A) straight from the opening question to the title, (B) a three-second channel sting first, (C) the channel mark landing in its corner as the title appears. All come after the hook, never before it. See `docs/11-prep-notes.md`.
+- **Outro: options made, owner to choose.** (A) straight to the next-video tease, or (B) the lesson in one line first.
 - **The ending sells the next video.** Narration runs to the end and teases a specific video ("Tomorrow: how … became …") over YouTube's end screen (next video + subscribe button). The end-card layout is identical in every video.
 - Check the retention graph at the ritual's timestamp after the first few videos, and shorten or move it if viewers drop there.
 

@@ -37,6 +37,11 @@ if (storyboard) {
     fs.mkdirSync(path.join(pub, "photos"), { recursive: true });
     for (const f of fs.readdirSync(photos)) if (f.endsWith(".jpg")) fs.copyFileSync(path.join(photos, f), path.join(pub, "photos", f));
   }
+  const clips = path.join(pdir, "clips");
+  if (fs.existsSync(clips)) {
+    fs.mkdirSync(path.join(pub, "clips"), { recursive: true });
+    for (const f of fs.readdirSync(clips)) if (f.endsWith(".mp4")) fs.copyFileSync(path.join(clips, f), path.join(pub, "clips", f));
+  }
 } else {
   fs.copyFileSync(path.join(build, "narration.wav"), path.join(pub, "narration.wav"));
   if (fs.existsSync(path.join(build, "music.wav"))) fs.copyFileSync(path.join(build, "music.wav"), path.join(pub, "music.wav"));

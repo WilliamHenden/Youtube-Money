@@ -84,6 +84,8 @@ Music level is `"music": { "underVoice": 22 }` (bigger is quieter). Effects leve
 - `"major": true` marks one of the video's 2–4 biggest moments. Only these may use the reveal sound.
 - `"sound"`: the sound at the scene change. Default `transition`; `none` for silence; `impact` or `reveal` for emphasis.
 - `"sounds": [{ "cue": "name", "role": "pop" }]`: a sound inside the scene.
+- `"bugIn": true`: the channel mark starts large in the middle and travels to its corner as the scene opens (one of the intro options).
+- `"tag": "…"`: a label in the corner, for demo reels only.
 - `"tall": { … }` inside `props`: settings that replace the wide ones in vertical videos (a map's centre, for example).
 
 **Rules to follow when storyboarding** (from `docs/05-production-standards.md`): change the kind of picture every 20–40 seconds, never use the same template twice in a row, and ask for few sounds. The sound director will drop extra ones anyway.
@@ -109,10 +111,14 @@ Each has a 16:9 and a 9:16 layout. Code: `video/src/storyboard/`.
 | `quote` | One sentence, large | `text`, `accent`, `by`, `kicker`, `cue` |
 | `names` | Many names resolving into one owner or number | `title`, `names[]`, `resolve{label, text, caption, cue}` |
 | `flow` | Simple diagram: source → pot → spending | `title`, `nodes[{icon, label, sub, cue, color}]`, `links[]` |
-| `subscribe` | The five-second subscribe moment | `line`, `sub` (same design every time) |
+| `clip` | Real video footage, silent, under the narration | `clip` (key from the script's `clips`), `start`, `rate`, plus the same settings as `photo` |
+| `ident` | The three-second channel sting | `name`, `tagline` |
+| `thumb` | A thumbnail, rendered as a still | `layout` (`flags`, `photo` or `map`) and its words |
+| `tank` | A pot that fills while a tap lets out a little: saving the capital, spending the return | `title`, `inLabel`, `tankLabel`, `rate`, `outLabel`, `fillCue`, `tapCue` |
+| `subscribe` | The five-second subscribe moment | `line`, `sub`, `cue` (same design every time) |
 | `end` | End card with room for YouTube's end-screen elements | `kicker`, `title` |
 
-Icons are Fluent Emoji. To use a new one, add its name to `video/src/icons/list.json` and run `node scripts/extract-icons.mjs` in `pipeline/video`. Flags available: `norway`, `uk`, `usa` (drawn in `storyboard/kit.tsx`).
+Drawn icons, in the channel's own style, are named `draw:rig`, `draw:contract`, `draw:fine`, `draw:barrel`, `draw:bank`, `draw:house` and `draw:clock` (add more in `storyboard/icons-drawn.tsx`). Other icons are Fluent Emoji. To use a new one, add its name to `video/src/icons/list.json` and run `node scripts/extract-icons.mjs` in `pipeline/video`. Flags available: `norway`, `uk`, `usa` (drawn in `storyboard/kit.tsx`).
 
 A custom scene for a video's biggest moment is a new template: write the component, add it to the list in `storyboard/Storyboard.tsx`, and name it in the storyboard.
 
@@ -122,10 +128,10 @@ The script asks for a **role**, never a file. `audio/director.py` chooses the fi
 
 | Rule | What happens |
 |---|---|
-| Roles | `transition`, `pop`, `impact`, `draw`, `tick`, `reveal`, each with 3–5 variants that rotate |
+| Roles | `transition`, `pop`, `impact`, `draw`, `tick`, `reveal`, and `sting` (the channel's musical signature, for the intro sting and end card), each with 3–5 variants that rotate |
 | Density | At most one effect every 6 seconds. When two collide, the more important one stays. |
 | Cooldown | The same file never plays twice within 30 seconds |
-| Reveal | Only in a scene marked `major`, at most 4 a video |
+| Reveal and sting | Only in a scene marked `major`; at most 4 reveals a video |
 | Beats | Nothing plays during a scripted beat, and the music drops out |
 | Counters | Silent unless the script asks for a `tick` |
 
@@ -137,7 +143,27 @@ The build fails if a rule is broken, and prints the sound report either way. Eff
 .venv/bin/python pipeline/media/commons.py search "Ekofisk oil platform"
 ```
 
-lists photos on Wikimedia Commons that are safe to use (public domain, CC0, CC BY). Name the chosen file in the script's `photos`, and the build downloads it and records its licence in `projects/<id>/photos/credits.json`. Share-alike, non-commercial and no-derivatives photos are refused. Commons limits how fast it can be asked; if it answers "too many requests", wait a few minutes. Pexels and Pixabay are not wired in yet (they need free API keys from the owner).
+lists photos on Wikimedia Commons that are safe to use (public domain, CC0, CC BY). Name the chosen file in the script's `photos`, and the build downloads it and records its licence in `projects/<id>/photos/credits.json`. Share-alike, non-commercial and no-derivatives photos are refused. Commons limits how fast it can be asked; if it answers "too many requests", wait a few minutes. **Pexels** (free stock photos and video, free for commercial use) is wired in but has not been run yet, because it needs a free key from the owner:
+
+```bash
+.venv/bin/python pipeline/media/pexels.py search "oil rig north sea" --video
+```
+
+Name the result's id in the script (`"clips": { "rig": { "pexels": 1234567 } }`) and the build downloads it. Pixabay is not wired in: its key has to travel in the web address, which the secure credential store can't do.
+
+## Thumbnails
+
+Thumbnails are scenes too. The Norway script has a `thumbnails` cut with three options. To remake them as 1280×720 stills:
+
+```bash
+pipeline/build.sh norway-fund --cut thumbnails --no-render
+```
+
+```bash
+cd pipeline/video && node scripts/render.mjs norway-fund --cut thumbnails --stills 0.9,2.5,4.2 --scale 0.66667
+```
+
+The PNGs land in `out/tmp/stills/`; the chosen ones are kept in `out/norway-fund-thumbnails/`.
 
 ## Voices
 

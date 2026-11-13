@@ -12,6 +12,7 @@ The script never names a sound file. It asks for a ROLE at a moment, and this fi
                pop         something appears.            impact  something lands.
                draw        a line or border is drawn.    tick    a small step or number landing.
                reveal      reserved for the biggest moments. Only plays in a scene marked "major": true.
+               sting       the channel's musical signature, for the intro sting and the end card. Major scenes only.
   density      at most one sound every MIN_GAP seconds. When two collide, the more important one stays.
   cooldown     the same file never plays twice within 30 seconds; variants of a role are rotated.
   beats        nothing plays during a scripted beat, and the music drops out for it.
@@ -28,7 +29,7 @@ SR = 48000
 MIN_GAP = 6.0       # seconds between any two effects
 COOLDOWN = 30.0     # seconds before the same file may play again
 MAX_REVEALS = 4     # per video
-PRIORITY = {"reveal": 5, "impact": 4, "transition": 3, "draw": 2, "pop": 2, "tick": 1, "riser": 1}
+PRIORITY = {"reveal": 5, "sting": 5, "impact": 4, "transition": 3, "draw": 2, "pop": 2, "tick": 1, "riser": 1}
 
 
 def db(x):
@@ -62,6 +63,7 @@ def plan_effects(tm, lib, cfg):
         for bt in beats:
             if bt["start"] - 0.05 <= r["at"] <= bt["end"] + 0.15:
                 r["at"] = bt["end"] + 0.03
+                r["not_before"] = bt["end"]  # a sound with a lead-in starts as the silence ends, not inside it
     for r in reqs:
         if r["role"] not in lib["roles"]:
             raise SystemExit(f"Unknown sound role \"{r['role']}\". Roles: {', '.join(lib['roles'])}")
@@ -69,8 +71,8 @@ def plan_effects(tm, lib, cfg):
     # 1. reveals only on major moments, and only a few per video
     keep = []
     for r in sorted(reqs, key=lambda r: r["at"]):
-        if r["role"] == "reveal" and not r["major"]:
-            dropped.append(dict(r, reason="reveal asked for in a scene not marked major"))
+        if r["role"] in ("reveal", "sting") and not r["major"]:
+            dropped.append(dict(r, reason=f"{r['role']} asked for in a scene not marked major"))
         elif r["role"] == "reveal" and sum(1 for k in keep if k["role"] == "reveal") >= MAX_REVEALS:
             dropped.append(dict(r, reason=f"more than {MAX_REVEALS} reveals in one video"))
         else:
@@ -94,14 +96,14 @@ def plan_effects(tm, lib, cfg):
             dropped.append(dict(r, reason="every variant of this role played in the last 30s"))
             continue
         s = lib["sounds"][choice]
-        start = max(r["at"] - s["sync"], 0)
+        start = max(r["at"] - s["sync"], r.get("not_before", 0), 0)
         end = start + s["duration"]
         beat = next((b for b in beats if start < b["end"] - 0.02 and end > b["start"] + 0.05), None)
         if beat:
             dropped.append(dict(r, reason="would sound during a scripted beat"))
             continue
         speech = any(start < l["end"] and end > l["start"] for l in tm["lines"])
-        gain = cfg["trim"] + (s["under_voice_db"] if speech else 0) + (cfg["revealBoost"] if r["role"] == "reveal" else 0)
+        gain = cfg["trim"] + (s["under_voice_db"] if speech else 0) + (cfg["revealBoost"] if r["role"] in ("reveal", "sting") else 0)
         turn[r["role"]] = k + 1 + order.index(choice)
         last_used[choice] = r["at"]
         played.append(dict(r, file=choice, start=round(start, 3), gain=round(gain, 1), over_speech=speech))
@@ -175,7 +177,7 @@ def main():
     for p in played:
         by_file.setdefault(p["file"], []).append(p["at"])
     repeat_gaps = [t2 - t1 for ts in by_file.values() for t1, t2 in zip(ts, ts[1:])]
-    reveals = [p for p in played if p["role"] == "reveal"]
+    reveals = [p for p in played if p["role"] in ("reveal", "sting")]
     scene_of = {s["id"]: s for s in tm["scenes"]}
     checks = [
         ("No file repeated within 30 seconds", not repeat_gaps or min(repeat_gaps) >= COOLDOWN,

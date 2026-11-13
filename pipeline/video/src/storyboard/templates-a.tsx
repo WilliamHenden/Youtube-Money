@@ -2,6 +2,7 @@ import React from "react";
 import { AbsoluteFill } from "remotion";
 import { glide, lerp, pop, useT } from "../lib/anim";
 import { Burst, Icon, Rays } from "../components/ui";
+import { DrawnIcon } from "./icons-drawn";
 import {
   Accent, Body, C, Card, F, Flag, Head, Heading, Kicker, Rise, SceneCtx, Source, Stage, Template, clamp01, colour, ease, fmt, headingSpace, ink, prog, sub, useL, when,
 } from "./kit";
@@ -228,7 +229,9 @@ export const Timeline: Template = ({ s }) => {
   const top = headingSpace(s, l);
   // how far the line has grown: it reaches each event as that event appears
   let reach = 0;
-  for (let i = 0; i < n; i++) reach = Math.max(reach, (i + glide(t, fps, times[i] - 0.25, { damping: 26, stiffness: 70 })) / n - 0.5 / n);
+  // the line travels steadily from each event to the next, so something is always moving
+  for (let i = 0; i < n; i++) if (t >= times[i]) reach = (i + (i < n - 1 ? clamp01((t - times[i]) / Math.max(times[i + 1] - times[i], 0.1)) : 0)) / n;
+  const moving = reach * n > 0.001 && reach * n < n - 1;
   const track = s.tone === "navy" ? "rgba(244,239,230,0.14)" : "rgba(14,26,43,0.12)";
   const dot = (i: number, on: boolean, hi: boolean) => (
     <div style={{ width: 44, height: 44, borderRadius: "50%", background: on ? (hi ? C.red : C.yellow) : s.tone === "navy" ? C.navy3 : C.cream3, border: `7px solid ${s.tone === "navy" ? C.navy : C.cream}`, boxShadow: on ? `0 0 0 5px ${hi ? C.red : C.yellow}55` : undefined, transform: `scale(${on ? 0.6 + 0.4 * pop(t, fps, times[i]) : 0.7})` }} />
@@ -240,6 +243,7 @@ export const Timeline: Template = ({ s }) => {
         <Heading s={s} align="left" />
         <div style={{ position: "absolute", left: l.x0 + 30, top: l.y0 + top + rowH * 0.5 - 4, width: 10, height: rowH * (n - 1) + 8, borderRadius: 5, background: track }} />
         <div style={{ position: "absolute", left: l.x0 + 30, top: l.y0 + top + rowH * 0.5 - 4, width: 10, height: Math.max(0, Math.min(reach * n - 0.5 + 0.5, n - 1)) * rowH, borderRadius: 5, background: C.yellow }} />
+        {moving && <div style={{ position: "absolute", left: l.x0 + 35 - 13, top: l.y0 + top + rowH * 0.5 + reach * n * rowH - 13, width: 26, height: 26, borderRadius: "50%", background: C.yellow, boxShadow: `0 0 0 ${8 + Math.sin(t * 6) * 3}px rgba(245,184,61,0.3)` }} />}
         {ev.map((e, i) => {
           const on = t >= times[i];
           return (
@@ -261,6 +265,7 @@ export const Timeline: Template = ({ s }) => {
       <Heading s={s} />
       <div style={{ position: "absolute", left: l.x0 + colW * 0.5, top: lineY - 5, width: colW * (n - 1), height: 10, borderRadius: 5, background: track }} />
       <div style={{ position: "absolute", left: l.x0 + colW * 0.5, top: lineY - 5, width: Math.max(0, Math.min(reach * n, n - 1)) * colW, height: 10, borderRadius: 5, background: C.yellow }} />
+      {moving && <div style={{ position: "absolute", left: l.x0 + colW * 0.5 + reach * n * colW - 13, top: lineY - 13, width: 26, height: 26, borderRadius: "50%", background: C.yellow, boxShadow: `0 0 0 ${8 + Math.sin(t * 6) * 3}px rgba(245,184,61,0.3)` }} />}
       {ev.map((e, i) => {
         const on = t >= times[i];
         return (
@@ -360,7 +365,7 @@ export const Icons: Template = ({ s }) => {
               outline: isNew ? `5px solid ${C.yellow}` : "5px solid transparent",
             }}>
               <div style={{ width: l.tall ? 150 : 190, height: l.tall ? 150 : 190, flexShrink: 0, borderRadius: "50%", background: s.tone === "navy" ? "rgba(14,26,43,0.55)" : "rgba(14,26,43,0.06)", display: "flex", alignItems: "center", justifyContent: "center", transform: `rotate(${Math.sin(t * 1.3 + i) * 3}deg)` }}>
-                <Icon name={it.icon} size={l.tall ? 96 : 120} />
+                {String(it.icon).startsWith("draw:") ? <DrawnIcon name={it.icon.slice(5)} size={l.tall ? 104 : 132} /> : <Icon name={it.icon} size={l.tall ? 96 : 120} />}
               </div>
               <div>
                 <Kicker size={l.tall ? 32 : 28}>{it.label}</Kicker>

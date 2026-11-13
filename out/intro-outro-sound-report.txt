@@ -1,0 +1,26 @@
+SOUND REPORT: intro-outro (full), 54.7 seconds
+
+Music: deliberate-thought at 22 LU under the voice
+Effects played: 5 (one every 11s on average). Requests dropped by the rules: 0.
+
+Played:
+    time  role       file                          level  scene
+     4.2  reveal     shimmer-medium-bright        -1.0dB  a-title (scene change)
+    11.4  sting      sting-warm-short             -1.0dB  b-ident (scene change)
+    21.7  sting      sting-bright-short           -1.0dB  c-title (scene change)
+    38.2  transition whoosh-medium-soft           -3.0dB  ob-lesson (scene change)
+    45.6  transition whoosh-slow-soft             -5.0dB  ob-end (scene change), under speech
+
+How often each file played:
+  1x  shimmer-medium-bright
+  1x  sting-warm-short
+  1x  sting-bright-short
+  1x  whoosh-medium-soft
+  1x  whoosh-slow-soft
+
+Checks:
+  PASS  No file repeated within 30 seconds (no file played twice)
+  PASS  At most one sound every 6 seconds (closest two sounds 7.2s apart)
+  PASS  Reveal sounds only on major moments (3 reveal(s): a-title at 4.2s, b-ident at 11.4s, c-title at 21.7s)
+  PASS  Silence during every scripted beat (3 beat(s): 2.8-4.1s, 10.0-11.3s, 20.4-21.7s)
+  PASS  Counters silent (no tick sounds were asked for)

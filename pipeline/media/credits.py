@@ -17,10 +17,10 @@ def main():
     pdir = os.path.join(ROOT, "projects", project)
     tm = json.load(open(os.path.join(pdir, "build", cut, "timings.json")))
     script = json.load(open(os.path.join(pdir, "script.json")))
-    used = [s["props"]["photo"] for s in tm["scenes"] if s.get("template") == "photo"]
+    used = [s["props"].get("clip") or s["props"]["photo"] for s in tm["scenes"] if s.get("template") in ("photo", "clip")]
     L = []
     if used:
-        L.append("Photos:")
+        L.append("Photos and footage:")
         for key in dict.fromkeys(used):
             c = tm["photos"].get(key)
             if not c:
