@@ -121,6 +121,8 @@ Owner feedback: the sounds worked as emphasis, but the same few were repeated un
 - **Scene templates first.** Most scenes come from reusable templates filled in from the script. Custom scenes are saved for the two or three key moments. The 17 templates and their settings are listed in `pipeline/README.md`; `projects/template-gallery` shows each one.
 - **No template twice in a row.**
 - **Every template has a vertical layout** so Shorts are rendered properly for phones, not cropped.
+- **Real imagery, often (owner, 13 November 2026):** the sample had one real photo in 77 seconds, which is too few. An 8-minute video needs at least 4 to 6 breaks from graphics into real photos or real footage, spread through the video, so the viewer isn't watching charts the whole way. Plan these in the storyboard first, not last.
+- **Real footage:** not built yet. Free stock video (Pexels, Pixabay: free for commercial use) is the first source to try; it needs a video-clip template and free API keys from the owner.
 - **Real photos:** only public domain, CC0 or CC BY, each with its credit shown on screen and collected for the description. Captions say what the photo really shows, including its date if it isn't from the time being described.
 - Style guide (colours, fonts, motion) stays as built in `pipeline/video/src/lib/theme.ts`.
 
