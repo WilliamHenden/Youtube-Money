@@ -1,0 +1,380 @@
+<title>Norway Video Decisions</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+/* Layout: one reading column, like a script on a desk. Each decision is a numbered block you answer by tapping.
+   Colours and headings are the channel's own (navy, cream, yellow, red; Montserrat and Inter). The script itself is set in a serif for reading. */
+:root {
+  --bg: #F4EFE6; --surface: #FFFDF8; --ink: #0E1A2B; --soft: #55627A; --line: #D9CFBB;
+  --accent: #C8881A; --accent-ink: #0E1A2B; --accent-fill: #F5B83D; --flag: #C93A30; --ok: #1E8C55; --chip: #ECE4D3;
+  --head: Montserrat, "Arial Black", Arial, sans-serif; --body: Inter, system-ui, -apple-system, "Segoe UI", sans-serif; --read: "Source Serif 4", Georgia, "Times New Roman", serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0E1A2B; --surface: #15243A; --ink: #F4EFE6; --soft: #9FAEC4; --line: #2B405F;
+  --accent: #F5B83D; --accent-ink: #0E1A2B; --accent-fill: #F5B83D; --flag: #F0685E; --ok: #45C987; --chip: #22385A; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0E1A2B; --surface: #15243A; --ink: #F4EFE6; --soft: #9FAEC4; --line: #2B405F;
+  --accent: #F5B83D; --accent-ink: #0E1A2B; --accent-fill: #F5B83D; --flag: #F0685E; --ok: #45C987; --chip: #22385A; color-scheme: dark }
+
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 150px; }
+.col { max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px; }
+h1, h2, h3 { font-family: var(--head); margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+h1 { font-size: clamp(30px, 7vw, 44px); font-weight: 900; line-height: 1.05; }
+h2 { font-size: 24px; font-weight: 800; line-height: 1.15; }
+p { margin: 0; }
+.eyebrow { font-weight: 700; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+.lede { color: var(--soft); font-size: 18px; max-width: 60ch; }
+header { display: flex; flex-direction: column; gap: 12px; }
+.todo-list { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 6px 0 0; list-style: none; }
+.todo-list a { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: var(--ink); background: var(--chip); border-radius: 999px; padding: 7px 14px 7px 8px; font-weight: 600; font-size: 14px; }
+.todo-list a:focus-visible, button:focus-visible, textarea:focus-visible, input[type="text"]:focus-visible { outline: 3px solid var(--accent-fill); outline-offset: 2px; }
+.dot { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--soft); display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: var(--soft); flex: none; }
+.done .dot { background: var(--ok); border-color: var(--ok); color: #fff; }
+
+section { display: flex; flex-direction: column; gap: 18px; scroll-margin-top: 16px; }
+.sec-head { display: flex; flex-direction: column; gap: 6px; border-top: 3px solid var(--ink); padding-top: 14px; }
+.help { color: var(--soft); max-width: 62ch; }
+.q { display: flex; flex-direction: column; gap: 10px; }
+.q > .label { font-weight: 700; }
+.q > .hint { color: var(--soft); font-size: 15px; margin-top: -6px; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips label { position: relative; cursor: pointer; }
+.chips input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.chips span { display: inline-block; padding: 9px 16px; border-radius: 999px; background: var(--chip); font-weight: 600; font-size: 15px; border: 2px solid transparent; }
+.chips input:checked + span { background: var(--accent-fill); color: var(--accent-ink); border-color: var(--accent-ink); }
+.chips input:focus-visible + span { outline: 3px solid var(--accent-fill); outline-offset: 2px; }
+textarea, input[type="text"] { font: inherit; color: var(--ink); background: var(--surface); border: 2px solid var(--line); border-radius: 12px; padding: 12px 14px; width: 100%; box-sizing: border-box; }
+textarea { min-height: 96px; resize: vertical; }
+
+.media { display: grid; grid-template-columns: 1fr; gap: 18px; }
+@media (min-width: 620px) { .media { grid-template-columns: 1.78fr 0.56fr; align-items: start; } }
+figure { margin: 0; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+video { width: 100%; max-width: 100%; border-radius: 12px; background: #000; display: block; }
+.short video { max-height: 70vh; width: auto; margin: 0 auto; }
+figcaption { font-size: 14px; color: var(--soft); }
+.clips { display: flex; flex-direction: column; gap: 14px; }
+.clip { display: flex; flex-direction: column; gap: 6px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+.clip:last-child { border-bottom: 0; padding-bottom: 0; }
+.clip b { font-weight: 700; }
+.clip small { color: var(--soft); font-size: 14px; }
+audio { width: 100%; height: 40px; }
+
+/* The script */
+.script { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: clamp(18px, 5vw, 44px); display: flex; flex-direction: column; gap: 18px; }
+.script .title { font-family: var(--head); font-weight: 800; font-size: 22px; line-height: 1.2; text-wrap: balance; }
+.script .meta { color: var(--soft); font-size: 14px; }
+.act { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; font-size: 13px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); border-bottom: 1px solid var(--line); padding: 14px 0 6px; }
+.act .when { font-family: var(--body); font-weight: 600; letter-spacing: 0.02em; text-transform: none; color: var(--soft); font-variant-numeric: tabular-nums; }
+.line { font-family: var(--read); font-size: 19px; line-height: 1.62; max-width: 62ch; }
+.stage { color: var(--soft); font-style: italic; font-size: 15px; }
+.beat, .check, .todo { font-family: var(--body); font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 6px; padding: 2px 7px; margin: 0 4px; white-space: nowrap; vertical-align: 2px; }
+.beat { background: var(--chip); color: var(--soft); }
+.check, .todo { border: 1.5px solid var(--flag); color: var(--flag); }
+mark { background: color-mix(in srgb, var(--accent-fill) 38%, transparent); color: inherit; padding: 1px 2px; border-radius: 3px; }
+.swap { display: flex; flex-direction: column; gap: 12px; }
+.suggest { border-left: 4px solid var(--accent-fill); padding: 4px 0 4px 16px; display: flex; flex-direction: column; gap: 10px; }
+.suggest .why { font-size: 15px; color: var(--soft); }
+.suggest .new { font-family: var(--read); font-size: 19px; line-height: 1.55; }
+.key { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; color: var(--soft); }
+
+/* Save bar */
+.bar { position: fixed; left: 0; right: 0; bottom: 0; background: var(--surface); border-top: 1px solid var(--line); z-index: 20;
+  padding: 12px max(16px, env(safe-area-inset-right, 0px)) calc(12px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
+.bar-in { max-width: 700px; margin: 0 auto; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.bar .status { flex: 1 1 180px; min-width: 0; font-size: 14px; color: var(--soft); }
+.bar .status b { color: var(--ink); }
+button { font: inherit; font-weight: 700; border-radius: 999px; padding: 11px 20px; border: 2px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; }
+button.primary { background: var(--accent-fill); color: var(--accent-ink); border-color: var(--accent-ink); }
+#copybox { width: 100%; min-height: 140px; font-size: 14px; }
+@media (max-width: 520px) { .bar .status { flex-basis: 100%; } .bar button { flex: 1 1 0; padding: 9px 12px; font-size: 15px; white-space: nowrap; } .bar-in { gap: 8px; } }
+@media (prefers-reduced-motion: no-preference) { .chips span, button { transition: background 0.12s, transform 0.12s; } button:active { transform: scale(0.97); } }
+</style>
+
+<div class="col">
+<header>
+  <p class="eyebrow">Before the full video is made</p>
+  <h1>How Norway Saved $2.3 Trillion: your decisions</h1>
+  <p class="lede">Everything I need from you is on this page. Watch and listen, tap your choices, then press Save at the bottom. You can come back and change anything.</p>
+  <ul class="todo-list" id="todo" aria-label="What's left to answer"></ul>
+</header>
+
+<section id="watch">
+  <div class="sec-head"><p class="eyebrow">Start here</p><h2>Watch the sample and the Short</h2>
+  <p class="help">Sound on. These are smaller copies for your phone; the full-quality files are in the project's <code>out</code> folder.</p></div>
+  <div class="media">
+    <figure><video controls preload="metadata" playsinline poster="sample-poster.jpg" src="sample.mp4"></video><figcaption>The sample: the first 77 seconds of the video.</figcaption></figure>
+    <figure class="short"><video controls preload="metadata" playsinline poster="short-poster.jpg" src="short.mp4"></video><figcaption>The vertical Short, 46 seconds.</figcaption></figure>
+  </div>
+</section>
+
+<section id="sample" data-need="sounds music pace nofund">
+  <div class="sec-head"><p class="eyebrow">Decision 1</p><h2>What should change in the sample?</h2>
+  <p class="help">I can't hear, so I set every level by measurement. Your ears decide.</p></div>
+  <div class="q"><p class="label">The sound effects</p><p class="hint">Seven in the sample: a pen stroke as the line is drawn, soft whooshes between scenes, a shimmer on the title.</p>
+    <div class="chips" role="radiogroup" aria-label="Sound effects">
+      <label><input type="radio" name="sounds" id="sounds-1" value="Fine as they are"><span>Fine as they are</span></label>
+      <label><input type="radio" name="sounds" id="sounds-2" value="Too quiet"><span>Too quiet</span></label>
+      <label><input type="radio" name="sounds" id="sounds-3" value="Too loud"><span>Too loud</span></label>
+      <label><input type="radio" name="sounds" id="sounds-4" value="They sound artificial"><span>They sound artificial</span></label>
+      <label><input type="radio" name="sounds" id="sounds-5" value="Too many"><span>Too many</span></label>
+      <label><input type="radio" name="sounds" id="sounds-6" value="Too few"><span>Too few</span></label>
+    </div></div>
+  <div class="q"><p class="label">The music</p><p class="hint">In the sample it sits very quietly under the voice. Here are the two tracks on their own, 45 seconds each. Both are by Kevin MacLeod and free to use with a credit in the description.</p>
+    <div class="clips">
+      <div class="clip"><b>Deliberate Thought</b><small>Used in the sample and the Short.</small><audio controls preload="none" src="music-deliberate-thought.mp3"></audio></div>
+      <div class="clip"><b>Thinking Music</b><small>The alternative. Slower and lighter.</small><audio controls preload="none" src="music-thinking-music.mp3"></audio></div>
+    </div>
+    <div class="chips" role="radiogroup" aria-label="Music choice">
+      <label><input type="radio" name="music" id="music-1" value="Keep Deliberate Thought"><span>Keep Deliberate Thought</span></label>
+      <label><input type="radio" name="music" id="music-2" value="Switch to Thinking Music"><span>Switch to Thinking Music</span></label>
+      <label><input type="radio" name="music" id="music-3" value="Neither, I'll send a track from the YouTube Audio Library"><span>Neither, I'll send my own</span></label>
+    </div>
+    <div class="chips" role="radiogroup" aria-label="Music level">
+      <label><input type="radio" name="musiclevel" id="musiclevel-1" value="Level is fine"><span>Level is fine</span></label>
+      <label><input type="radio" name="musiclevel" id="musiclevel-2" value="Louder"><span>Louder</span></label>
+      <label><input type="radio" name="musiclevel" id="musiclevel-3" value="Quieter"><span>Quieter</span></label>
+    </div></div>
+  <div class="q"><p class="label">The pace</p>
+    <div class="chips" role="radiogroup" aria-label="Pace">
+      <label><input type="radio" name="pace" id="pace-1" value="About right"><span>About right</span></label>
+      <label><input type="radio" name="pace" id="pace-2" value="Too fast"><span>Too fast</span></label>
+      <label><input type="radio" name="pace" id="pace-3" value="Too slow"><span>Too slow</span></label>
+    </div></div>
+  <div class="q"><p class="label">One line to listen for, at about 0:20</p><p class="hint">"Britain's side has turned into no fund at all." My automatic check heard "no fun at all".</p>
+    <div class="chips" role="radiogroup" aria-label="No fund line">
+      <label><input type="radio" name="nofund" id="nofund-1" value="It clearly says fund"><span>It clearly says "fund"</span></label>
+      <label><input type="radio" name="nofund" id="nofund-2" value="It sounds like fun, reword it"><span>It sounds like "fun", reword it</span></label>
+    </div></div>
+  <div class="q"><label class="label" for="look">Anything about the look, or anything else in the sample?</label>
+    <textarea id="look" placeholder="For example: the timeline at 0:40 drags, or the icons look cheap."></textarea></div>
+</section>
+
+<section id="voice" data-need="voice">
+  <div class="sec-head"><p class="eyebrow">Decision 2</p><h2>Pick the narrator</h2>
+  <p class="help">The same 30 seconds in four free voices, with the same scripted pause before "Around three percent". One narrator is used for every video on the channel.</p></div>
+  <div class="clips">
+    <div class="clip"><b>1. Heart: American woman</b><small>The voice in the demo and the sample. Brisk.</small><audio controls preload="none" src="voice-1.mp3"></audio></div>
+    <div class="clip"><b>2. George: British man</b><small>Slower. Would take the video past 8 minutes without adding words.</small><audio controls preload="none" src="voice-2.mp3"></audio></div>
+    <div class="clip"><b>3. Chatterbox, standard</b><small>A different, more expressive engine. Slower to make: about 25 minutes for the full narration.</small><audio controls preload="none" src="voice-3.mp3"></audio></div>
+    <div class="clip"><b>4. Chatterbox, more expressive</b><small>The same voice with more feeling turned up. It also speeds up.</small><audio controls preload="none" src="voice-4.mp3"></audio></div>
+  </div>
+  <div class="chips" role="radiogroup" aria-label="Voice choice">
+    <label><input type="radio" name="voice" id="voice-1" value="1. Kokoro Heart (American woman)"><span>1. Heart</span></label>
+    <label><input type="radio" name="voice" id="voice-2" value="2. Kokoro George (British man)"><span>2. George</span></label>
+    <label><input type="radio" name="voice" id="voice-3" value="3. Chatterbox standard"><span>3. Chatterbox</span></label>
+    <label><input type="radio" name="voice" id="voice-4" value="4. Chatterbox more expressive"><span>4. Chatterbox, expressive</span></label>
+    <label><input type="radio" name="voice" id="voice-5" value="None of these. Try ElevenLabs (paid, about £17 a month)"><span>None: try ElevenLabs (paid)</span></label>
+  </div>
+</section>
+
+<section id="script" data-need="line1 line2 length approve">
+  <div class="sec-head"><p class="eyebrow">Decision 3</p><h2>Approve the script</h2>
+  <p class="help">This is the full narration. Read it aloud if you can: anything that sounds stiff, note it in the box underneath. Two lines have a suggested change for you to accept or refuse.</p></div>
+  <div class="script">
+    <p class="title">How Norway Saved $2.3 Trillion and Britain Saved Nothing</p>
+    <p class="meta">Draft 1 · about 1,200 words · times are the plan, not measured</p>
+    <div class="key"><span><span class="beat">pause</span> a held silence before a payoff</span><span><span class="check">to check</span> a fact I verify before recording</span></div>
+<h3 class="act"><span>Hook</span><span class="when">0:00 to 0:25</span></h3>
+<p class="line">In nineteen sixty-five, Britain and Norway drew a line down the middle of the North Sea and agreed that whatever lay under the seabed on each side belonged to them. A few years later, both of them found oil.</p>
+<p class="line">Today, Norway's side of that line has turned into a fund worth around two point three trillion dollars. Britain's side has turned into no fund at all.</p>
+<p class="line">They had the same sea and the same oil. So what did Norway do that Britain didn't?</p>
+<h3 class="act"><span>Context</span><span class="when">0:25 to 1:20</span></h3>
+<p class="line">To understand it, you have to go back to a time when nobody thought Norway had any oil. Through the nineteen sixties, companies drilled well after well off the Norwegian coast and found almost nothing worth having.</p>
+<div class="swap">
+<p class="line">By nineteen sixty-nine, the American company Phillips Petroleum had seen enough and was ready to pull out. <mark>There was just one problem. Its licence required one more well, and walking away meant paying a penalty.</mark> The drilling rig had already been hired, so the company decided it might as well use it.</p>
+<div class="suggest"><p class="why"><strong>Suggested change.</strong> The original opens with a stock phrase your writing rules ask me to avoid. The sample already uses the new wording.</p>
+<p class="new">But its licence still required one more well, and walking away meant paying a penalty.</p>
+<div class="chips" role="radiogroup" aria-label="Which wording">
+<label><input type="radio" name="line1" id="line1-new" value="Use the suggestion"><span>Use the suggestion</span></label>
+<label><input type="radio" name="line1" id="line1-old" value="Keep my original"><span>Keep my original</span></label>
+</div></div></div>
+<p class="line">That autumn, the rig struck a field called Ekofisk, and it was enormous. It sat close to the line Britain and Norway had drawn only four years earlier.</p>
+<p class="line">Norway was suddenly an oil country. But finding oil turned out to be the easy part, because plenty of countries have struck oil and had very little to show for it a generation later. And for a while, it looked as if Norway might become one of them.</p>
+<h3 class="act"><span>Act 1: who owns the oil</span><span class="when">1:20 to 2:50</span></h3>
+<p class="line">The obvious explanation is that Norway is rich because it has oil. But Britain had oil too, and in the early years Britain was pumping more of it.</p>
+<p class="line">The first real difference was a decision about who the oil belonged to. Norway had almost no experience of the industry, so some of its best advice came from an unlikely place. A geologist from Iraq called Farouk al-Kasim had moved to Norway in nineteen sixty-eight for family reasons<span class="check" title="This fact is checked before recording">to check</span>, and he ended up helping to write the plan for how the country would manage its oil. He went on to spend nearly two decades as one of its most senior oil officials.</p>
+<p class="line">The principles Norway settled on were simple. The oil belonged to the Norwegian people, the state would have its own oil company, and the state would take a share of every field.</p>
+<p class="line">It still works that way. When an oil company makes a profit in Norwegian waters today, the tax rate on that profit is seventy-eight percent, and the state owns a direct stake in many of the fields as well.</p>
+<p class="line">Britain started down a similar road. In nineteen seventy-five it created a national oil company of its own. But seven years later the government began selling it off, and by nineteen eighty-eight what was left had been bought by BP.</p>
+<p class="line">So Norway kept more of the money from every barrel. But that's only half the story, because money you collect can still be money you waste.</p>
+<h3 class="act"><span>Subscribe moment</span><span class="when">2:50 to 3:00</span></h3>
+<p class="stage">Five seconds, fixed line, after the payoff above.</p>
+<h3 class="act"><span>Re-hook</span><span class="when">3:00 to 3:15</span></h3>
+<p class="line">By the nineteen eighties, both governments had oil money pouring in. And this is the point where the two countries really went their separate ways.</p>
+<h3 class="act"><span>Act 2: spend or save</span><span class="when">3:15 to 5:20</span></h3>
+<p class="line">In Britain, the money went into the ordinary budget. In nineteen eighty-two alone, oil brought in eight billion pounds, which was about eight pounds fifty of every hundred the taxman collected. It helped pay the country's bills and keep other taxes lower than they would have been.</p>
+<p class="line">It's worth being fair about that. Britain had far more people to share its oil between, and it was going through a deep recession with millions out of work. Spending the money was a choice a lot of governments would have made, and some economists still defend it.</p>
+<p class="line">What most people don't know is that, at first, Norway did exactly the same thing. Through the seventies and early eighties it spent its oil money as it arrived, and the economy overheated. When the oil price collapsed in nineteen eighty-six, Norway was hit hard<span class="check" title="This fact is checked before recording">to check</span>.</p>
+<p class="line">That scare is what changed everything. In nineteen ninety, Norway's parliament passed a law creating a fund for the oil money. For six years it sat completely empty, because there was nothing to spare. The first deposit finally arrived in nineteen ninety-six, and it was just under two billion kroner.</p>
+<p class="line">Then came the two rules that matter most. The first is that the money has to be invested outside Norway, in companies and property all over the world, so that it can't flood the economy at home. The second arrived in two thousand and one, and it's the heart of the whole story.</p>
+<p class="line">So how much of its oil fortune is Norway allowed to spend each year? <span class="beat">pause</span></p>
+<div class="swap">
+<p class="line">Around three percent. That's roughly what the fund is expected to earn, after inflation. <mark>In other words, Norway doesn't spend its oil money. It spends what the oil money earns.</mark></p>
+<div class="suggest"><p class="why"><strong>Suggested change.</strong> The original is the "it's not X, it's Y" pattern your writing rules rule out. It is also the heart of the video, so this one is your call.</p>
+<p class="new">In other words, Norway only ever spends what its oil money earns.</p>
+<div class="chips" role="radiogroup" aria-label="Which wording">
+<label><input type="radio" name="line2" id="line2-new" value="Use the suggestion"><span>Use the suggestion</span></label>
+<label><input type="radio" name="line2" id="line2-old" value="Keep my original"><span>Keep my original</span></label>
+</div></div></div>
+<h3 class="act"><span>Act 3: the payoff</span><span class="when">5:20 to 7:00</span></h3>
+<p class="line">Leave money alone like that for thirty years, keep adding to it, and something remarkable happens.</p>
+<p class="line">So how big did the empty fund from nineteen ninety actually get? <span class="beat">pause</span></p>
+<p class="line">At the last count, it was worth around two point three trillion dollars. That works out at roughly four hundred thousand dollars for every single person in Norway.</p>
+<p class="line">It's so large that it owns, on average, about one and a half percent of every company listed on a stock market anywhere in the world. That's more than seven thousand companies. If you own a phone, drive a car or shop on a high street, there's a good chance Norway owns a small piece of the business behind it.</p>
+<p class="line">And it doesn't stop at shares. In twenty eleven, the fund made its very first property investment, and it chose London. It bought a quarter-share in Regent Street from the Crown Estate. So part of one of Britain's most famous streets now earns rent for Norway, paid for with oil from the same sea.</p>
+<p class="line">Because of the three percent rule, that money doesn't run out. This year, transfers from the fund are paying for more than a quarter of the Norwegian government's entire budget, and the fund is still growing.</p>
+<p class="line">So what about Britain? Nobody can know for certain what a British fund would be worth today. Researchers who've tried to work it out have landed anywhere between four hundred and eight hundred and fifty billion pounds. What isn't in doubt is the figure Britain actually has, which is nothing.</p>
+<h3 class="act"><span>Takeaway</span><span class="when">7:00 to 7:40</span></h3>
+<p class="line">Norway didn't get rich because it found oil. It got rich because it decided the oil money wasn't income. It was a one-off, and a one-off should be turned into something that lasts.</p>
+<p class="line">That's worth remembering the next time a windfall lands in your own life, whether it's a bonus, an inheritance or a pay rise. You can treat it as extra spending money, and it'll be gone in a year. Or you can do what Norway did, which is to decide on the rule before the money arrives, put it somewhere that grows, and spend only what it earns.</p>
+<h3 class="act"><span>Lead-out</span><span class="when">7:40 to 8:00</span></h3>
+<p class="line">Norway, though, is the exception. The biggest economy on earth went the opposite way, and it now owes more than <span class="todo">figure to confirm on publish day</span> trillion dollars. So who exactly does America owe all that money to, and why hasn't it gone bust? That's the next video.</p>
+  </div>
+  <div class="q"><p class="label">Length</p><p class="hint">With the Heart voice this script runs about 7 to 7½ minutes. Adverts in the middle of a video need 8 minutes. A slower voice (George) would get there without new words.</p>
+    <div class="chips" role="radiogroup" aria-label="Length">
+      <label><input type="radio" name="length" id="length-1" value="Add about 150 words to pass 8 minutes"><span>Add about 150 words</span></label>
+      <label><input type="radio" name="length" id="length-2" value="Leave the length; the voice I chose will decide it"><span>Leave it as it is</span></label>
+    </div></div>
+  <div class="q"><p class="label">The script overall</p>
+    <div class="chips" role="radiogroup" aria-label="Script approval">
+      <label><input type="radio" name="approve" id="approve-1" value="Approved, with my choices above"><span>Approved</span></label>
+      <label><input type="radio" name="approve" id="approve-2" value="Approved once my edits below are made"><span>Approved with my edits below</span></label>
+      <label><input type="radio" name="approve" id="approve-3" value="Not yet. See my notes"><span>Not yet</span></label>
+    </div></div>
+  <div class="q"><label class="label" for="edits">Your edits or notes on the script</label>
+    <textarea id="edits" placeholder="Quote the line and say what you'd change."></textarea></div>
+</section>
+
+<section id="short" data-need="shortline">
+  <div class="sec-head"><p class="eyebrow">Decision 4</p><h2>The Short's opening line</h2>
+  <p class="help">I wrote this line for the Short. It isn't in the script you're approving above.</p></div>
+  <p class="line">Norway's two point three trillion dollar oil fund began with a well that the oil company didn't even want to drill.</p>
+  <div class="chips" role="radiogroup" aria-label="Short opening line">
+    <label><input type="radio" name="shortline" id="shortline-1" value="Fine to use"><span>Fine to use</span></label>
+    <label><input type="radio" name="shortline" id="shortline-2" value="Change it (see my notes)"><span>Change it</span></label>
+  </div>
+</section>
+
+<section id="extras">
+  <div class="sec-head"><p class="eyebrow">Optional</p><h2>Only if you have them</h2></div>
+  <div class="q"><label class="label" for="channel">Channel name</label><p class="hint">The corner of the screen still says "MONEY MECHANICS", a placeholder from the demo.</p>
+    <input type="text" id="channel" placeholder="Leave blank to keep the placeholder"></div>
+  <div class="q"><p class="label">More real photos</p><p class="hint">Wikimedia kept refusing downloads, so the sample has one photo. Free keys for Pexels and Pixabay would give me two more sources. I'd ask for them through a secure form, never in chat.</p>
+    <div class="chips" role="radiogroup" aria-label="Photo keys">
+      <label><input type="radio" name="photos" id="photos-1" value="Yes, ask me for Pexels and Pixabay keys"><span>Yes, ask me for the keys</span></label>
+      <label><input type="radio" name="photos" id="photos-2" value="No, manage with Wikimedia"><span>No, manage without</span></label>
+    </div></div>
+  <div class="q"><label class="label" for="other">Anything else</label><textarea id="other" placeholder="Notes for the next session."></textarea></div>
+</section>
+
+<section id="copy" hidden>
+  <div class="sec-head"><h2>Your answers as text</h2><p class="help">Select all of this and paste it into the chat.</p></div>
+  <textarea id="copybox" readonly></textarea>
+</section>
+</div>
+
+<div class="bar"><div class="bar-in">
+  <p class="status" id="status" role="status">Loading your saved answers…</p>
+  <button type="button" id="copybtn">Copy answers</button>
+  <button type="button" class="primary" id="savebtn">Save my answers</button>
+</div></div>
+
+<script>
+(function () {
+  var RADIOS = ["sounds", "music", "musiclevel", "pace", "nofund", "voice", "line1", "line2", "length", "approve", "shortline", "photos"];
+  var TEXTS = ["look", "edits", "channel", "other"];
+  var LABELS = { sounds: "Sound effects", music: "Music", musiclevel: "Music level", pace: "Pace", nofund: "\"No fund\" line", look: "Notes on the sample",
+    voice: "Narrator", line1: "\"There was just one problem\" line", line2: "\"Doesn't spend its oil money\" line", length: "Length", approve: "Script",
+    edits: "Script edits", shortline: "Short's opening line", channel: "Channel name", photos: "Photo keys", other: "Anything else" };
+  var ORDER = ["sounds", "music", "musiclevel", "pace", "nofund", "look", "voice", "line1", "line2", "length", "approve", "edits", "shortline", "channel", "photos", "other"];
+  var SECTIONS = [["sample", "The sample"], ["voice", "Narrator"], ["script", "Script"], ["short", "Short's first line"]];
+  var DOC = "decisions/norway-video", DRAFT = "norway-decisions-draft";
+  var db = null, dirty = false;
+  var $ = function (id) { return document.getElementById(id); };
+  var status = $("status");
+
+  function collect() {
+    var a = {};
+    RADIOS.forEach(function (n) { var el = document.querySelector('input[name="' + n + '"]:checked'); if (el) a[n] = el.value; });
+    TEXTS.forEach(function (n) { var v = $(n).value.trim(); if (v) a[n] = v; });
+    return a;
+  }
+  function apply(a) {
+    if (!a) return;
+    RADIOS.forEach(function (n) { document.querySelectorAll('input[name="' + n + '"]').forEach(function (el) { el.checked = a[n] === el.value; }); });
+    TEXTS.forEach(function (n) { if (typeof a[n] === "string") $(n).value = a[n]; });
+    progress();
+  }
+  function asText(a) {
+    var out = ["My decisions for the Norway video", ""];
+    ORDER.forEach(function (k) { if (a[k]) out.push(LABELS[k] + ": " + a[k]); });
+    var missing = ORDER.filter(function (k) { return !a[k] && RADIOS.indexOf(k) !== -1 && k !== "photos"; });
+    if (missing.length) out.push("", "Not answered yet: " + missing.map(function (k) { return LABELS[k]; }).join(", "));
+    return out.join("\n");
+  }
+  function progress() {
+    var a = collect(), left = 0;
+    $("todo").innerHTML = "";
+    SECTIONS.forEach(function (s, i) {
+      var need = $(s[0]).getAttribute("data-need").split(" ");
+      var ok = need.every(function (k) { return a[k]; });
+      if (!ok) left++;
+      var li = document.createElement("li");
+      li.className = ok ? "done" : "";
+      li.innerHTML = '<a href="#' + s[0] + '"><span class="dot">' + (ok ? "✓" : i + 1) + "</span></a>";
+      li.firstChild.appendChild(document.createTextNode(s[1]));
+      $("todo").appendChild(li);
+    });
+    return left;
+  }
+  function say(html) { status.innerHTML = html; }
+  function draft() { try { localStorage.setItem(DRAFT, JSON.stringify(collect())); } catch (e) {} }
+
+  document.addEventListener("change", function () { dirty = true; var left = progress(); draft(); say(left ? "<b>" + left + " of 4</b> decisions still open. Not saved yet." : "<b>All four answered.</b> Press Save."); });
+  document.addEventListener("input", function (e) { if (e.target.tagName === "TEXTAREA" || e.target.type === "text") { dirty = true; draft(); } });
+
+  $("savebtn").addEventListener("click", async function () {
+    var a = collect();
+    draft();
+    if (!db) { showCopy(a); say("Saving isn't available in this view. Your answers are below as text: paste them into the chat."); return; }
+    say("Saving…");
+    try {
+      a.savedAt = new Date().toISOString();
+      await db.doc(DOC).set(a);
+      dirty = false;
+      var left = progress();
+      say("<b>Saved.</b> " + (left ? left + " of 4 decisions still open. " : "") + "Tell Claude \"I've answered\" and it will read them from here.");
+    } catch (e) {
+      showCopy(a);
+      say("<b>Couldn't save</b> (" + ((e && e.code) || "error") + "). Your answers are below as text: paste them into the chat.");
+    }
+  });
+  function showCopy(a) { $("copy").hidden = false; $("copybox").value = asText(a); $("copybox").scrollIntoView({ block: "center" }); }
+  $("copybtn").addEventListener("click", function () {
+    var a = collect(), text = asText(a);
+    showCopy(a);
+    var fallback = function () { $("copybox").focus(); $("copybox").select(); say("Text selected below. Copy it and paste it into the chat."); };
+    try { navigator.clipboard.writeText(text).then(function () { say("<b>Copied.</b> Paste it into the chat."); }, fallback); } catch (e) { fallback(); }
+  });
+
+  progress();
+  (async function load() {
+    var local = null;
+    try { local = JSON.parse(localStorage.getItem(DRAFT) || "null"); } catch (e) {}
+    try { db = window.claude && window.claude.use ? await window.claude.use("db") : null; } catch (e) { db = null; }
+    var saved = null;
+    if (db) {
+      try {
+        var snap = await Promise.race([db.doc(DOC).get(), new Promise(function (_, rej) { setTimeout(function () { rej({ code: "timeout" }); }, 10000); })]);
+        if (snap && snap.exists) saved = snap.data();
+      } catch (e) {}
+    }
+    if (!dirty) apply(saved || local);
+    if (saved && saved.savedAt) say("Showing the answers you saved on <b>" + new Date(saved.savedAt).toLocaleString([], { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }) + "</b>.");
+    else if (db) say("Nothing saved yet. Tap your choices, then Save.");
+    else say("Tap your choices, then use Copy answers and paste them into the chat.");
+  })();
+})();
+</script>

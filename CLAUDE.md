@@ -9,6 +9,7 @@ A faceless YouTube business channel made with a code-based video pipeline. The o
 - `projects/norway-fund/brief.md`: the first real video (script, fact sheet, status).
 - `pipeline/README.md`: how the video pipeline works, how to write a storyboard, and the list of scene templates.
 - `docs/10-session-1-review.md`: what session 1 built, the sample's weak points, and what the owner still has to decide.
+- **The owner's decisions for the Norway video** are collected on a private page: https://claude.ai/artifact/WMPHgDruLbBt3KHd3kSWPs (script, voice clips, music, tap-to-answer choices). When the owner says they've answered, read the document `norway-video` in the page's `decisions` collection with the ArtifactData tool. Page source: `docs/decision-page/` (run `build.py` after the script in `brief.md` changes, then republish to the same link).
 - Background, only if needed: `docs/01` (strategy), `02` (tools), `04` (demo review), `06` (channel setup), `07` (topic shortlist).
 
 ## Standing instructions from the owner
