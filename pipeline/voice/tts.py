@@ -216,7 +216,7 @@ def align_heard(words, heard):
     return times, notes
 
 
-NUM_WORDS = set("zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty thirty forty fifty sixty seventy eighty ninety hundred thousand million billion trillion point and percent dollars pounds a sixties seventies eighties nineties".split())
+NUM_WORDS = set("zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty thirty forty fifty sixty seventy eighty ninety hundred thousand million billion trillion point and percent dollar dollars pound pounds a sixties seventies eighties nineties".split())
 SAME = [{"licence", "license"}, {"programme", "program"}, {"cheque", "check"}, {"metre", "meter"}, {"centre", "center"}, {"defence", "defense"}, {"labour", "labor"}]
 
 

@@ -20,16 +20,14 @@
   "leadIn": 0.6,
   "tail": 2.4,
   "photos": {
-    "stavanger": {
-      "file": "File:N081 Bergen Stavanger ferry, Stavanger 1960 (51180091913).jpg"
-    },
     "ekofisk": {
       "file": "File:Ekofisk 2-4 K (DEX KF 000635).jpg"
     }
   },
   "notes": [
     "The dividing line on the map follows the eight points of the 1965 UK-Norway agreement as closely as recalled; it is a schematic, not a chart.",
-    "One line differs from brief.md: 'There was just one problem. Its licence required...' became 'But its licence still required...' (writing rule: no stock phrases)."
+    "One line differs from brief.md: 'There was just one problem. Its licence required...' became 'But its licence still required...' (writing rule: no stock phrases).",
+    "The 'no-oil' scene was planned as a photo of Stavanger in 1960 (File:N081 Bergen Stavanger ferry, Stavanger 1960 (51180091913).jpg, CC BY 2.0). Wikimedia refused the download all session, so it is a chapter card for now. Swap it back in session 2."
   ],
   "scenes": [
     {
@@ -253,15 +251,12 @@
     },
     {
       "id": "no-oil",
-      "template": "photo",
-      "tone": "navy",
-      "enter": "fade",
+      "template": "chapter",
+      "tone": "cream",
       "props": {
-        "photo": "stavanger",
-        "kicker": "Norway, 1960",
-        "title": "Before the oil",
-        "caption": "Stavanger, Norway, 1960",
-        "move": "in"
+        "number": 1,
+        "kicker": "Part one",
+        "title": "Before the oil"
       },
       "lines": [
         {
@@ -526,6 +521,61 @@
         "one-more-well",
         "ekofisk",
         "near-the-line"
+      ]
+    },
+    "short-last-well": {
+      "format": "tall",
+      "about": "A vertical Short: the well nobody wanted to drill. Two short scenes are written for the Short; the rest are the same scenes as the main video.",
+      "tail": 1.6,
+      "scenes": [
+        {
+          "id": "s-hook",
+          "template": "number",
+          "tone": "navy",
+          "sound": "none",
+          "props": {
+            "label": "Norway's oil fund",
+            "value": 2.3,
+            "prefix": "$",
+            "decimals": 1,
+            "unit": "trillion",
+            "caption": "It began with a well nobody wanted to drill",
+            "countDur": 0.1,
+            "source": "Fund value: mid-2026, rounded",
+            "at": 0.0,
+            "from": 2.3
+          },
+          "lines": [
+            {
+              "say": "Norway's two point three trillion dollar oil fund | began with a well | that the oil company didn't even want to drill.",
+              "show": "Norway's *$2.3 trillion* oil fund | began with a well | that the oil company didn't even want to drill."
+            }
+          ]
+        },
+        "dry-wells",
+        "one-more-well",
+        "ekofisk",
+        {
+          "id": "s-end",
+          "template": "quote",
+          "tone": "cream",
+          "props": {
+            "text": "Finding oil turned out to be the easy part.",
+            "accent": "the easy part",
+            "by": "The full story is on the channel",
+            "cue": "seasy"
+          },
+          "lines": [
+            {
+              "say": "Norway was suddenly an oil country.",
+              "show": "Norway was suddenly an *oil country.*"
+            },
+            {
+              "say": "But {seasy}finding oil | turned out to be the easy part.",
+              "show": "But finding oil | turned out to be *the easy part.*"
+            }
+          ]
+        }
       ]
     }
   }

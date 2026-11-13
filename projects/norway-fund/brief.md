@@ -9,6 +9,7 @@
 - **Why a viewer cares:** it's the same choice anyone faces with a windfall, played out with two whole countries.
 - **Target length:** about 8 minutes (script below is about 1,200 words).
 - **Thumbnail idea:** the two flags, with "$2.3 TRILLION" under Norway's and "£0" under Britain's.
+- **Sample (session 1, 13 November 2026):** the hook and most of the context were built as a sample from this draft, with one vertical Short. Storyboard: `script.json` in this folder. Review and file list: `docs/10-session-1-review.md`. Making the sample is not approval of the script.
 
 ---
 

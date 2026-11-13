@@ -77,7 +77,8 @@ def describe(page, width=2560):
             "usable": ok, "needs_credit": needs_credit}
 
 
-INFO = dict(prop="imageinfo", iiprop="url|size|mime|extmetadata", iiurlwidth=2560,
+# 3840 is one of the standard thumbnail widths Commons asks automated tools to use.
+INFO = dict(prop="imageinfo", iiprop="url|size|mime|extmetadata", iiurlwidth=3840,
             iiextmetadatafilter="LicenseShortName|LicenseUrl|Artist|Credit|DateTimeOriginal|ImageDescription")
 
 
@@ -101,9 +102,18 @@ def lookup(title):
     return describe(page)
 
 
-def download(info, dest, original=False):
+def download(info, dest, original=False, max_side=2560):
     with _open(info["original"] if original else info["url"]) as r, open(dest, "wb") as f:
         f.write(r.read())
+    if not original and info.get("mime", "").startswith("image/"):
+        try:  # keep photos a sensible size for the repo and the renderer
+            from PIL import Image
+            im = Image.open(dest).convert("RGB")
+            if max(im.size) > max_side:
+                im.thumbnail((max_side, max_side))
+                im.save(dest, quality=88)
+        except ImportError:
+            pass
 
 
 def fetch(project):

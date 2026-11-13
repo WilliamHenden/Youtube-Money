@@ -68,7 +68,7 @@ export const BigNumber: Template = ({ s }) => {
   const l = useL();
   const { t } = useT();
   const p = s.props;
-  const at = when(s, p.cue);
+  const at = p.at !== undefined ? s.t0 + p.at : when(s, p.cue); // "at": seconds into the scene, for a number that must be there from the first frame
   const dur = p.countDur ?? 1.6;
   const v = lerp(p.from ?? 0, p.value, prog(t, at, dur, ease.out5));
   const done = t >= at + dur;
