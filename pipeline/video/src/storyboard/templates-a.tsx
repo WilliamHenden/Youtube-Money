@@ -49,7 +49,7 @@ export const ChapterCard: Template = ({ s }) => {
   return (
     <Stage style={{ flexDirection: l.tall ? "column" : "row", gap: l.tall ? 30 : 70, alignItems: "center" }}>
       <Rise at={s.t0 + 0.15} from="scale">
-        <div style={{ fontFamily: F.head, fontWeight: 900, fontSize: l.tall ? 300 : 340, lineHeight: 0.9, color: "transparent", WebkitTextStroke: `7px ${C.yellow}`, letterSpacing: 6 }}>{n}</div>
+        <div style={{ fontFamily: F.head, fontWeight: 900, fontSize: l.tall ? 300 : 340, lineHeight: 0.9, color: C.yellow, letterSpacing: -6 }}>{n}</div>
       </Rise>
       <div style={{ width: l.tall ? 300 : 10, height: l.tall ? 10 : 300, borderRadius: 5, background: C.red, transform: l.tall ? `scaleX(${prog(t, s.t0 + 0.4, 0.5)})` : `scaleY(${prog(t, s.t0 + 0.4, 0.5)})` }} />
       <div style={{ textAlign: l.tall ? "center" : "left", maxWidth: l.tall ? l.w : 900 }}>
@@ -307,7 +307,7 @@ const Side: React.FC<{ s: SceneCtx; d: any; i: number }> = ({ s, d, i }) => {
           </Rise>
         )}
       </div>
-      <div style={{ minHeight: 60, textAlign: "center" }}>
+      <div style={{ minHeight: l.tall ? 130 : 160, textAlign: "center" }}>
         {d.unit && <Rise at={at + 0.2}><div style={{ fontFamily: F.head, fontWeight: 800, fontSize: l.tall ? 60 : 76, color: ink(s.tone), lineHeight: 1 }}>{d.unit}</div></Rise>}
         {d.caption && <Rise at={at + 0.35} style={{ marginTop: d.unit ? 14 : 0 }}><Body tone={s.tone} size={l.tall ? 40 : 42}>{d.caption}</Body></Rise>}
       </div>

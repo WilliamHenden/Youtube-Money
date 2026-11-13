@@ -29,6 +29,14 @@ cd pipeline/video && node scripts/render.mjs norway-fund --cut sample --sheet 2
 
 Rendering takes about 7 minutes per minute of video on this machine, so check stills first.
 
+Change only the sound of a video that is already rendered (a different music track, quieter effects), without rendering the pictures again:
+
+```bash
+pipeline/remix.sh norway-fund --cut sample
+```
+
+Music level is `"music": { "underVoice": 22 }` (bigger is quieter). Effects level is `"sound": { "trim": -3 }` in decibels (more negative is quieter).
+
 ## What a build produces (in `out/`)
 
 | File | What it is |

@@ -1,0 +1,37 @@
+SOUND REPORT: norway-fund (sample), 77.0 seconds
+
+Music: deliberate-thought at 22 LU under the voice
+Effects played: 7 (one every 11s on average). Requests dropped by the rules: 5.
+
+Played:
+    time  role       file                          level  scene
+     3.5  draw       writing-marker-draw          -4.0dB  the-line (line), under speech
+    13.0  transition whoosh-medium-soft           -3.0dB  two-outcomes (scene change)
+    19.9  impact     impact-medium-soft           -6.0dB  two-outcomes (britain), under speech
+    29.7  reveal     shimmer-medium-bright        -1.0dB  title (scene change)
+    38.8  transition whoosh-slow-soft             -5.0dB  dry-wells (scene change), under speech
+    53.5  transition reverse-whoosh-medium-soft   -6.0dB  one-more-well (scene change), under speech
+    64.6  impact     impact-medium-firm           -3.0dB  ekofisk (scene change)
+
+How often each file played:
+  1x  writing-marker-draw
+  1x  whoosh-medium-soft
+  1x  impact-medium-soft
+  1x  shimmer-medium-bright
+  1x  whoosh-slow-soft
+  1x  reverse-whoosh-medium-soft
+  1x  impact-medium-firm
+
+Dropped:
+    11.3  pop        the-line (oil): within 6s of the transition at 13.0s
+    23.0  transition the-question (scene change): within 6s of the impact at 19.9s
+    33.2  transition no-oil (scene change): within 6s of the reveal at 29.7s
+    59.3  pop        one-more-well (rig): within 6s of the impact at 64.6s
+    69.4  transition near-the-line (scene change): within 6s of the impact at 64.6s
+
+Checks:
+  PASS  No file repeated within 30 seconds (no file played twice)
+  PASS  At most one sound every 6 seconds (closest two sounds 6.9s apart)
+  PASS  Reveal sounds only on major moments (1 reveal(s): title at 29.7s)
+  PASS  Silence during every scripted beat (1 beat(s): 28.3-29.6s)
+  PASS  Counters silent (no tick sounds were asked for)

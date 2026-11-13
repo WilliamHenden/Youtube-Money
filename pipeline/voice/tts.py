@@ -358,6 +358,9 @@ def main():
                 if len(gaps) > marks + 1:
                     print(f"  ! check pacing: {len(gaps)} long pauses but {marks} punctuation marks in: {text}")
                 heard = None if a.no_listen else hear(x, sr)
+                if heard:  # the recogniser sometimes invents a phrase after the speech has ended; ignore those
+                    speech_end = speech_bounds_and_gaps(x, sr)[1]
+                    heard = [h for h in heard if h[1] < speech_end - 0.12]
                 seg_t = align_sphinx(seg_words, x, sr)
                 how = "sphinx"
                 h_times, notes = align_heard(seg_words, heard)

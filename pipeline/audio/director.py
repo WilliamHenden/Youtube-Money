@@ -146,7 +146,7 @@ def main():
     script = json.load(open(os.path.join(pdir, "script.json")))
     tm = json.load(open(os.path.join(b, "timings.json")))
     lib = json.load(open(os.path.join(LIB, "sounds.json")))
-    cfg = {"minGap": MIN_GAP, "trim": -5.0, "revealBoost": 2.0, **script.get("sound", {})}
+    cfg = {"minGap": MIN_GAP, "trim": -3.0, "revealBoost": 2.0, **script.get("sound", {})}  # trim: effects level in dB; a script can set "sound": {"trim": -6}
     cfg["minGap"] = max(cfg["minGap"], MIN_GAP)  # a project may ask for fewer sounds, never more
     mcfg = {**script.get("music", {}), **script.get("cuts", {}).get(a.cut, {}).get("music", {})}
 

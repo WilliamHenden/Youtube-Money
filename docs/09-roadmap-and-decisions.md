@@ -48,8 +48,8 @@ Pattern: the owner's ideas are about **how money really works** (debt, wealth, n
 
 ## Known risks for the next session
 
-- **The environment's install script worked** on its first real run (13 November). It doesn't yet install the listening check or the Chatterbox voice: run `pipeline/setup.sh` (add `chatterbox` for that voice, 3.3 GB).
-- **Voice-model downloads:** Hugging Face serves model files from `us.aws.cdn.hf.co`, which the owner added to the environment on 13 November.
+- **The environment's install script worked** on its first real run (13 November). It was then extended to install the listening check too; that version is unproven until a fresh session starts. If anything is missing, run `pipeline/setup.sh` (add `chatterbox` for that voice, 3.3 GB, which is never installed automatically).
+- **Voice-model downloads:** Hugging Face serves model files from `us.aws.cdn.hf.co`, which the owner added to the environment on 13 November, along with `incompetech.com` for the music.
 - **Wikimedia Commons throttles this machine's shared address.** Searches and downloads were refused for long stretches in session 1. Search sparingly, name exact files in the script, and allow time for retries. If it blocks the full video, ask the owner for free Pexels and Pixabay keys through the secure credential form and wire those in.
 - **The sound effects are a designed, synthesised library (CC0), not recordings.** If the owner dislikes them by ear, recorded ones have to be downloaded by hand (Pixabay) or the environment needs freesound.org and an API key.
 - **Music is CC BY (Kevin MacLeod), so the description must carry the credit.** His tracks are very widely used on YouTube; the owner may prefer a YouTube Audio Library track for a more distinctive sound.
