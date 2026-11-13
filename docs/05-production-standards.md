@@ -80,24 +80,26 @@ Owner feedback: the sounds worked as emphasis, but the same few were repeated un
 - **Transitions:** a sound only on scene changes, rotating between several different ones. Small in-scene moves are silent.
 - **Cooldown:** the same sound file cannot play twice within 30 seconds.
 
-### 3.2 How the pipeline enforces it
-- Sounds are requested by **role** (reveal, pop, transition, impact, tick), not by file. Each role has 3–5 variants and the pipeline rotates them.
-- The pipeline applies the cooldown and the density limit automatically, and drops the lower-priority sound when two collide.
-- Every build prints a **sound report** (how many times each sound played) for review.
+### 3.2 How the pipeline enforces it (built 13 November 2026)
+- Sounds are requested by **role** (reveal, pop, transition, impact, tick, draw), not by file. Each role has 3–5 variants and the pipeline rotates them.
+- `pipeline/audio/director.py` applies the rules on every build: at most one effect every 6 seconds, a 30-second cooldown per file, the reveal sound only in scenes marked `major` (4 a video at most), nothing during a scripted beat (the music drops out too), and silent counters. When two sounds collide, the less important one is dropped.
+- Every build prints a **sound report** and saves it to `out/<video>-sound-report.txt`: what played, what was dropped and why, and a pass or fail for each rule. A build that breaks a rule fails.
 
-### 3.3 Better sounds
-- Replace the synthesised set with a larger library of professionally recorded effects that are free for commercial use, each one's licence recorded.
-- Replace the synthesised music loop with licensed tracks (the YouTube Audio Library is the safe free source).
+### 3.3 Better sounds (status 13 November 2026)
+- **Effects:** the demo's home-made set is replaced by 27 sounds from the SFX Kit by Wyzowl (CC0, free for commercial use, no credit needed). Honest note: this library is synthesised by code and curated by an explainer-video company; it is not microphone recordings. The recorded libraries (Pixabay, Freesound) could not be reached from the build machine. If the owner wants recorded sounds after hearing the sample, files downloaded by hand can be dropped into the same roles.
+- **Music:** two Kevin MacLeod tracks (CC BY 4.0, credit required in the description) replace the synthesised loop. The YouTube Audio Library remains the safest source, but its tracks have to be downloaded by the owner from YouTube Studio.
+- Every file's source and licence is in `pipeline/audio/LICENCES.md`.
 
 ## 4. Voice
 
 - **Fixed:** "U.S." was read as "U. … S." with a sentence-length pause. The narrator now converts dotted abbreviations before speaking, and warns when a line has more long pauses than punctuation.
 - **Pauses are scripted.** Each line can set its own gap, which is how the question → beat → payoff timing is made. This works with any voice engine.
-- **Voice engine: undecided.** The free voice (Kokoro) is clear but has limited expression, which matters more now that delivery carries the storytelling. Next step is a side-by-side test of the same 30-second passage:
-  1. Kokoro (current, free)
-  2. A more expressive free model (now downloadable; may be slow here without a graphics card)
-  3. ElevenLabs (paid, about £17/month; samples can be heard on their site first)
+- **Voice engine: undecided, test clips ready.** The same 30-second passage (with a scripted beat) is in `out/voice-tests/`:
+  1. Kokoro "Heart" (current, free, US female) and Kokoro "George" (free, UK male)
+  2. Chatterbox (free, more expressive, two settings). It runs here at about a third of real-time speed, so an 8-minute video takes about 25 minutes to speak.
+  3. ElevenLabs (paid, about £17/month) is not in the clips; samples can be heard on their site.
   The owner chooses by ear. The pipeline times everything from the audio, so switching engines doesn't affect the visuals.
+- **Listening check.** After speaking, the pipeline listens to its own narration with a speech recogniser and lists words it didn't hear back as written, so likely mispronunciations are flagged for the owner's ear.
 - **One consistent narrator voice** per channel. A second voice is allowed only for the subscribe ritual.
 
 ## 5. Calls to action and the outro
@@ -116,8 +118,10 @@ Owner feedback: the sounds worked as emphasis, but the same few were repeated un
   3. Real photos, cut out and animated with depth
   4. Bold text moments (the question, the answer, a key quote)
 - **No mascot in the body of the video** (see section 1).
-- **Scene templates first.** Most scenes come from reusable templates filled in from the script. Custom scenes are saved for the two or three key moments.
+- **Scene templates first.** Most scenes come from reusable templates filled in from the script. Custom scenes are saved for the two or three key moments. The 17 templates and their settings are listed in `pipeline/README.md`; `projects/template-gallery` shows each one.
+- **No template twice in a row.**
 - **Every template has a vertical layout** so Shorts are rendered properly for phones, not cropped.
+- **Real photos:** only public domain, CC0 or CC BY, each with its credit shown on screen and collected for the description. Captions say what the photo really shows, including its date if it isn't from the time being described.
 - Style guide (colours, fonts, motion) stays as built in `pipeline/video/src/lib/theme.ts`.
 
 ## 7. Sources consulted for section 2

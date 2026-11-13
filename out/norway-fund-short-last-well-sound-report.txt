@@ -1,0 +1,26 @@
+SOUND REPORT: norway-fund (short-last-well), 45.7 seconds
+
+Music: deliberate-thought at 22 LU under the voice
+Effects played: 3 (one every 15s on average). Requests dropped by the rules: 2.
+
+Played:
+    time  role       file                          level  scene
+     8.0  transition whoosh-medium-soft           -3.0dB  dry-wells (scene change)
+    22.7  transition whoosh-slow-soft             -5.0dB  one-more-well (scene change), under speech
+    33.7  impact     impact-medium-soft           -3.0dB  ekofisk (scene change)
+
+How often each file played:
+  1x  whoosh-medium-soft
+  1x  whoosh-slow-soft
+  1x  impact-medium-soft
+
+Dropped:
+    28.4  pop        one-more-well (rig): within 6s of the impact at 33.7s
+    38.5  transition s-end (scene change): within 6s of the impact at 33.7s
+
+Checks:
+  PASS  No file repeated within 30 seconds (no file played twice)
+  PASS  At most one sound every 6 seconds (closest two sounds 11.1s apart)
+  PASS  Reveal sounds only on major moments (0 reveal(s): none)
+  PASS  Silence during every scripted beat (0 beat(s): none)
+  PASS  Counters silent (no tick sounds were asked for)

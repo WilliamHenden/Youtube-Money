@@ -1,13 +1,14 @@
 import React from "react";
 import { AbsoluteFill, Audio, Img, Sequence, staticFile, useVideoConfig } from "remotion";
 import icons from "../icons/icons.generated.json";
-import { C, F, H, Tone, W, ink, sub } from "../lib/theme";
+import { C, F, Tone, ink, sub } from "../lib/theme";
 import { clamp01, ease, glide, lerp, pop, prog, useT } from "../lib/anim";
 import { useTimings } from "../lib/timings";
 
 /* ---------- Background ---------- */
 export const Background: React.FC<{ tone: Tone }> = ({ tone }) => {
   const { t } = useT();
+  const { width: W, height: H } = useVideoConfig();
   const navy = tone === "navy";
   const dot = navy ? "rgba(244,239,230,0.075)" : "rgba(14,26,43,0.085)";
   const ox = -((t * 7) % 48);
@@ -171,14 +172,16 @@ export const Captions: React.FC = () => {
   const { lines } = useTimings();
   let cur: { show: string; start: number; end: number } | null = null;
   for (const l of lines) for (const c of l.chunks) if (t >= c.start - 0.04 && t < c.end + 0.12) cur = c;
+  const { width: W, height: H } = useVideoConfig();
   if (!cur) return null;
+  const tall = H > W;
   const p = prog(t, cur.start - 0.04, 0.14);
   return (
-    <div style={{ position: "absolute", left: 0, right: 0, top: 898, display: "flex", justifyContent: "center" }}>
+    <div style={{ position: "absolute", left: 0, right: 0, top: tall ? 1385 : 898, height: tall ? 150 : undefined, display: "flex", justifyContent: "center", alignItems: "center", zIndex: 40 }}>
       <div
         style={{
-          fontFamily: F.body, fontWeight: 700, fontSize: 48, color: C.cream, background: "rgba(7,13,22,0.86)", padding: "16px 34px 18px",
-          borderRadius: 20, lineHeight: 1.15, whiteSpace: "nowrap", opacity: p, transform: `translateY(${(1 - p) * 10}px)`,
+          fontFamily: F.body, fontWeight: 700, fontSize: tall ? 54 : 48, color: C.cream, background: "rgba(7,13,22,0.86)", padding: tall ? "18px 34px 20px" : "16px 34px 18px",
+          borderRadius: 20, lineHeight: 1.15, whiteSpace: tall ? "normal" : "nowrap", maxWidth: tall ? 900 : 1700, textAlign: "center", opacity: p, transform: `translateY(${(1 - p) * 10}px)`,
           boxShadow: "0 12px 30px rgba(0,0,0,0.3)",
         }}
       >
@@ -189,14 +192,18 @@ export const Captions: React.FC = () => {
 };
 
 /* ---------- Channel bug + source note ---------- */
-export const ChannelBug: React.FC<{ tone: Tone; name: string }> = ({ tone, name }) => (
-  <div style={{ position: "absolute", left: 60, top: 48, display: "flex", alignItems: "center", gap: 14, opacity: 0.92 }}>
+export const ChannelBug: React.FC<{ tone: Tone; name: string; light?: boolean }> = ({ tone, name, light }) => {
+  const { width: W, height: H } = useVideoConfig();
+  const tall = H > W;
+  return (
+  <div style={{ position: "absolute", left: tall ? 0 : 60, width: tall ? W : undefined, justifyContent: tall ? "center" : undefined, top: tall ? 150 : 48, display: "flex", alignItems: "center", gap: 14, opacity: 0.92, zIndex: 30 }}>
     <div style={{ width: 40, height: 40, borderRadius: 11, background: C.yellow, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: F.head, fontWeight: 900, fontSize: 26, color: C.navy }}>
       $
     </div>
-    <div style={{ fontFamily: F.head, fontWeight: 800, fontSize: 22, letterSpacing: 4, color: ink(tone) }}>{name}</div>
+    <div style={{ fontFamily: F.head, fontWeight: 800, fontSize: 22, letterSpacing: 4, color: light ? C.white : ink(tone), textShadow: light ? "0 2px 8px rgba(0,0,0,0.6)" : undefined }}>{name}</div>
   </div>
-);
+  );
+};
 export const SourceNote: React.FC<{ tone: Tone; from: number; to: number; children: React.ReactNode }> = ({ tone, from, to, children }) => {
   const { t } = useT();
   if (t < from || t > to) return null;
@@ -211,13 +218,14 @@ export const SourceNote: React.FC<{ tone: Tone; from: number; to: number; childr
 /* ---------- Scene wipe ---------- */
 export const Wipe: React.FC<{ at: number; colors?: [string, string] }> = ({ at, colors = [C.red, C.yellow] }) => {
   const { t } = useT();
+  const { height: H } = useVideoConfig();
   const d = 0.7;
   const p = (t - (at - d / 2)) / d;
   if (p <= 0 || p >= 1) return null;
   const e = ease.inOut(p);
   const x1 = lerp(-185, 115, e);
   const panel = (x: number, color: string): React.CSSProperties => ({
-    position: "absolute", top: -60, height: H + 120, left: `${x}%`, width: "150%", background: color, transform: "skewX(-11deg)",
+    position: "absolute", top: -60, height: H + 120, left: `${x}%`, width: "150%", background: color, transform: `skewX(${H > 1200 ? -5 : -11}deg)`,
   });
   return (
     <AbsoluteFill style={{ overflow: "hidden", zIndex: 50 }}>

@@ -7,7 +7,8 @@ A faceless YouTube business channel made with a code-based video pipeline. The o
 - `docs/09-roadmap-and-decisions.md`: where the project stands, what's next, every decision the owner has made, and known risks.
 - `docs/08-build-plan.md`: the current build plan and what each session should do.
 - `projects/norway-fund/brief.md`: the first real video (script, fact sheet, status).
-- `pipeline/README.md`: how the video pipeline works and how to build a video.
+- `pipeline/README.md`: how the video pipeline works, how to write a storyboard, and the list of scene templates.
+- `docs/10-session-1-review.md`: what session 1 built, the sample's weak points, and what the owner still has to decide.
 - Background, only if needed: `docs/01` (strategy), `02` (tools), `04` (demo review), `06` (channel setup), `07` (topic shortlist).
 
 ## Standing instructions from the owner
@@ -29,5 +30,9 @@ A faceless YouTube business channel made with a code-based video pipeline. The o
 - Use the **youtube-money** cloud environment. It installs the pipeline tools at session start and allows the stock-photo, voice-model and YouTube sites.
 - Files over 100 MB can't go in the repo. Save finished long videos to the Google Drive folder "YouTube Business - Videos" (ID `1LdoEe4r0zkBtsIfB1xwNxtO8sE35HYvY`) and commit only small previews.
 - Render with the default graphics setting in `pipeline/video/scripts/render.mjs`. The "swangle" setting is about ten times slower on this machine.
+- A video is `projects/<id>/script.json` only: words plus a storyboard naming a template per scene. Build with `pipeline/build.sh <id> [--cut name]`; add `--no-render` while storyboarding, and check one contact sheet (`render.mjs --sheet 2`) before any render.
+- New tools since the environment was made: run `pipeline/setup.sh` if the listening check or a voice model is missing (`pipeline/setup.sh chatterbox` for the 3.3 GB expressive voice).
+- Wikimedia Commons throttles this machine's shared address hard. Search sparingly, and expect downloads to need retries.
+- Sound and music licences: `pipeline/audio/LICENCES.md`. Music is CC BY, so the credits file from each build must go in the video description.
 - Research tools: `tools/yt_search.py` (YouTube view counts for a topic) and `tools/yt_handle_check.sh` (handle availability).
 - Undecided: channel name, narrator voice engine. Parked: mascot, AI-generated cinematic clips.

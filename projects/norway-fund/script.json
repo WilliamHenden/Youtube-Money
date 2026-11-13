@@ -1,0 +1,582 @@
+{
+  "id": "norway-fund",
+  "title": "How Norway Saved $2.3 Trillion and Britain Saved Nothing",
+  "channel": "MONEY MECHANICS",
+  "status": "SAMPLE ONLY. Hook and context from script draft v1 in brief.md. The full script is not yet approved.",
+  "voice": {
+    "engine": "kokoro",
+    "voice": "af_heart",
+    "speed": 0.95
+  },
+  "music": {
+    "track": "deliberate-thought",
+    "underVoice": 22
+  },
+  "pauses": {
+    "line": 0.38,
+    "scene": 0.75,
+    "beat": 1.2
+  },
+  "leadIn": 0.6,
+  "tail": 2.4,
+  "photos": {
+    "ekofisk": {
+      "file": "File:Ekofisk 2-4 K (DEX KF 000635).jpg"
+    }
+  },
+  "notes": [
+    "The dividing line on the map follows the eight points of the 1965 UK-Norway agreement as closely as recalled; it is a schematic, not a chart.",
+    "One line differs from brief.md: 'There was just one problem. Its licence required...' became 'But its licence still required...' (writing rule: no stock phrases).",
+    "The 'no-oil' scene was planned as a photo of Stavanger in 1960 (File:N081 Bergen Stavanger ferry, Stavanger 1960 (51180091913).jpg, CC BY 2.0). Wikimedia refused the download all session, so it is a chapter card for now. Swap it back in session 2."
+  ],
+  "scenes": [
+    {
+      "id": "the-line",
+      "template": "map",
+      "tone": "navy",
+      "sound": "none",
+      "props": {
+        "kicker": "The North Sea, 1965",
+        "center": [
+          3.0,
+          57.9
+        ],
+        "span": 34,
+        "countries": [
+          {
+            "name": "United Kingdom",
+            "label": "BRITAIN",
+            "color": "blue",
+            "labelAt": [
+              -3.6,
+              56.6
+            ]
+          },
+          {
+            "name": "Norway",
+            "label": "NORWAY",
+            "color": "red",
+            "labelAt": [
+              8.9,
+              60.9
+            ]
+          }
+        ],
+        "lines": [
+          {
+            "cue": "line",
+            "label": "The 1965 line",
+            "labelAt": 0.6,
+            "points": [
+              [
+                3.25,
+                56.087
+              ],
+              [
+                2.613,
+                56.595
+              ],
+              [
+                1.965,
+                57.905
+              ],
+              [
+                1.483,
+                58.43
+              ],
+              [
+                1.712,
+                59.29
+              ],
+              [
+                2.077,
+                59.897
+              ],
+              [
+                1.79,
+                61.357
+              ],
+              [
+                1.56,
+                61.737
+              ]
+            ]
+          }
+        ],
+        "points": [
+          {
+            "lon": 0.4,
+            "lat": 57.8,
+            "cue": "oil",
+            "kind": "oil"
+          },
+          {
+            "lon": 3.9,
+            "lat": 57.3,
+            "cue": "oil",
+            "kind": "oil",
+            "delay": 0.35
+          }
+        ],
+        "tall": {
+          "center": [
+            2.4,
+            58.4
+          ],
+          "span": 16,
+          "countries": [
+            {
+              "name": "United Kingdom",
+              "label": "BRITAIN",
+              "color": "blue",
+              "labelAt": [
+                -2.9,
+                54.4
+              ]
+            },
+            {
+              "name": "Norway",
+              "label": "NORWAY",
+              "color": "red",
+              "labelAt": [
+                8.0,
+                61.2
+              ]
+            }
+          ]
+        }
+      },
+      "sounds": [
+        {
+          "cue": "line",
+          "role": "draw"
+        },
+        {
+          "cue": "oil",
+          "role": "pop"
+        }
+      ],
+      "lines": [
+        {
+          "say": "In nineteen sixty-five, | Britain and Norway {line}drew a line | down the middle of the North Sea | and agreed that whatever lay under the seabed | on each side belonged to them.",
+          "show": "In *1965,* | Britain and Norway drew a line | down the middle of the North Sea | and agreed that whatever lay under the seabed | on each side belonged to them."
+        },
+        {
+          "say": "A few years later, | {oil}both of them found oil.",
+          "show": "A few years later, | both of them found *oil.*"
+        }
+      ]
+    },
+    {
+      "id": "two-outcomes",
+      "template": "split",
+      "tone": "navy",
+      "props": {
+        "kicker": "Today",
+        "left": {
+          "flag": "norway",
+          "label": "Norway's side",
+          "value": 2.3,
+          "prefix": "$",
+          "decimals": 1,
+          "unit": "trillion",
+          "caption": "in one national fund",
+          "cue": "norway",
+          "color": "green"
+        },
+        "right": {
+          "flag": "uk",
+          "label": "Britain's side",
+          "text": "No fund",
+          "caption": "at all",
+          "cue": "britain",
+          "color": "muted"
+        },
+        "source": "Fund value: mid-2026, rounded"
+      },
+      "sounds": [
+        {
+          "cue": "britain",
+          "role": "impact"
+        }
+      ],
+      "lines": [
+        {
+          "say": "Today, | {norway}Norway's side of that line | has turned into a fund | worth around two point three trillion dollars.",
+          "show": "Today, | Norway's side of that line | has turned into a fund | worth around *$2.3 trillion.*"
+        },
+        {
+          "say": "{britain}Britain's side | has turned into no fund at all.",
+          "show": "Britain's side | has turned into *no fund at all.*"
+        }
+      ]
+    },
+    {
+      "id": "the-question",
+      "template": "question",
+      "tone": "cream",
+      "props": {
+        "kicker": "The same sea and the same oil",
+        "text": "So what did Norway do that Britain didn't?",
+        "accent": "Norway",
+        "cue": "ask"
+      },
+      "lines": [
+        {
+          "say": "They had the same sea | and the same oil.",
+          "show": "They had the same sea | and the same oil."
+        },
+        {
+          "say": "{ask}So what did Norway do | that Britain didn't?",
+          "show": "So what did Norway do | that Britain didn't?",
+          "beat": 1.3
+        }
+      ]
+    },
+    {
+      "id": "title",
+      "template": "title",
+      "tone": "navy",
+      "major": true,
+      "sound": "reveal",
+      "hold": 3.4,
+      "props": {
+        "lines": [
+          "How Norway saved",
+          "$2.3 trillion",
+          "and Britain saved nothing"
+        ],
+        "accent": 1
+      }
+    },
+    {
+      "id": "no-oil",
+      "template": "chapter",
+      "tone": "cream",
+      "props": {
+        "number": 1,
+        "kicker": "Part one",
+        "title": "Before the oil"
+      },
+      "lines": [
+        {
+          "say": "To understand it, | you have to go back to a time | when nobody thought Norway had any oil.",
+          "show": "To understand it, | you have to go back to a time | when *nobody* thought Norway had any oil."
+        }
+      ]
+    },
+    {
+      "id": "dry-wells",
+      "template": "timeline",
+      "tone": "cream",
+      "props": {
+        "title": "The search off Norway's coast",
+        "events": [
+          {
+            "label": "1965",
+            "text": "The line is agreed"
+          },
+          {
+            "label": "Late 1960s",
+            "text": "Well after well, almost nothing",
+            "cue": "wells"
+          },
+          {
+            "label": "1969",
+            "text": "Phillips is ready to pull out",
+            "cue": "phillips",
+            "highlight": true
+          }
+        ]
+      },
+      "lines": [
+        {
+          "say": "Through the nineteen sixties, | companies {wells}drilled well after well | off the Norwegian coast | and found almost nothing worth having.",
+          "show": "Through the 1960s, | companies drilled well after well | off the Norwegian coast | and found *almost nothing* worth having."
+        },
+        {
+          "say": "By {phillips}nineteen sixty-nine, | the American company Phillips Petroleum | had seen enough | and was ready to pull out.",
+          "show": "By *1969,* | the American company Phillips Petroleum | had seen enough | and was ready to pull out."
+        }
+      ]
+    },
+    {
+      "id": "one-more-well",
+      "template": "icons",
+      "tone": "navy",
+      "props": {
+        "title": "Why Phillips drilled one more",
+        "items": [
+          {
+            "icon": "page-facing-up",
+            "label": "The licence",
+            "text": "One more well required",
+            "cue": "licence"
+          },
+          {
+            "icon": "money-with-wings",
+            "label": "The penalty",
+            "text": "Paid for walking away",
+            "cue": "penalty"
+          },
+          {
+            "icon": "building-construction",
+            "label": "The rig",
+            "text": "Already hired",
+            "cue": "rig"
+          }
+        ]
+      },
+      "sounds": [
+        {
+          "cue": "rig",
+          "role": "pop"
+        }
+      ],
+      "lines": [
+        {
+          "say": "But its {licence}licence still required one more well, | and walking away | meant {penalty}paying a penalty.",
+          "show": "But its licence still required *one more well,* | and walking away | meant paying a penalty."
+        },
+        {
+          "say": "The {rig}drilling rig had already been hired, | so the company decided | it might as well use it.",
+          "show": "The drilling rig had already been hired, | so the company decided | it might as well use it."
+        }
+      ]
+    },
+    {
+      "id": "ekofisk",
+      "template": "photo",
+      "tone": "navy",
+      "enter": "fade",
+      "sound": "impact",
+      "props": {
+        "photo": "ekofisk",
+        "kicker": "Autumn 1969",
+        "title": "Ekofisk",
+        "titleCue": "ekofisk",
+        "caption": "Platforms on the Ekofisk field, photographed after 1985",
+        "move": "out",
+        "focus": [
+          0.42,
+          0.45
+        ]
+      },
+      "lines": [
+        {
+          "say": "That autumn, | the rig struck a field called {ekofisk}Ekofisk, | and it was enormous.",
+          "show": "That autumn, | the rig struck a field called *Ekofisk,* | and it was enormous."
+        }
+      ]
+    },
+    {
+      "id": "near-the-line",
+      "template": "map",
+      "tone": "navy",
+      "props": {
+        "kicker": "Where the oil was",
+        "center": [
+          3.0,
+          57.9
+        ],
+        "span": 34,
+        "zoomTo": {
+          "center": [
+            2.6,
+            57.3
+          ],
+          "span": 13,
+          "at": 0.2,
+          "dur": 2.2
+        },
+        "countries": [
+          {
+            "name": "United Kingdom",
+            "label": "BRITAIN",
+            "color": "blue",
+            "labelAt": [
+              -3.2,
+              56.9
+            ]
+          },
+          {
+            "name": "Norway",
+            "label": "NORWAY",
+            "color": "red",
+            "labelAt": [
+              7.4,
+              58.75
+            ]
+          }
+        ],
+        "lines": [
+          {
+            "label": "The 1965 line",
+            "labelAt": 0.42,
+            "points": [
+              [
+                3.25,
+                56.087
+              ],
+              [
+                2.613,
+                56.595
+              ],
+              [
+                1.965,
+                57.905
+              ],
+              [
+                1.483,
+                58.43
+              ],
+              [
+                1.712,
+                59.29
+              ],
+              [
+                2.077,
+                59.897
+              ],
+              [
+                1.79,
+                61.357
+              ],
+              [
+                1.56,
+                61.737
+              ]
+            ]
+          }
+        ],
+        "points": [
+          {
+            "lon": 3.21,
+            "lat": 56.55,
+            "cue": "close",
+            "kind": "oil",
+            "label": "Ekofisk",
+            "big": true
+          }
+        ],
+        "tall": {
+          "center": [
+            2.4,
+            58.4
+          ],
+          "span": 16,
+          "zoomTo": {
+            "center": [
+              2.8,
+              57.4
+            ],
+            "span": 8.5,
+            "at": 0.2,
+            "dur": 2.2
+          }
+        }
+      },
+      "lines": [
+        {
+          "say": "It sat {close}close to the line | that Britain and Norway had drawn | only four years earlier.",
+          "show": "It sat close to the line | that Britain and Norway had drawn | only *four years* earlier."
+        }
+      ]
+    },
+    {
+      "id": "easy-part",
+      "template": "quote",
+      "tone": "cream",
+      "props": {
+        "text": "Finding oil turned out to be the easy part.",
+        "accent": "the easy part",
+        "cue": "easy"
+      },
+      "lines": [
+        {
+          "say": "Norway was suddenly an oil country.",
+          "show": "Norway was suddenly an *oil country.*"
+        },
+        {
+          "say": "But {easy}finding oil turned out to be the easy part, | because plenty of countries have struck oil | and had very little to show for it | a generation later.",
+          "show": "But finding oil turned out to be the easy part, | because plenty of countries have struck oil | and had very little to show for it | a generation later."
+        },
+        {
+          "say": "And for a while, | it looked as if Norway | might become one of them.",
+          "show": "And for a while, | it looked as if Norway | might become one of them."
+        }
+      ]
+    }
+  ],
+  "cuts": {
+    "sample": {
+      "format": "wide",
+      "scenes": [
+        "the-line",
+        "two-outcomes",
+        "the-question",
+        "title",
+        "no-oil",
+        "dry-wells",
+        "one-more-well",
+        "ekofisk",
+        "near-the-line"
+      ]
+    },
+    "short-last-well": {
+      "format": "tall",
+      "about": "A vertical Short: the well nobody wanted to drill. Two short scenes are written for the Short; the rest are the same scenes as the main video.",
+      "tail": 1.6,
+      "scenes": [
+        {
+          "id": "s-hook",
+          "template": "number",
+          "tone": "navy",
+          "sound": "none",
+          "props": {
+            "label": "Norway's oil fund",
+            "value": 2.3,
+            "prefix": "$",
+            "decimals": 1,
+            "unit": "trillion",
+            "caption": "It began with a well nobody wanted to drill",
+            "countDur": 0.1,
+            "source": "Fund value: mid-2026, rounded",
+            "at": 0.0,
+            "from": 2.3
+          },
+          "lines": [
+            {
+              "say": "Norway's two point three trillion dollar oil fund | began with a well | that the oil company didn't even want to drill.",
+              "show": "Norway's *$2.3 trillion* oil fund | began with a well | that the oil company didn't even want to drill."
+            }
+          ]
+        },
+        "dry-wells",
+        "one-more-well",
+        "ekofisk",
+        {
+          "id": "s-end",
+          "template": "quote",
+          "tone": "cream",
+          "props": {
+            "text": "Finding oil turned out to be the easy part.",
+            "accent": "the easy part",
+            "by": "The full story is on the channel",
+            "cue": "seasy"
+          },
+          "lines": [
+            {
+              "say": "Norway was suddenly an oil country.",
+              "show": "Norway was suddenly an *oil country.*"
+            },
+            {
+              "say": "But {seasy}finding oil | turned out to be the easy part.",
+              "show": "But finding oil | turned out to be *the easy part.*"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
