@@ -35,8 +35,8 @@ The demo's weakness was the story, not the look. Viewers said "I already knew th
 | ~3:00 | **Re-hook** | Restate the bigger question with higher stakes. Retention commonly dips here. |
 | 3:00–5:30 | **Act 2: how it really works** | The mechanism, step by step. Second mini-payoff. Include a setback, a rival or a counter-argument. |
 | 5:30–7:15 | **Act 3: the main payoff** | The answer the viewer came for, delivered as question → beat → payoff, with the video's strongest visual. |
-| 7:15–7:50 | **The takeaway** | What this teaches the viewer. One clear lesson. |
-| 7:50–8:10 | **Lead-out** | Tease a specific next video over the end screen. No "thanks for watching". |
+| 7:15–7:50 | **The answer and takeaway** | Answer the opening hook's question plainly, summing up the whole video in a few sentences, then the one lesson for the viewer. This is where the lesson lives, never in the outro. |
+| 7:50–8:10 | **Lead-out (outro)** | Short and snappy: tease a specific next video over the end screen. No lesson, no recap, no "thanks for watching". |
 
 ### 2.4 Writing rules
 - **"But" and "therefore", never "and then".** Each beat must be caused by, or clash with, the one before.
@@ -109,7 +109,7 @@ Owner feedback: the sounds worked as emphasis, but the same few were repeated un
 - **No "press the bell".**
 - **Intro: B, the channel sting (owner, 17 November 2026).** Order: the hook and its question, the pause, then a short, clear "Money Mechanics" sting (about three seconds), then the title. Keep it simple, but the owner wants it more polished, with more effects. Demo: `out/intro-outro.mp4` at 0:11 to 0:18.
 - **Subscribe moment: approved as demoed (17 November).** Same line and look every time. Demo at 0:25 to 0:30.
-- **Outro: A, the simple version (owner, 17 November).** Straight from the takeaway to the end screen, with one or two spoken lines that tease the next video. Demo: `out/intro-outro.mp4` at 0:30 to 0:38 (the layout was liked; the words and the voice were not).
+- **Outro: A, the simple version (owner, 17 November).** The outro holds no lesson and no summary; those come just before it, in the answer and takeaway. Straight from the takeaway to the end screen, with one or two spoken lines that tease the next video. Demo: `out/intro-outro.mp4` at 0:30 to 0:38 (the layout was liked; the words and the voice were not).
 - **How to write the tease:** under about ten seconds. Lead with the next video's most surprising fact, ask its central question, then send the viewer to it ("Watch the next video to find out"). Punchy and curious, never a summary. Every fact in it is sourced like the rest of the script. Owner's examples of the tone: "So how come the US is so successful when it's $40 trillion in debt? Watch now to find out."
 - **Order of making a video: script first, then voice, then pictures.** The narration is recorded or generated once the script is approved, and the visuals are timed to it word by word. Changing words after the voice is made means remaking that audio.
 - **The ending sells the next video.** Narration runs to the end and teases a specific video ("Tomorrow: how … became …") over YouTube's end screen (next video + subscribe button). The end-card layout is identical in every video.
