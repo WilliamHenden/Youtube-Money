@@ -14,6 +14,9 @@ A faceless YouTube business channel made with a code-based video pipeline. The o
 - `docs/12-voice-workflow.md`: how ElevenLabs fits in (text to speech or the owner's recording re-voiced), what it costs, the order of work, and Spotify.
 - Background, only if needed: `docs/01` (strategy), `02` (tools), `04` (demo review), `06` (channel setup), `07` (topic shortlist).
 
+## First thing next session
+- **Ask the owner for the ElevenLabs API key** (secure form, host `api.elevenlabs.io`, header `xi-api-key`) as soon as work starts. They asked to be asked again on 17 November. Then add an `elevenlabs` engine to `pipeline/voice/engines.py` and make test clips with the voice "James - English Story Teller" (`GrVxA7Ub86nJH91Viyiv`).
+
 ## Standing instructions from the owner
 
 ### Saving work (owner's instruction, 13 Nov 2026)
