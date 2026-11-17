@@ -16,6 +16,7 @@
 4. **Passive research:** a scheduled job that gathers which competitor videos are outperforming, feeding a ranked idea shortlist. Plain scripts where possible, since scheduled Claude sessions use the owner's limit.
 5. **Command centre:** a web dashboard with a "big red button" that starts the weekly run, shows each video's status, and handles the three approvals (idea, script, finished video) from a phone. The owner has Vercel and Supabase connected.
 6. **Cross-posting** the vertical clips to TikTok, Instagram and Facebook.
+7. **Spotify (idea, 17 November):** the same episodes as a podcast, audio-only or as video. AI narration appears to be allowed as long as it doesn't imitate a real person; music must be licensed. See `docs/12-voice-workflow.md`.
 
 The owner's end goal: press one button at the start of the week, approve at three points, and have long videos plus 2–3 Shorts a day produced and published.
 
@@ -42,7 +43,8 @@ Pattern: the owner's ideas are about **how money really works** (debt, wealth, n
 | Mascot | Parked. The owner didn't like the first three designs. If it returns, intro, outro and subscribe moment only. |
 | AI cinematic clips | Not for now. Revisit only if the first long video feels flat. The owner is willing to pay a few pounds per video if needed. |
 | Channel name | Undecided, and not a priority. Shortlist in `05-production-standards.md`. |
-| Narrator voice | Undecided. Four free clips are in `out/voice-tests/`. On 13 November the owner asked to look harder at ElevenLabs and at "speech-to-speech" (a person records the narration and AI re-voices it, keeping the human emphasis). Next step: add both to the voice test once the owner provides an ElevenLabs key. Open to paying for a better voice. |
+| Narrator voice | **ElevenLabs, voice to be chosen** (owner, 17 November). One official voice for the whole channel. Two ways to use it: (1) ElevenLabs reads the script (text to speech), or (2) the owner records the script and ElevenLabs re-voices it (speech to speech). Both cost about the same in credits for an 8-minute video (about 7,000 to 8,000 credits per take; see `docs/12-voice-workflow.md`). Next step: the owner opens an ElevenLabs account; Claude adds the key through the secure form, wires ElevenLabs into the pipeline and makes test clips with several voices. |
+| Intro and outro | Intro B (channel sting), approved subscribe moment, outro format liked; all to be polished further. See `05-production-standards.md` section 5. |
 | Real imagery | At least 4 to 6 real photos or clips per 8-minute video (owner, 13 November). Stock video from Pexels and Pixabay to be added. |
 | Affiliate links | Only for products genuinely used or relevant to a video, clearly labelled. No false "we use this" claims. |
 | Spending | Avoid new subscriptions and hardware unless they clearly earn their place |
