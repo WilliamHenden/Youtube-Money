@@ -107,8 +107,10 @@ Owner feedback: the sounds worked as emphasis, but the same few were repeated un
 - **No ask in the first 30 seconds.**
 - **One subscribe moment per video,** under five seconds, after the first payoff (about a third of the way in). The same short line and the same look every time. A different voice is fine here, including the owner's own. A mascot could deliver it later if a design the owner likes is found.
 - **No "press the bell".**
-- **Intro: options made, owner to choose (13 November 2026).** Three options are in `out/intro-outro.mp4`: (A) straight from the opening question to the title, (B) a three-second channel sting first, (C) the channel mark landing in its corner as the title appears. All come after the hook, never before it. See `docs/11-prep-notes.md`.
-- **Outro: options made, owner to choose.** (A) straight to the next-video tease, or (B) the lesson in one line first.
+- **Intro: B, the channel sting (owner, 17 November 2026).** Order: the hook and its question, the pause, then a short, clear "Money Mechanics" sting (about three seconds), then the title. Keep it simple, but the owner wants it more polished, with more effects. Demo: `out/intro-outro.mp4` at 0:11 to 0:18.
+- **Subscribe moment: approved as demoed (17 November).** Same line and look every time. Demo at 0:25 to 0:30.
+- **Outro: owner liked the format (17 November); A or B to confirm.** The owner's note named "outro B" but gave the timings of outro A (0:30 to 0:38, straight to the next-video tease). Outro B (0:38 to 0:55) puts the lesson in one line first. Both are to be made "significantly" more polished.
+- **Order of making a video: script first, then voice, then pictures.** The narration is recorded or generated once the script is approved, and the visuals are timed to it word by word. Changing words after the voice is made means remaking that audio.
 - **The ending sells the next video.** Narration runs to the end and teases a specific video ("Tomorrow: how … became …") over YouTube's end screen (next video + subscribe button). The end-card layout is identical in every video.
 - Check the retention graph at the ritual's timestamp after the first few videos, and shorten or move it if viewers drop there.
 
