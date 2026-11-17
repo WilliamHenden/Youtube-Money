@@ -119,10 +119,17 @@ That's worth remembering the next time a windfall lands in your own life, whethe
 
 ### Lead-out
 
-Norway, though, is the exception. The biggest economy on earth went the opposite way, and it now owes more than forty trillion dollars. So who exactly does America owe all that money to, and why hasn't it gone bust? That's the next video.
+America owes more than forty trillion dollars, and it's still the biggest economy on earth. So how does it get away with it? Watch the next video to find out.
+
+*(Over the end screen. Rewritten 17 November after the owner chose outro A and asked for a punchier tease. Alternatives are in section 4.)*
 
 ## 4. Notes for the owner
 
+- **Lead-out options** (outro A: one or two lines over the end screen, under about ten seconds). The script uses option 1.
+  1. "America owes more than forty trillion dollars, and it's still the biggest economy on earth. So how does it get away with it? Watch the next video to find out." *(recommended: closest to your idea, every fact sourced)*
+  2. "If you think America owes most of its forty trillion dollars to China, you're in for a surprise. The answer's in the next video." *(the strongest twist; China is only the third-largest foreign lender)*
+  3. "Norway saved its oil money, but America went the other way. It owes more than forty trillion dollars and it's still the biggest economy on earth. Find out how in the next video." *(links the two videos)*
+  4. "America owes more than forty trillion dollars. So why does anyone keep lending it more? Watch the next video." *(shortest)*
 - **The hook can be swapped.** If you prefer option 2 (the last well) or 4 (Regent Street) as the opening, the rest of the script stays as it is.
 - **Fairness to Britain is deliberate.** The title is blunt, so the script gives Britain's side honestly. That protects the channel from "this is misleading" comments.
 - **Question → pause → payoff is used three times:** the opening, the three percent rule, and the size of the fund.
@@ -155,6 +162,7 @@ Norway, though, is the exception. The biggest economy on earth went the opposite
 | 21 | Fund transfers pay for about 27% of the central government budget in 2026 | Verified | Norwegian government white paper, as 18 |
 | 22 | Estimates of a UK fund: £400 billion to £850 billion | Verified, as estimates | [The Scotsman/IPPR](https://www.scotsman.com/news/politics/north-sea-oil-wealth-fund-would-be-worth-over-500-billion-1-4718376), [World Finance](https://worldfinance.com/wealth-management/can-britain-still-create-a-norway-style-wealth-fund). Made at different dates, so the script says "anywhere between". |
 | 23 | Britain has no oil fund | Verified | World Finance, as above |
+| 25 | America is the biggest economy on earth (lead-out) | Verified 17 Nov 2026 | Largest by nominal GDP in the IMF's October 2026 World Economic Outlook, about $30.9 trillion in 2025 against China's $19.6 trillion, as reported by [CEOWORLD](https://ceoworld.biz/2026/11/05/global-gdp-2026-every-major-economy-ranked-by-the-imf/) and [Wikipedia](https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)). The IMF's own tables weren't reachable; check them on publish day. |
 | 24 | America owes more than forty trillion dollars (lead-out) | Verified 13 Nov 2026; **re-check on publish day** | The debt passed $40 trillion in August 2026 ([Al Jazeera](https://www.aljazeera.com/economy/2026/8/19/us-national-debt-passes-record-40-trillion), [WAMC/NPR](https://www.wamc.org/2026-08-19/the-u-s-debt-tops-a-record-shattering-40-trillion-yes-with-a-t)) and was $40.25 trillion on 5 October 2026 ([Joint Economic Committee](https://www.jec.senate.gov/public/vendor/_accounts/JEC-R/debt/Monthly%20Debt%20Update%20%28PDF%29.pdf)). |
 
 **Rule for production:** every ⚠ line is either verified with a source or rewritten before narration is recorded.
