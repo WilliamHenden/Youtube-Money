@@ -91,6 +91,9 @@ mark { background: color-mix(in srgb, var(--accent-fill) 38%, transparent); colo
 .bar .status b { color: var(--ink); }
 button { font: inherit; font-weight: 700; border-radius: 999px; padding: 11px 20px; border: 2px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; }
 button.primary { background: var(--accent-fill); color: var(--accent-ink); border-color: var(--accent-ink); }
+.alt { border-left: 4px solid var(--line); padding: 2px 0 2px 14px; display: flex; flex-direction: column; gap: 4px; }
+.alt .line { font-size: 17px; }
+a.out { display: inline-block; font-weight: 700; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 #copybox { width: 100%; min-height: 140px; font-size: 14px; }
 @media (max-width: 520px) { .bar .status { flex-basis: 100%; } .bar button { flex: 1 1 0; padding: 9px 12px; font-size: 15px; white-space: nowrap; } .bar-in { gap: 8px; } }
 @media (prefers-reduced-motion: no-preference) { .chips span, button { transition: background 0.12s, transform 0.12s; } button:active { transform: scale(0.97); } }
@@ -99,22 +102,110 @@ button.primary { background: var(--accent-fill); color: var(--accent-ink); borde
 <div class="col">
 <header>
   <p class="eyebrow">Before the full video is made</p>
-  <h1>How Norway Saved $2.3 Trillion: your decisions</h1>
-  <p class="lede">Everything I need from you is on this page. Watch and listen, tap your choices, then press Save at the bottom. You can come back and change anything.</p>
+  <h1>Norway video, script draft 2: your decisions</h1>
+  <p class="lede">The new script is first. Read it, tap your choices, then press Save at the bottom. You can come back and change anything. Already settled and no longer on this page: the voice (James), the intro (the channel sting), the subscribe moment and the short outro.</p>
   <ul class="todo-list" id="todo" aria-label="What's left to answer"></ul>
 </header>
 
+<section id="script" data-need="hook approve">
+  <div class="sec-head"><p class="eyebrow">Decision 1</p><h2>Approve the script</h2>
+  <p class="help">This is draft 2, written for your new angle: the video is about Norway's fund, and Britain is one segment in the middle. It runs to about 1,420 words, which is roughly 8½ minutes in the voice you chose. Every fact has a source in the fact sheet.</p></div>
+  <div class="q"><p class="label">Hear the opening in your chosen voice</p><p class="hint">Two takes of the first 36 seconds, read by "James". They open in your ElevenLabs account.</p>
+    <p><a class="out" href="https://elevenlabs.io/app/flows/A4zh3JWiZ5nUKORzE5ha" target="_blank" rel="noopener">Open the two takes in ElevenLabs</a></p></div>
+  <div class="script">
+    <p class="title">How Norway Built the Biggest Wealth Fund on Earth</p>
+    <p class="meta">Draft 2 · about 1,420 words · times are estimates until the narration is made</p>
+    <div class="key"><span><span class="beat">pause</span> a silence of about a second before a payoff</span></div>
+<h3 class="act"><span>Hook</span><span class="when">from about 0:00</span></h3>
+<p class="line">Every baby born in Norway today arrives with a share, on paper, of around four hundred thousand dollars. So does her mother, and the midwife who delivered her, and every other person in the country.</p>
+<p class="line">That's because Norway is sitting on a fund worth two point three trillion dollars. No country on earth has a bigger one, and it owns a small piece of most of the big companies you could name.</p>
+<p class="line">And none of it was supposed to happen, because Norway's own geologists once told the government there was no oil to find.</p>
+<p class="line">So how did a country of five and a half million people end up with the largest wealth fund on earth? <span class="beat">pause</span></p>
+<h3 class="act"><span>Intro sting</span><span class="when">from about 0:43</span></h3>
+<p class="stage">About three seconds: the channel sting with its musical signature, then the title. The narration picks straight up again.</p>
+<h3 class="act"><span>Context: the last well</span><span class="when">from about 0:48</span></h3>
+<p class="line">The story starts in nineteen fifty-eight, when Norway's government asked its geologists whether there might be anything valuable under the sea off its coast. The reply was blunt. The chances of finding coal, oil or sulphur, they wrote, could be discounted.</p>
+<p class="line">For the next ten years, that looked about right. Oil companies came anyway, and between them they drilled more than thirty wells in Norwegian waters without finding anything worth developing.</p>
+<p class="line">By nineteen sixty-nine, the American company Phillips Petroleum had had enough, and it was ready to pack up and go home. But its licence still required one more well, and walking away meant paying a penalty. The rig was already hired, so Phillips decided it might as well drill.</p>
+<p class="line">That last well struck a field called Ekofisk, and it was enormous. Just before Christmas, Phillips told the Norwegian government what it had found.</p>
+<p class="line">So Norway had oil after all. But finding it turned out to be the easy part, because plenty of countries have struck oil and had very little to show for it a generation later. What Norway did next is the reason that baby has her four hundred thousand dollars.</p>
+<h3 class="act"><span>Act 1: who owns the oil</span><span class="when">from about 2:00</span></h3>
+<p class="line">The first thing Norway had to decide was who the oil belonged to, and it had almost nobody who understood the business. Some of its best help turned up by chance.</p>
+<p class="line">In nineteen sixty-eight, an Iraqi geologist called Farouk al-Kasim moved to Norway with his Norwegian wife, so that their youngest son could get the medical care he needed. He'd spent years in Iraq's oil industry and he needed a job, so he went to the ministry in Oslo to look for one.</p>
+<p class="line">They hired him, and he went on to help write the plan for how Norway would run its oil. The principles were simple. The oil belonged to the Norwegian people, the state would have an oil company of its own, and it would keep a share of every field. Parliament agreed ten rules along those lines in nineteen seventy-one, and Norwegians still call them the ten oil commandments.</p>
+<p class="line">You can see the result in the tax bill. When an oil company makes a profit in Norwegian waters today, seventy-eight percent of it goes to the state.</p>
+<p class="line">So Norway kept most of the money from every barrel.</p>
+<h3 class="act"><span>Subscribe moment</span><span class="when">from about 3:10</span></h3>
+<p class="line">If you're enjoying this, subscribing is free, and it really helps the channel.</p>
+<h3 class="act"><span>Re-hook</span><span class="when">from about 3:15</span></h3>
+<p class="line">Keeping the money still doesn't explain the fund, though, because money you collect can just as easily be money you waste. To see how easily, you only have to look across the water.</p>
+<h3 class="act"><span>The Britain detour</span><span class="when">from about 3:27</span></h3>
+<p class="line">Britain was sitting on the other half of the same sea. The two countries had split it down the middle, and by the early nineteen eighties Britain's side was producing about three times as much oil as Norway's. So why doesn't Britain have a fund?</p>
+<p class="line">It did start down a similar road. In nineteen seventy-five it set up a national oil company of its own. Seven years later the government began selling it off, and before the eighties were out, what was left of it belonged to BP.</p>
+<p class="line">The tax money, meanwhile, went into the ordinary budget. In nineteen eighty-two alone, oil brought in close to eight billion pounds, which was about eight pounds in every hundred the taxman collected. It helped pay the country's bills, and it kept other taxes lower than they would have been.</p>
+<p class="line">It's only fair to say why. Britain had fourteen times as many people to share its oil between, and it was deep in a recession, with more than three million of them out of work. Plenty of governments would have done the same.</p>
+<p class="line">Still, the money was spent as it came in. People have since tried to work out what a British oil fund would be worth today, and their answers run anywhere from four hundred to eight hundred and fifty billion pounds. What Britain actually has is no fund at all.</p>
+<p class="line">Now, back to Norway, because the awkward truth is that for years it was doing exactly the same thing.</p>
+<h3 class="act"><span>Act 2: the fright, and the rule</span><span class="when">from about 5:00</span></h3>
+<p class="line">Through the nineteen seventies and into the eighties, Norway spent its oil money as it arrived, and borrowed on top of it. Prices raced ahead and the economy overheated.</p>
+<p class="line">Then, in nineteen eighty-six, the price of oil collapsed, and Norway's boom collapsed with it. The years that followed were the bleakest the country had seen since the nineteen thirties, and the state ended up having to rescue its biggest banks.</p>
+<p class="line">That fright is where the fund comes from. In nineteen ninety, parliament passed a law to create one, so that oil money would be kept apart from the everyday budget. And then, for six years, the fund sat completely empty, because there was nothing left over to put in it. The first deposit finally arrived in nineteen ninety-six, and it was just under two billion kroner, or about three hundred million dollars.</p>
+<p class="line">Two rules turned that small start into what the fund is today. The first is that the money has to be invested outside Norway, in companies and property all over the world, so that it can't flood the economy at home the way it did before.</p>
+<p class="line">The second arrived in two thousand and one, and it's the heart of the whole story. It answers one question. How much of this fortune is Norway allowed to spend each year? <span class="beat">pause</span></p>
+<p class="line">About three percent. That's roughly what the fund is expected to earn in a year, after inflation. So the idea is that Norway only ever spends what the money earns, and leaves the money itself alone.</p>
+<h3 class="act"><span>Act 3: what the rule built</span><span class="when">from about 6:35</span></h3>
+<p class="line">Leave a rule like that running for thirty years, keep adding oil money on top, and the numbers start to look absurd.</p>
+<p class="line">At the last count the fund was worth around two point three trillion dollars, and about two thirds of that isn't oil money at all. It's what the oil money has earned.</p>
+<p class="line">It's now so large that it owns, on average, about one and a half percent of every company listed on a stock market anywhere in the world. That's more than seven thousand companies. If you've bought a phone or filled up a car lately, you've very probably made a little money for Norway.</p>
+<p class="line">It owns property too, and this is where Britain comes back into the story. When the fund made its first ever property purchase, in twenty eleven, it chose London, and it bought a quarter-share of Regent Street. So rent from one of Britain's most famous shopping streets began flowing to Norway, paid for with oil from the same sea.</p>
+<p class="line">And because of the three percent rule, the money doesn't run out. This year the fund is paying for more than a quarter of Norway's national budget.</p>
+<h3 class="act"><span>The answer, and the takeaway</span><span class="when">from about 7:45</span></h3>
+<p class="line">So how did five and a half million people end up with the largest wealth fund on earth? The oil was only the start. Britain had oil too, and so have dozens of other countries. Norway got there by making three decisions and then sticking to them for decades. It kept hold of the oil money, it put that money where it couldn't easily be spent, and it agreed to live on what the money earned.</p>
+<p class="line">Most of us face the same choice on a smaller scale. Sooner or later some money lands in your lap that you weren't counting on, whether it's a bonus or an inheritance. You can treat it as spending money, and it'll be gone within the year. Or you can do what Norway did, and decide on the rule before the money arrives. Put it somewhere it can grow, and spend only what it earns.</p>
+<h3 class="act"><span>Outro</span><span class="when">from about 8:40</span></h3>
+<p class="line">America owes more than forty trillion dollars, and it's still the biggest economy on earth. So how does it get away with it? Watch the next video to find out.</p>
+  </div>
+  <div class="q"><p class="label">The opening</p><p class="hint">The script above uses A. B and C use the same facts and end on the same question, so either can be swapped in.</p>
+    <div class="alt"><b>B. What it owns.</b><p class="line">If you've bought a phone or filled up a car lately, you've very probably made a little money for Norway. Its national fund owns a small piece of more than seven thousand companies, and it's worth two point three trillion dollars. No country on earth has a bigger one, and it works out at around four hundred thousand dollars for every person in the country…</p></div>
+    <div class="alt"><b>C. The letter.</b><p class="line">In nineteen fifty-eight, Norway's government asked its geologists whether there might be oil under the sea off its coast, and they wrote back that the chances could be discounted. Today Norway has a fund worth two point three trillion dollars. No country on earth has a bigger one…</p></div>
+    <div class="chips" role="radiogroup" aria-label="Opening choice">
+      <label><input type="radio" name="hook" id="hook-a" value="A: your share (the baby)"><span>A: your share</span></label>
+      <label><input type="radio" name="hook" id="hook-b" value="B: what it owns"><span>B: what it owns</span></label>
+      <label><input type="radio" name="hook" id="hook-c" value="C: the letter"><span>C: the letter</span></label>
+      <label><input type="radio" name="hook" id="hook-d" value="None of these (see my notes)"><span>None of these</span></label>
+    </div></div>
+  <div class="q"><p class="label">The script overall</p>
+    <div class="chips" role="radiogroup" aria-label="Script approval">
+      <label><input type="radio" name="approve" id="approve-1" value="Approved as written"><span>Approved</span></label>
+      <label><input type="radio" name="approve" id="approve-2" value="Approved once my edits below are made"><span>Approved with my edits below</span></label>
+      <label><input type="radio" name="approve" id="approve-3" value="Not yet. See my notes"><span>Not yet</span></label>
+    </div></div>
+  <div class="q"><label class="label" for="edits">Your edits or notes on the script</label>
+    <textarea id="edits" placeholder="Quote the line and say what you'd change. Or describe what feels off: too fast, too many numbers, a boring stretch."></textarea></div>
+</section>
+
+<section id="pack" data-need="title">
+  <div class="sec-head"><p class="eyebrow">Decision 2</p><h2>The title</h2>
+  <p class="help">All four are true as worded. New thumbnails will be made to match your choice; the three you saw before were built on the Britain comparison.</p></div>
+  <div class="chips stack" role="radiogroup" aria-label="Title choice">
+    <label><input type="radio" name="title" id="title-1" value="How Norway Built the Biggest Wealth Fund on Earth"><span>How Norway Built the Biggest Wealth Fund on Earth</span></label>
+    <label><input type="radio" name="title" id="title-2" value="Why Every Norwegian Is Worth $400,000 on Paper"><span>Why Every Norwegian Is Worth $400,000 on Paper</span></label>
+    <label><input type="radio" name="title" id="title-3" value="How 5 Million People Built a $2.3 Trillion Fund"><span>How 5 Million People Built a $2.3 Trillion Fund</span></label>
+    <label><input type="radio" name="title" id="title-4" value="How Norway Became One of the Richest Countries on Earth"><span>How Norway Became One of the Richest Countries on Earth</span></label>
+  </div>
+</section>
+
 <section id="watch">
-  <div class="sec-head"><p class="eyebrow">Start here</p><h2>Watch the sample and the Short</h2>
-  <p class="help">Sound on. These are smaller copies for your phone; the full-quality files are in the project's <code>out</code> folder.</p></div>
+  <div class="sec-head"><p class="eyebrow">For decision 3</p><h2>The earlier sample</h2>
+  <p class="help">These were made from the first draft with the old test voice, so judge only the sound effects, the music and the pace of the pictures. Smaller copies for your phone; the full-quality files are in the project's <code>out</code> folder.</p></div>
   <div class="media">
     <figure><video controls preload="metadata" playsinline poster="sample-poster.jpg" src="sample.mp4"></video><figcaption>The sample: the first 77 seconds of the video. Updated since you first saw it: drawn icons and a livelier timeline.</figcaption></figure>
     <figure class="short"><video controls preload="metadata" playsinline poster="short-poster.jpg" src="short.mp4"></video><figcaption>The vertical Short, 46 seconds.</figcaption></figure>
   </div>
 </section>
 
-<section id="sample" data-need="sounds music pace nofund">
-  <div class="sec-head"><p class="eyebrow">Decision 1</p><h2>What should change in the sample?</h2>
+<section id="sample" data-need="sounds music pace">
+  <div class="sec-head"><p class="eyebrow">Decision 3</p><h2>Sound, music and pace</h2>
   <p class="help">I can't hear, so I set every level by measurement. Your ears decide.</p></div>
   <div class="q"><p class="label">The sound effects</p><p class="hint">Seven in the sample: a pen stroke as the line is drawn, soft whooshes between scenes, a shimmer on the title.</p>
     <div class="chips" role="radiogroup" aria-label="Sound effects">
@@ -146,177 +237,8 @@ button.primary { background: var(--accent-fill); color: var(--accent-ink); borde
       <label><input type="radio" name="pace" id="pace-2" value="Too fast"><span>Too fast</span></label>
       <label><input type="radio" name="pace" id="pace-3" value="Too slow"><span>Too slow</span></label>
     </div></div>
-  <div class="q"><p class="label">One line to listen for, at about 0:20</p><p class="hint">"Britain's side has turned into no fund at all." My automatic check heard "no fun at all".</p>
-    <div class="chips" role="radiogroup" aria-label="No fund line">
-      <label><input type="radio" name="nofund" id="nofund-1" value="It clearly says fund"><span>It clearly says "fund"</span></label>
-      <label><input type="radio" name="nofund" id="nofund-2" value="It sounds like fun, reword it"><span>It sounds like "fun", reword it</span></label>
-    </div></div>
   <div class="q"><label class="label" for="look">Anything about the look, or anything else in the sample?</label>
     <textarea id="look" placeholder="For example: the timeline at 0:40 drags, or the icons look cheap."></textarea></div>
-</section>
-
-<section id="voice" data-need="voice">
-  <div class="sec-head"><p class="eyebrow">Decision 2</p><h2>Pick the narrator</h2>
-  <p class="help">The same 30 seconds in four free voices, with the same scripted pause before "Around three percent". One narrator is used for every video on the channel.</p></div>
-  <div class="clips">
-    <div class="clip"><b>1. Heart: American woman</b><small>The voice in the demo and the sample. Brisk.</small><audio controls preload="none" src="voice-1.mp3"></audio></div>
-    <div class="clip"><b>2. George: British man</b><small>Slower. Would take the video past 8 minutes without adding words.</small><audio controls preload="none" src="voice-2.mp3"></audio></div>
-    <div class="clip"><b>3. Chatterbox, standard</b><small>A different, more expressive engine. Slower to make: about 25 minutes for the full narration.</small><audio controls preload="none" src="voice-3.mp3"></audio></div>
-    <div class="clip"><b>4. Chatterbox, more expressive</b><small>The same voice with more feeling turned up. It also speeds up.</small><audio controls preload="none" src="voice-4.mp3"></audio></div>
-  </div>
-  <div class="chips" role="radiogroup" aria-label="Voice choice">
-    <label><input type="radio" name="voice" id="voice-1" value="1. Kokoro Heart (American woman)"><span>1. Heart</span></label>
-    <label><input type="radio" name="voice" id="voice-2" value="2. Kokoro George (British man)"><span>2. George</span></label>
-    <label><input type="radio" name="voice" id="voice-3" value="3. Chatterbox standard"><span>3. Chatterbox</span></label>
-    <label><input type="radio" name="voice" id="voice-4" value="4. Chatterbox more expressive"><span>4. Chatterbox, expressive</span></label>
-    <label><input type="radio" name="voice" id="voice-5" value="None of these. Try ElevenLabs (paid, about £17 a month)"><span>None: try ElevenLabs (paid)</span></label>
-  </div>
-</section>
-
-<section id="script" data-need="line1 line2 line3 length approve">
-  <div class="sec-head"><p class="eyebrow">Decision 3</p><h2>Approve the script</h2>
-  <p class="help">This is the full narration. Read it aloud if you can: anything that sounds stiff, note it in the box underneath. Three lines have a suggested change for you to accept or refuse. Since the first version of this page I have checked the facts that were flagged: all but one are now confirmed with sources (the open one is whether Norway still owns its share of Regent Street today).</p></div>
-  <div class="script">
-    <p class="title">How Norway Saved $2.3 Trillion and Britain Saved Nothing</p>
-    <p class="meta">Draft 1 · about 1,190 words · times are the plan, not measured</p>
-    <div class="key"><span><span class="beat">pause</span> a held silence before a payoff</span></div>
-<h3 class="act"><span>Hook</span><span class="when">0:00 to 0:25</span></h3>
-<p class="line">In nineteen sixty-five, Britain and Norway drew a line down the middle of the North Sea and agreed that whatever lay under the seabed on each side belonged to them. A few years later, both of them found oil.</p>
-<p class="line">Today, Norway's side of that line has turned into a fund worth around two point three trillion dollars. Britain's side has turned into no fund at all.</p>
-<p class="line">They had the same sea and the same oil. So what did Norway do that Britain didn't?</p>
-<h3 class="act"><span>Context</span><span class="when">0:25 to 1:20</span></h3>
-<p class="line">To understand it, you have to go back to a time when nobody thought Norway had any oil. Through the nineteen sixties, companies drilled well after well off the Norwegian coast and found almost nothing worth having.</p>
-<div class="swap">
-<p class="line">By nineteen sixty-nine, the American company Phillips Petroleum had seen enough and was ready to pull out. <mark>There was just one problem. Its licence required one more well, and walking away meant paying a penalty.</mark> The drilling rig had already been hired, so the company decided it might as well use it.</p>
-<div class="suggest"><p class="why"><strong>Suggested change.</strong> The original opens with a stock phrase your writing rules ask me to avoid. The sample already uses the new wording.</p>
-<p class="new">But its licence still required one more well, and walking away meant paying a penalty.</p>
-<div class="chips" role="radiogroup" aria-label="Which wording">
-<label><input type="radio" name="line1" id="line1-new" value="Use the suggestion"><span>Use the suggestion</span></label>
-<label><input type="radio" name="line1" id="line1-old" value="Keep my original"><span>Keep my original</span></label>
-</div></div></div>
-<p class="line">That autumn, the rig struck a field called Ekofisk, and it was enormous. It sat close to the line Britain and Norway had drawn only four years earlier.</p>
-<p class="line">Norway was suddenly an oil country. But finding oil turned out to be the easy part, because plenty of countries have struck oil and had very little to show for it a generation later. And for a while, it looked as if Norway might become one of them.</p>
-<h3 class="act"><span>Act 1: who owns the oil</span><span class="when">1:20 to 2:50</span></h3>
-<p class="line">The obvious explanation is that Norway is rich because it has oil. But Britain had oil too, and in the early years Britain was pumping more of it.</p>
-<p class="line">The first real difference was a decision about who the oil belonged to. Norway had almost no experience of the industry, so some of its best advice came from an unlikely place. A geologist from Iraq called Farouk al-Kasim had moved to Norway in nineteen sixty-eight for family reasons, and he ended up helping to write the plan for how the country would manage its oil. He went on to spend nearly two decades as one of its most senior oil officials.</p>
-<p class="line">The principles Norway settled on were simple. The oil belonged to the Norwegian people, the state would have its own oil company, and the state would take a share of every field.</p>
-<p class="line">It still works that way. When an oil company makes a profit in Norwegian waters today, the tax rate on that profit is seventy-eight percent, and the state owns a direct stake in many of the fields as well.</p>
-<p class="line">Britain started down a similar road. In nineteen seventy-five it created a national oil company of its own. But seven years later the government began selling it off, and by nineteen eighty-eight what was left had been bought by BP.</p>
-<p class="line">So Norway kept more of the money from every barrel. But that's only half the story, because money you collect can still be money you waste.</p>
-<h3 class="act"><span>Subscribe moment</span><span class="when">2:50 to 3:00</span></h3>
-<p class="stage">Five seconds, fixed line, after the payoff above.</p>
-<h3 class="act"><span>Re-hook</span><span class="when">3:00 to 3:15</span></h3>
-<p class="line">By the nineteen eighties, both governments had oil money pouring in. And this is the point where the two countries really went their separate ways.</p>
-<h3 class="act"><span>Act 2: spend or save</span><span class="when">3:15 to 5:20</span></h3>
-<div class="swap">
-<p class="line">In Britain, the money went into the ordinary budget. <mark>In nineteen eighty-two alone, oil brought in eight billion pounds, which was about eight pounds fifty of every hundred the taxman collected.</mark> It helped pay the country's bills and keep other taxes lower than they would have been.</p>
-<div class="suggest"><p class="why"><strong>Suggested change.</strong> I checked this against official figures: £7.8 billion, and between 7 and 10 percent of tax depending on what is counted. The new wording is safer.</p>
-<p class="new">In nineteen eighty-two alone, oil brought in close to eight billion pounds, which was about eight pounds of every hundred the taxman collected.</p>
-<div class="chips" role="radiogroup" aria-label="Which wording">
-<label><input type="radio" name="line3" id="line3-new" value="Use the suggestion"><span>Use the suggestion</span></label>
-<label><input type="radio" name="line3" id="line3-old" value="Keep my original"><span>Keep my original</span></label>
-</div></div></div>
-<p class="line">It's worth being fair about that. Britain had far more people to share its oil between, and it was going through a deep recession with millions out of work. Spending the money was a choice a lot of governments would have made, and some economists still defend it.</p>
-<p class="line">What most people don't know is that, at first, Norway did exactly the same thing. Through the seventies and early eighties it spent its oil money as it arrived, and the economy overheated. When the oil price collapsed in nineteen eighty-six, Norway was hit hard.</p>
-<p class="line">That scare is what changed everything. In nineteen ninety, Norway's parliament passed a law creating a fund for the oil money. For six years it sat completely empty, because there was nothing to spare. The first deposit finally arrived in nineteen ninety-six, and it was just under two billion kroner.</p>
-<p class="line">Then came the two rules that matter most. The first is that the money has to be invested outside Norway, in companies and property all over the world, so that it can't flood the economy at home. The second arrived in two thousand and one, and it's the heart of the whole story.</p>
-<p class="line">So how much of its oil fortune is Norway allowed to spend each year? <span class="beat">pause</span></p>
-<div class="swap">
-<p class="line">Around three percent. That's roughly what the fund is expected to earn, after inflation. <mark>In other words, Norway doesn't spend its oil money. It spends what the oil money earns.</mark></p>
-<div class="suggest"><p class="why"><strong>Suggested change.</strong> The original is the "it's not X, it's Y" pattern your writing rules rule out. It is also the heart of the video, so this one is your call.</p>
-<p class="new">In other words, Norway only ever spends what its oil money earns.</p>
-<div class="chips" role="radiogroup" aria-label="Which wording">
-<label><input type="radio" name="line2" id="line2-new" value="Use the suggestion"><span>Use the suggestion</span></label>
-<label><input type="radio" name="line2" id="line2-old" value="Keep my original"><span>Keep my original</span></label>
-</div></div></div>
-<h3 class="act"><span>Act 3: the payoff</span><span class="when">5:20 to 7:00</span></h3>
-<p class="line">Leave money alone like that for thirty years, keep adding to it, and something remarkable happens.</p>
-<p class="line">So how big did the empty fund from nineteen ninety actually get? <span class="beat">pause</span></p>
-<p class="line">At the last count, it was worth around two point three trillion dollars. That works out at roughly four hundred thousand dollars for every single person in Norway.</p>
-<p class="line">It's so large that it owns, on average, about one and a half percent of every company listed on a stock market anywhere in the world. That's more than seven thousand companies. If you own a phone, drive a car or shop on a high street, there's a good chance Norway owns a small piece of the business behind it.</p>
-<p class="line">And it doesn't stop at shares. In twenty eleven, the fund made its very first property investment, and it chose London. It bought a quarter-share in Regent Street from the Crown Estate. So part of one of Britain's most famous streets now earns rent for Norway, paid for with oil from the same sea.</p>
-<p class="line">Because of the three percent rule, that money doesn't run out. This year, transfers from the fund are paying for more than a quarter of the Norwegian government's entire budget, and the fund is still growing.</p>
-<p class="line">So what about Britain? Nobody can know for certain what a British fund would be worth today. Researchers who've tried to work it out have landed anywhere between four hundred and eight hundred and fifty billion pounds. What isn't in doubt is the figure Britain actually has, which is nothing.</p>
-<h3 class="act"><span>Takeaway</span><span class="when">7:00 to 7:40</span></h3>
-<p class="line">Norway didn't get rich because it found oil. It got rich because it decided the oil money wasn't income. It was a one-off, and a one-off should be turned into something that lasts.</p>
-<p class="line">That's worth remembering the next time a windfall lands in your own life, whether it's a bonus, an inheritance or a pay rise. You can treat it as extra spending money, and it'll be gone in a year. Or you can do what Norway did, which is to decide on the rule before the money arrives, put it somewhere that grows, and spend only what it earns.</p>
-<h3 class="act"><span>Lead-out</span><span class="when">7:40 to 8:00</span></h3>
-<p class="line">America owes more than forty trillion dollars, and it's still the biggest economy on earth. So how does it get away with it? Watch the next video to find out.</p>
-<p class="stage">Over the end screen. Rewritten 17 November after the owner chose outro A and asked for a punchier tease. Alternatives are in section 4.</p>
-  </div>
-  <div class="q"><p class="label">Length</p><p class="hint">With the Heart voice this script runs about 7 to 7½ minutes. Adverts in the middle of a video need 8 minutes. A slower voice (George) would get there without new words.</p>
-    <div class="chips" role="radiogroup" aria-label="Length">
-      <label><input type="radio" name="length" id="length-1" value="Add about 150 words to pass 8 minutes"><span>Add about 150 words</span></label>
-      <label><input type="radio" name="length" id="length-2" value="Leave the length; the voice I chose will decide it"><span>Leave it as it is</span></label>
-    </div></div>
-  <div class="q"><p class="label">The script overall</p>
-    <div class="chips" role="radiogroup" aria-label="Script approval">
-      <label><input type="radio" name="approve" id="approve-1" value="Approved, with my choices above"><span>Approved</span></label>
-      <label><input type="radio" name="approve" id="approve-2" value="Approved once my edits below are made"><span>Approved with my edits below</span></label>
-      <label><input type="radio" name="approve" id="approve-3" value="Not yet. See my notes"><span>Not yet</span></label>
-    </div></div>
-  <div class="q"><label class="label" for="edits">Your edits or notes on the script</label>
-    <textarea id="edits" placeholder="Quote the line and say what you'd change."></textarea></div>
-</section>
-
-<section id="short" data-need="shortline">
-  <div class="sec-head"><p class="eyebrow">Decision 4</p><h2>The Short's opening line</h2>
-  <p class="help">I wrote this line for the Short. It isn't in the script you're approving above.</p></div>
-  <p class="line">Norway's two point three trillion dollar oil fund began with a well that the oil company didn't even want to drill.</p>
-  <div class="chips" role="radiogroup" aria-label="Short opening line">
-    <label><input type="radio" name="shortline" id="shortline-1" value="Fine to use"><span>Fine to use</span></label>
-    <label><input type="radio" name="shortline" id="shortline-2" value="Change it (see my notes)"><span>Change it</span></label>
-  </div>
-</section>
-
-<section id="intro" data-need="intro outro subline">
-  <div class="sec-head"><p class="eyebrow">Decision 5</p><h2>Intro, subscribe moment and outro</h2>
-  <p class="help">One reel, 55 seconds, with a label in the corner saying which option you're watching. Your rules already say: no logo before the hook, one short subscribe moment, and an ending that sells the next video. These options all follow that. The channel name and the line under it are placeholders.</p></div>
-  <figure><video controls preload="metadata" playsinline poster="reel-poster.jpg" src="reel.mp4"></video><figcaption>Intro A, B and C, then the subscribe moment, then Outro A and B.</figcaption></figure>
-  <div class="q"><p class="label">The intro</p><p class="hint">All three come after the opening question, never before it.</p>
-    <div class="chips" role="radiogroup" aria-label="Intro choice">
-      <label><input type="radio" name="intro" id="intro-a" value="A: question, pause, title (as in the sample)"><span>A: straight to the title</span></label>
-      <label><input type="radio" name="intro" id="intro-b" value="B: three-second channel sting, then the title"><span>B: channel sting first</span></label>
-      <label><input type="radio" name="intro" id="intro-c" value="C: the logo lands in its corner as the title appears"><span>C: logo lands with the title</span></label>
-      <label><input type="radio" name="intro" id="intro-d" value="None of these (see my notes)"><span>None of these</span></label>
-    </div></div>
-  <div class="q"><p class="label">The subscribe moment</p><p class="hint">Spoken line in the reel: "If you're enjoying this, subscribing is free, and it really helps the channel." You could also record this one line yourself.</p>
-    <div class="chips" role="radiogroup" aria-label="Subscribe line">
-      <label><input type="radio" name="subline" id="subline-1" value="Fine as it is"><span>Fine as it is</span></label>
-      <label><input type="radio" name="subline" id="subline-2" value="Shorter"><span>Make it shorter</span></label>
-      <label><input type="radio" name="subline" id="subline-3" value="I'll record it in my own voice"><span>I'll record it myself</span></label>
-      <label><input type="radio" name="subline" id="subline-4" value="Change the wording (see my notes)"><span>Change the wording</span></label>
-    </div></div>
-  <div class="q"><p class="label">The outro</p>
-    <div class="chips" role="radiogroup" aria-label="Outro choice">
-      <label><input type="radio" name="outro" id="outro-a" value="A: straight to the next-video tease"><span>A: straight to the next video</span></label>
-      <label><input type="radio" name="outro" id="outro-b" value="B: the lesson in one line, then the next video"><span>B: one-line lesson first</span></label>
-      <label><input type="radio" name="outro" id="outro-c" value="None of these (see my notes)"><span>Neither</span></label>
-    </div></div>
-  <div class="q"><label class="label" for="ionotes">Notes on the intro and outro</label><textarea id="ionotes" placeholder="For example: I like B but without the line under the name."></textarea></div>
-</section>
-
-<section id="pack" data-need="thumb title">
-  <div class="sec-head"><p class="eyebrow">Decision 6</p><h2>Thumbnail and title</h2>
-  <p class="help">YouTube lets you test up to three thumbnails against each other once the channel is live, so this is a first pick, not a final one.</p></div>
-  <div class="thumbs">
-    <figure><img src="thumb-a.jpg" alt="Thumbnail A: Norway's flag with $2.3 trillion beside Britain's flag with £0" width="1280" height="720"><figcaption>A: the two flags</figcaption></figure>
-    <figure><img src="thumb-b.jpg" alt="Thumbnail B: an oil platform with the words Norway saved $2.3T, saved £0" width="1280" height="720"><figcaption>B: the oil platform</figcaption></figure>
-    <figure><img src="thumb-c.jpg" alt="Thumbnail C: a map of the North Sea with £0 on Britain and $2.3T on Norway" width="1280" height="720"><figcaption>C: the map</figcaption></figure>
-  </div>
-  <div class="chips" role="radiogroup" aria-label="Thumbnail choice">
-    <label><input type="radio" name="thumb" id="thumb-a" value="A: flags"><span>A: flags</span></label>
-    <label><input type="radio" name="thumb" id="thumb-b" value="B: oil platform"><span>B: oil platform</span></label>
-    <label><input type="radio" name="thumb" id="thumb-c" value="C: map"><span>C: map</span></label>
-    <label><input type="radio" name="thumb" id="thumb-d" value="Test all three"><span>Test all three</span></label>
-    <label><input type="radio" name="thumb" id="thumb-e" value="None of these (see my notes)"><span>None of these</span></label>
-  </div>
-  <div class="q"><p class="label">The title</p>
-    <div class="chips stack" role="radiogroup" aria-label="Title choice">
-      <label><input type="radio" name="title" id="title-1" value="How Norway Saved $2.3 Trillion and Britain Saved Nothing"><span>How Norway Saved $2.3 Trillion and Britain Saved Nothing</span></label>
-      <label><input type="radio" name="title" id="title-2" value="Why Norway Refuses to Spend Its $2.3 Trillion"><span>Why Norway Refuses to Spend Its $2.3 Trillion</span></label>
-      <label><input type="radio" name="title" id="title-3" value="Same Sea, Same Oil: Why Norway Got Rich and Britain Didn't"><span>Same Sea, Same Oil: Why Norway Got Rich and Britain Didn't</span></label>
-    </div></div>
 </section>
 
 <section id="extras">
@@ -345,15 +267,15 @@ button.primary { background: var(--accent-fill); color: var(--accent-ink); borde
 
 <script>
 (function () {
-  var RADIOS = ["sounds", "music", "musiclevel", "pace", "nofund", "voice", "line1", "line2", "line3", "length", "approve", "shortline", "intro", "subline", "outro", "thumb", "title", "photos"];
-  var TEXTS = ["look", "edits", "ionotes", "channel", "other"];
-  var LABELS = { sounds: "Sound effects", music: "Music", musiclevel: "Music level", pace: "Pace", nofund: "\"No fund\" line", look: "Notes on the sample",
+  var RADIOS = ["hook", "approve", "title", "sounds", "music", "musiclevel", "pace", "photos"];
+  var TEXTS = ["edits", "look", "channel", "other"];
+  var LABELS = { hook: "Opening", sounds: "Sound effects", music: "Music", musiclevel: "Music level", pace: "Pace", nofund: "\"No fund\" line", look: "Notes on the sample",
     voice: "Narrator", line1: "\"There was just one problem\" line", line2: "\"Doesn't spend its oil money\" line", line3: "\"Eight billion pounds\" line", intro: "Intro", subline: "Subscribe line", outro: "Outro", ionotes: "Intro and outro notes", thumb: "Thumbnail", title: "Title", length: "Length", approve: "Script",
     edits: "Script edits", shortline: "Short's opening line", channel: "Channel name", photos: "Photo keys", other: "Anything else" };
-  var ORDER = ["sounds", "music", "musiclevel", "pace", "nofund", "look", "voice", "line1", "line2", "line3", "length", "approve", "edits", "shortline", "intro", "subline", "outro", "ionotes", "thumb", "title", "channel", "photos", "other"];
-  var SECTIONS = [["sample", "The sample"], ["voice", "Narrator"], ["script", "Script"], ["short", "Short's first line"], ["intro", "Intro and outro"], ["pack", "Thumbnail and title"]];
+  var ORDER = ["hook", "approve", "edits", "title", "sounds", "music", "musiclevel", "pace", "look", "channel", "photos", "other"];
+  var SECTIONS = [["script", "Script"], ["pack", "Title"], ["sample", "Sound and pace"]];
   var N = SECTIONS.length;
-  var DOC = "decisions/norway-video", DRAFT = "norway-decisions-draft";
+  var DOC = "decisions/norway-script-v2", DRAFT = "norway-decisions-v2-draft";
   var db = null, dirty = false;
   var $ = function (id) { return document.getElementById(id); };
   var status = $("status");

@@ -13,6 +13,8 @@
 
 ## 2. Story and script
 
+*The working method, the banned-phrase list and the rules for writing for the ElevenLabs voice are in `13-script-playbook.md`. Read both.*
+
 The demo's weakness was the story, not the look. Viewers said "I already knew that", and the narration told them facts without making them want the answer first.
 
 ### 2.1 Topic test (before any script is written)
@@ -25,7 +27,7 @@ The demo's weakness was the story, not the look. Viewers said "I already knew th
 - **Use it sparingly: 3 or 4 times per video** (the opening, and the main reveal of each act). Overused, it becomes a tic.
 - The pause is real: the script marks it and the pipeline inserts the silence.
 
-### 2.3 Blueprint for an 8-minute video (about 1,150–1,250 spoken words)
+### 2.3 Blueprint for an 8-minute video (about 1,400 spoken words with the channel's voice, which reads at about 190 words a minute)
 
 | Time | Section | Job |
 |---|---|---|
@@ -37,6 +39,12 @@ The demo's weakness was the story, not the look. Viewers said "I already knew th
 | 5:30–7:15 | **Act 3: the main payoff** | The answer the viewer came for, delivered as question → beat → payoff, with the video's strongest visual. |
 | 7:15–7:50 | **The answer and takeaway** | Answer the opening hook's question plainly, summing up the whole video in a few sentences, then the one lesson for the viewer. This is where the lesson lives, never in the outro. |
 | 7:50–8:10 | **Lead-out (outro)** | Short and snappy: tease a specific next video over the end screen. No lesson, no recap, no "thanks for watching". |
+
+**Audio first (owner, 17 November 2026).** Some viewers only listen, so the narration is close to continuous and the video must make sense with the screen off. Scripted pauses are about a second; the only longer gap is the three-second intro sting, which has music. A silence of five to ten seconds is allowed only where the picture is strong enough to carry it, and the default is not to have one.
+
+**The subject is the star (owner, 17 November 2026).** The hook is about what makes the subject itself remarkable, not about a comparison with someone else. A comparison (Britain, in the Norway video) is a segment inside the story.
+
+**Order of the opening:** hook and its question, a short pause, the intro sting, the title, then straight back into the story.
 
 ### 2.4 Writing rules
 - **"But" and "therefore", never "and then".** Each beat must be caused by, or clash with, the one before.
