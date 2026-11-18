@@ -1,60 +1,64 @@
-# Norway video: storyboard plan
+# Norway video: visual plan (script draft v3)
 
-*Draft, 13 November 2026. A plan, not production: nothing here is built beyond the sample (the first nine scenes). It follows script draft v1 and will need adjusting once the script is approved.*
+*18 November 2026. Replaces the plan made for draft 1. It takes ChatGPT's visual review (which the owner ran on 18 November), keeps the ideas the pipeline can build automatically, and says plainly which need new work, a source, or a key from the owner. Nothing is built until the script is approved.*
 
-Rules it follows: no template twice in a row, the kind of picture changes every 20 to 40 seconds, **at least 4 to 6 real photos or clips** (this plan has 9, marked 📷), reveal sound on three moments only, and three uses of question → pause → payoff.
+## The approach
 
-| # | Time | Script section | Template | What's on screen | Real imagery to find |
-|---|---|---|---|---|---|
-| 1 | 0:00 | Hook: the 1965 line | map | Line drawn down the North Sea, oil found on both sides | |
-| 2 | 0:13 | Hook: two outcomes | split | Norway $2.3 trillion, Britain no fund | |
-| 3 | 0:23 | Hook: the question | question | "So what did Norway do that Britain didn't?" then the pause | |
-| 4 | 0:30 | Title | title (+ chosen intro) | Title card. **Reveal sound 1** | |
-| 5 | 0:34 | Context: nobody thought Norway had oil | photo 📷 | Stavanger harbour, 1960 | Chosen: Wikimedia "N081 Bergen Stavanger ferry, Stavanger 1960" (blocked so far) |
-| 6 | 0:40 | Context: dry wells, Phillips ready to quit | timeline | 1965, late 1960s, 1969 | |
-| 7 | 0:47 | (inside 6, over "well after well") | clip 📷 | Rough North Sea water or a drilling rig at work, 5 seconds | Pexels: "north sea waves", "oil rig drilling" |
-| 8 | 0:55 | Context: licence, penalty, rig | icons | Three drawn icons | |
-| 9 | 1:06 | Context: Ekofisk | photo 📷 | Ekofisk platforms (have it) | Done |
-| 10 | 1:11 | Context: close to the line | map | Zoom to Ekofisk beside the line | |
-| 11 | 1:18 | Context: the easy part | quote | "Finding oil turned out to be the easy part." | |
-| 12 | 1:35 | Act 1: Britain had oil too, and pumped more | bars | Barrels a day in 1980: Britain about 1.7 million, Norway about 0.5 million | |
-| 13 | 1:45 | Act 1: the geologist from Iraq | photo 📷 | Farouk al-Kasim, or Oslo's government quarter around 1970 | Wikimedia: portrait of Farouk al-Kasim (check licence); fallback Pexels "Oslo city" |
-| 14 | 2:05 | Act 1: the three principles | icons | The people own it · a state oil company · a share of every field | |
-| 15 | 2:20 | Act 1: seventy-eight percent | number | 78% tax on oil profits | |
-| 16 | 2:30 | Act 1: Britain's oil company, sold | timeline | 1975 created · 1982 sale begins · 1988 bought by BP | |
-| 17 | 2:42 | Act 1: "only half the story" | clip 📷 | Oil platform flare or tanker, 5 seconds, under the closing line | Pexels: "oil platform", "oil tanker sea" |
-| 18 | 2:50 | Subscribe moment | subscribe | Fixed five seconds | |
-| 19 | 3:00 | Re-hook | chapter | "Part two: what do you do with the money?" | |
-| 20 | 3:12 | Act 2: Britain spends it | number | £7.8 billion in 1982, about £8 of every £100 of tax | |
-| 21 | 3:28 | Act 2: fairness to Britain | photo 📷 | Britain in the early 1980s: a dole queue or a closed factory | Wikimedia: "unemployment 1980s Britain" (licences are often restrictive; fallback Pexels "old factory england") |
-| 22 | 3:45 | Act 2: Norway did the same at first | split | 1970s to 1986: both spending as it arrived | |
-| 23 | 3:58 | Act 2: the 1986 crash | chart | Oil price falling in 1986 (needs a sourced price series) | |
-| 24 | 4:12 | Act 2: the fund, empty for six years | timeline | 1990 law · six empty years · 1996 first deposit | |
-| 25 | 4:30 | Act 2: rule one, invest abroad | map | World map, money leaving Norway | |
-| 26 | 4:45 | Act 2: "how much can Norway spend?" | question | Then the pause | |
-| 27 | 4:55 | Act 2: three percent | answer | "Around 3%". **Reveal sound 2** | |
-| 28 | 5:05 | Act 2: spends what it earns | flow | Oil → fund → only the earnings are spent | |
-| 29 | 5:22 | Act 3: thirty years | clip 📷 | Oslo, or Norwegian fjord, calm, 5 seconds | Pexels: "oslo skyline", "norway fjord" |
-| 30 | 5:30 | Act 3: "how big did it get?" | question | Then the pause | |
-| 31 | 5:38 | Act 3: $2.3 trillion | number | Counts up. **Reveal sound 3** | |
-| 32 | 5:50 | Act 3: per person | split | One Norwegian · about $400,000 | |
-| 33 | 6:00 | Act 3: 1.5% of every listed company | names | Company names resolving into "One fund" (use real names from NBIM's public holdings list, sourced) | |
-| 34 | 6:20 | Act 3: Regent Street | photo 📷 | Regent Street, London | Pexels: "regent street london". Confirm the fund still holds the stake first (fact sheet row 20). |
-| 35 | 6:38 | Act 3: pays a quarter of the budget | bars | Share of the budget paid by the fund: 27% | |
-| 36 | 6:50 | Act 3: what about Britain? | split | Estimates £400 to £850 billion · actual: nothing | |
-| 37 | 7:05 | Takeaway: not income, a one-off | quote | The lesson line | |
-| 38 | 7:20 | Takeaway: your own windfall | icons | Decide the rule first · put it somewhere that grows · spend only what it earns | |
-| 39 | 7:40 | Lead-out | clip 📷 then end | Washington or the US Capitol, 4 seconds, then the end card | Pexels: "us capitol building" |
+ChatGPT's main point matches the channel's rules: **the visuals explain the story, they don't decorate it.** When the narration says 1.5%, show what 1.5% looks like. The video stays in the channel's own look (navy, cream and yellow, the same fonts), which the owner liked in the demo. Real photos and footage break up the graphics at least 4 to 6 times, and the owner picks each one from 2 or 3 candidates on a picker page.
 
-## Custom scenes worth building (two or three, per the build plan)
+**Key:** **Ready** = an existing template does it · **Small** = a small addition to a template · **Custom** = one of the video's two or three custom scenes · **Footage/Photo** = real imagery, found on Pexels (needs the owner's free key) or Wikimedia · **Data** = needs a sourced dataset first
 
-1. **The three percent rule (27–28):** a tank with a tap. The tank keeps filling; only a thin stream comes out.
-2. **The size reveal (31–33):** the number, then the wall of company names behind it.
-3. **Regent Street (34):** the photo, with a quarter of the street lighting up in Norway's colours.
+## Scene by scene
 
-## Still needed before this can be built
+| # | Section | What's on screen | How | Status |
+|---|---|---|---|---|
+| 1 | Hook | Aerial footage of Norway's coast and fjords | `clip` | Footage |
+| 2 | Hook | "$2.3 trillion" counts up, then a bar for the next-largest fund appears far below it | `number`, then `bars` | Ready |
+| 3 | Hook | A world map filling with thousands of small dots, one for each company, with a few real company names surfacing | `map` with a dots option, or the `names` wall | Small + Data (NBIM's published holdings list) |
+| 4 | Hook | A grainy black-and-white photo of 1960s offshore drilling, under "none of it was supposed to happen" | `photo` with an old-film look | Photo + Small (film-grain option) |
+| 5 | Hook | The question card, then the pause | `question` | Ready |
+| 6 | Intro | The channel sting, then the title | `ident`, `title` | Ready |
+| 7 | Context | The 1958 letter: a typed government page with "can be discounted" highlighted | new `document` template | Small |
+| 8 | Context | Map of the North Sea; dry wells appearing one by one | `map` with points | Ready (well positions illustrative and labelled so) |
+| 9 | Context | Phillips and its rig in the 1960s | `photo` | Photo (Norwegian Petroleum Museum images are CC BY on Wikimedia) |
+| 10 | Context | The last well: a cross-section of the seabed, the drill going down until it reaches oil | custom scene | Custom (1 of 3) |
+| 11 | Context | Ekofisk from the air | `photo` | Have it |
+| 12 | Act 1 | Farouk al-Kasim | `photo` | Photo, only if a usable licence exists. Otherwise Oslo in that era |
+| 13 | Act 1 | The three principles: the people own it, a state oil company, a share of every field | `icons` (drawn icons) | Ready |
+| 14 | Act 1 | 78%: a grid of 100 squares, 78 turning the state's colour | new `grid` template | Small (the demo had one like it) |
+| 15 | Subscribe | The fixed five seconds | `subscribe` | Ready |
+| 16 | Britain | Norway and Britain side by side, the motif ChatGPT suggested: what each did with its oil | `split` | Ready |
+| 17 | Britain | 1970s and 1980s British North Sea photos | `photo` | Photo (licence check: no CC BY-SA) |
+| 18 | Britain | Britoil timeline: 1975 national oil company · 1982 Britoil sold · 1988 bought by BP | `timeline` | Ready |
+| 19 | Britain | "£500 billion" (IPPR's estimate) against "no oil fund" | `split` or `number` | Ready |
+| 20 | Act 2 | The oil price falling in 1986 | `chart` | Data (a sourced price series) |
+| 21 | Act 2 | 1990 law · six empty years · 1996 first deposit · 2001 rule · 2017 lowered to 3% | `timeline` | Ready |
+| 22 | Act 2 | The question, the pause, then "about 3%" | `question`, `answer` | Ready |
+| 23 | Act 2 | The three percent rule: the fund earns returns, a thin stream goes to the government, the rest stays and keeps growing | `tank` (extended to show growth) | Small; ChatGPT's "most polished animation". Custom (2 of 3) if it needs more |
+| 24 | Act 3 | The fund growing from almost nothing in 1996 to today | `chart` or `bars` | Data (NBIM's year-end values) |
+| 25 | Act 3 | 1.5%: a grid of 100 shares, one and a half lighting up, then zooming out to many companies | `grid` | Small |
+| 26 | Act 3 | A handful of real company names, each with "Norway's fund is a shareholder" | `names` wall or `icons` | Ready (names, not logos: see below) |
+| 27 | Act 3 | About $400,000 per person | `number` | Ready |
+| 28 | Act 3 | Regent Street, with a quarter of the street highlighted | `photo` with a highlight overlay | Photo + Custom (3 of 3) |
+| 29 | Act 3 | More than a quarter of the national budget | `grid` or `bars` | Ready once `grid` exists |
+| 30 | Takeaway | Norway's landscapes, people in a Norwegian town | `clip` | Footage |
+| 31 | Takeaway | A windfall: spend it, or set the rule and let it grow | `flow` or `tank` | Ready |
+| 32 | Outro | A US shot (the Capitol), then the end card | `clip`, `end` | Footage |
 
-- Script approval, and the owner's choices (voice, intro, outro).
-- A Pexels key for the clips and most photos.
-- A sourced oil price series for scene 23, and NBIM's holdings list for scene 33.
-- Confirmation of fact sheet row 20 (Regent Street).
+That's about **12 real photo or footage moments** in 8½ minutes, well above the minimum of 4 to 6.
+
+## ChatGPT's ideas I'd change or leave out
+
+- **Company logos.** Brands own them, and a wall of logos looks like an advert. I'd show company names, set in the channel's type, with the "shareholder, not owner" label ChatGPT rightly asked for. Real photos of the companies' headquarters can be added where a free licence exists.
+- **Grainy archival *footage* of the 1960s.** Free archival video is rare. Free archival *photos* exist (the Norwegian Petroleum Museum puts many on Wikimedia under CC BY), and a slow push with an old-film look gives most of the effect.
+- **Portraits of famous people** such as Margaret Thatcher. Most good photos are under licences the channel can't use. Only where a licence allows.
+- **A separate visual identity** (ChatGPT's dark, restrained style). The channel already has one, and the owner liked it. ChatGPT's rules for it (restrained colours, consistent type, no decoration for its own sake) are already the channel's rules.
+- **Generic stock-market footage.** Agreed with ChatGPT: never. Show the mechanism instead.
+
+## What has to happen before this is built
+
+1. **Script approved.**
+2. **A free Pexels key** from the owner (footage for scenes 1, 30 and 32, and most photos).
+3. **Data with sources:** NBIM's year-end fund values (scene 24), an oil price series covering 1986 (scene 20), and NBIM's list of holdings (scenes 3 and 26).
+4. **Build:** the `grid` and `document` templates, a dots option for the map, an old-film option for photos, and the three custom scenes (the drill, the three percent rule if the tank isn't enough, Regent Street).
+5. **The picker page** for the owner to choose every photo and clip.
