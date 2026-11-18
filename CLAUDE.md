@@ -16,7 +16,9 @@ A faceless YouTube business channel made with a code-based video pipeline. The o
 - Background, only if needed: `docs/01` (strategy), `02` (tools), `04` (demo review), `06` (channel setup), `07` (topic shortlist).
 
 ## First thing next session
-- **Ask the owner for the ElevenLabs API key** (secure form, host `api.elevenlabs.io`, header `xi-api-key`) as soon as work starts. They asked to be asked again on 17 November. Then add an `elevenlabs` engine to `pipeline/voice/engines.py` and make test clips with the voice "James - English Story Teller" (`GrVxA7Ub86nJH91Viyiv`).
+- **Keys (owner, 18 November):** ElevenLabs' site wasn't working for the owner, so no keys are saved yet. Ask whether they've added them. The secure form was declined twice, so the owner may add them instead in the environment's settings (environment menu in the title bar, Edit, Network secrets): ElevenLabs as host `api.elevenlabs.io`, header `xi-api-key`; Pexels as host `api.pexels.com`, header `Authorization`, the bare key as the value. Then add an `elevenlabs` engine to `pipeline/voice/engines.py` and wire in `pipeline/media/pexels.py`.
+- **Without the ElevenLabs key**, narration can still be made through the ElevenLabs connector, in sections. The video machine then needs `elevenlabsusercontent.com` allowed in the environment to download the audio.
+- **Still to ask the owner:** approve script draft 3 or not, the title, and whether the sample's sound effects are fine. The owner said they won't complete the decision page, so ask in chat. Already decided in chat: keep the quiet music bed; the channel name idea is "Money Stories" (@MoneyStories was free on 18 November).
 
 ## Standing instructions from the owner
 
