@@ -14,7 +14,7 @@ ChatGPT's main point matches the channel's rules: **the visuals explain the stor
 |---|---|---|---|---|
 | 1 | Hook | Aerial footage of Norway's coast and fjords | `clip` | Footage |
 | 2 | Hook | "$2.3 trillion" counts up, then a bar for the next-largest fund appears far below it | `number`, then `bars` | Ready |
-| 3 | Hook | A world map filling with thousands of small dots, one for each company, with a few real company names surfacing | `map` with a dots option, or the `names` wall | Small + Data (NBIM's published holdings list) |
+| 3 | Hook | **The scale moment (owner, 18 November).** A slow pull-back over a dark world map as thousands of points light up, spreading country by country in proportion to the fund's real holdings (most in the US, then Japan, Britain, Germany, France and so on), while a counter climbs past 7,000. A few real company names surface briefly. It should feel vast, not like a chart | `map` with a dots option and counter | Small + Data (NBIM's published holdings by country and company) |
 | 4 | Hook | A grainy black-and-white photo of 1960s offshore drilling, under "none of it was supposed to happen" | `photo` with an old-film look | Photo + Small (film-grain option) |
 | 5 | Hook | The question card, then the pause | `question` | Ready |
 | 6 | Intro | The channel sting, then the title | `ident`, `title` | Ready |
@@ -46,6 +46,14 @@ ChatGPT's main point matches the channel's rules: **the visuals explain the stor
 | 32 | Outro | A US shot (the Capitol), then the end card | `clip`, `end` | Footage |
 
 That's about **12 real photo or footage moments** in 8½ minutes, well above the minimum of 4 to 6.
+
+## Mood, by section
+
+- **Hook and Act 3 (scale and reveals):** big, bright, slow camera pull-backs; the most motion in the video.
+- **Context (the search and the last well):** archive photos, old-film look, tension building to the find.
+- **Britain and the 1986 crash:** calmer, darker, fewer effects; this is the sober part of the story.
+- **The three percent rule:** clear and patient; the most explanatory animation, held long enough to understand.
+- **Takeaway:** quiet real footage of Norway; reflective, not another chart.
 
 ## ChatGPT's ideas I'd change or leave out
 
