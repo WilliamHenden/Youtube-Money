@@ -102,31 +102,22 @@ a.out { display: inline-block; font-weight: 700; color: var(--ink); text-decorat
 <div class="col">
 <header>
   <p class="eyebrow">Before the full video is made</p>
-  <h1>Norway video, script draft 2: your decisions</h1>
-  <p class="lede">The new script is first. Read it, tap your choices, then press Save at the bottom. You can come back and change anything. Already settled and no longer on this page: the voice (James), the intro (the channel sting), the subscribe moment and the short outro.</p>
+  <h1>Norway video, script draft 3: your decisions</h1>
+  <p class="lede">The new script is first. Read it, tap your choices, then press Save at the bottom. You can come back and change anything. Already settled and no longer on this page: the opening, the voice (James), the intro (the channel sting), the subscribe moment and the short outro.</p>
   <ul class="todo-list" id="todo" aria-label="What's left to answer"></ul>
 </header>
 
-<section id="script" data-need="hook approve">
+<section id="script" data-need="approve">
   <div class="sec-head"><p class="eyebrow">Decision 1</p><h2>Approve the script</h2>
-  <p class="help">This is draft 2, written for your new angle: the video is about Norway's fund, and Britain is one segment in the middle. It runs to about 1,420 words, which is roughly 8½ minutes in the voice you chose. Every fact has a source in the fact sheet.</p></div>
-  <div class="q"><p class="label">Hear the opening in your chosen voice</p><p class="hint">Two takes of the first 36 seconds, read by "James". They open in your ElevenLabs account.</p>
-    <p><a class="out" href="https://elevenlabs.io/app/flows/A4zh3JWiZ5nUKORzE5ha" target="_blank" rel="noopener">Open the two takes in ElevenLabs</a></p></div>
+  <p class="help">This is draft 3: your documentary-style opening, plus the fixes from your ChatGPT review. Where I did something different from ChatGPT's suggestion, the reason is in the project brief (section 1). About 1,470 words, roughly 8½ minutes in the voice you chose. Every fact has a source in the fact sheet.</p></div>
+  <div class="q"><p class="label">Hear it</p><p class="hint">The free read-through of the whole script (free British voice, judge the words, not the voice) is in the chat. Two takes of the old draft 2 opening, read by "James", are in your ElevenLabs account, to judge the voice.</p>
+    <p><a class="out" href="https://elevenlabs.io/app/flows/A4zh3JWiZ5nUKORzE5ha" target="_blank" rel="noopener">Open James's two takes in ElevenLabs</a></p></div>
   <div class="script">
     <p class="title">How Norway Built the Biggest Wealth Fund on Earth</p>
-    <p class="meta">Draft 2 · about <!--WORDS--> words · times are estimates until the narration is made</p>
+    <p class="meta">Draft 3 · about <!--WORDS--> words · times are estimates until the narration is made</p>
     <div class="key"><span><span class="beat">pause</span> a silence of about a second before a payoff</span></div>
 <!--SCRIPT-->
   </div>
-  <div class="q"><p class="label">The opening</p><p class="hint">The script above uses A. B and C use the same facts and end on the same question, so either can be swapped in.</p>
-    <div class="alt"><b>B. What it owns.</b><p class="line">If you've bought a phone or filled up a car lately, you've very probably made a little money for Norway. Its national fund owns a small piece of more than seven thousand companies, and it's worth two point three trillion dollars. No country on earth has a bigger one, and it works out at around four hundred thousand dollars for every person in the country…</p></div>
-    <div class="alt"><b>C. The letter.</b><p class="line">In nineteen fifty-eight, Norway's government asked its geologists whether there might be oil under the sea off its coast, and they wrote back that the chances could be discounted. Today Norway has a fund worth two point three trillion dollars. No country on earth has a bigger one…</p></div>
-    <div class="chips" role="radiogroup" aria-label="Opening choice">
-      <label><input type="radio" name="hook" id="hook-a" value="A: your share (the baby)"><span>A: your share</span></label>
-      <label><input type="radio" name="hook" id="hook-b" value="B: what it owns"><span>B: what it owns</span></label>
-      <label><input type="radio" name="hook" id="hook-c" value="C: the letter"><span>C: the letter</span></label>
-      <label><input type="radio" name="hook" id="hook-d" value="None of these (see my notes)"><span>None of these</span></label>
-    </div></div>
   <div class="q"><p class="label">The script overall</p>
     <div class="chips" role="radiogroup" aria-label="Script approval">
       <label><input type="radio" name="approve" id="approve-1" value="Approved as written"><span>Approved</span></label>
@@ -220,15 +211,15 @@ a.out { display: inline-block; font-weight: 700; color: var(--ink); text-decorat
 
 <script>
 (function () {
-  var RADIOS = ["hook", "approve", "title", "sounds", "music", "musiclevel", "pace", "photos"];
+  var RADIOS = ["approve", "title", "sounds", "music", "musiclevel", "pace", "photos"];
   var TEXTS = ["edits", "look", "channel", "other"];
   var LABELS = { hook: "Opening", sounds: "Sound effects", music: "Music", musiclevel: "Music level", pace: "Pace", nofund: "\"No fund\" line", look: "Notes on the sample",
     voice: "Narrator", line1: "\"There was just one problem\" line", line2: "\"Doesn't spend its oil money\" line", line3: "\"Eight billion pounds\" line", intro: "Intro", subline: "Subscribe line", outro: "Outro", ionotes: "Intro and outro notes", thumb: "Thumbnail", title: "Title", length: "Length", approve: "Script",
     edits: "Script edits", shortline: "Short's opening line", channel: "Channel name", photos: "Photo keys", other: "Anything else" };
-  var ORDER = ["hook", "approve", "edits", "title", "sounds", "music", "musiclevel", "pace", "look", "channel", "photos", "other"];
+  var ORDER = ["approve", "edits", "title", "sounds", "music", "musiclevel", "pace", "look", "channel", "photos", "other"];
   var SECTIONS = [["script", "Script"], ["pack", "Title"], ["sample", "Sound and pace"]];
   var N = SECTIONS.length;
-  var DOC = "decisions/norway-script-v2", DRAFT = "norway-decisions-v2-draft";
+  var DOC = "decisions/norway-script-v3", DRAFT = "norway-decisions-v3-draft";
   var db = null, dirty = false;
   var $ = function (id) { return document.getElementById(id); };
   var status = $("status");
