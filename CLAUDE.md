@@ -13,6 +13,7 @@ A faceless YouTube business channel made with a code-based video pipeline. The o
 - `docs/11-prep-notes.md`: what was prepared after session 1 (fact checks, intro and outro options, thumbnails, the storyboard plan, video 2 groundwork) and what is still waiting on the owner.
 - `docs/13-script-playbook.md`: how scripts are written for this channel (structure, writing for the ear, phrases to avoid, writing for the ElevenLabs voice, word budget). Follow it for every script.
 - `docs/12-voice-workflow.md`: how ElevenLabs fits in (text to speech or the owner's recording re-voiced), what it costs, the order of work, and Spotify.
+- `docs/14-footage-options.md`: free against paid footage (Pexels, Artlist, Storyblocks, AI clips), what can be automated, and the plan (free for video 1).
 - Background, only if needed: `docs/01` (strategy), `02` (tools), `04` (demo review), `06` (channel setup), `07` (topic shortlist).
 
 ## First thing next session
