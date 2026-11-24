@@ -1,6 +1,6 @@
 # Video 1: Norway's Oil Fund
 
-**Status: SCRIPT DRAFT v3 (18 November 2026), waiting for the owner's approval. No production until this is approved.**
+**Status: SCRIPT DRAFT v3 APPROVED for production (owner, 24 November 2026), narrated by ElevenLabs "James". Title not confirmed: use the working title.**
 
 - **Working title:** How Norway Built the Biggest Wealth Fund on Earth
 - **Other titles to consider:** Why Every Norwegian Is Worth $400,000 on Paper · How 5 Million People Built a $2.3 Trillion Fund · How Norway Became One of the Richest Countries on Earth
