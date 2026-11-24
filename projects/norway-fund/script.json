@@ -10,7 +10,11 @@
   },
   "music": {
     "track": "deliberate-thought",
-    "underVoice": 22
+    "underVoice": 22,
+    "then": {
+      "track": "thinking-music",
+      "at": "a2-chapter"
+    }
   },
   "pauses": {
     "line": 0.38,
@@ -28,25 +32,24 @@
     "Storyboard for script draft 3 (brief.md), following storyboard-plan.md. Words match the approved script; only caption splits and cues are added.",
     "IPPR is written 'I P P R' in the spoken text so it's read as letters.",
     "Placeholders: every footage or photo slot, and every graphic not built yet (grid, document, map dots, the three custom scenes, the oil-price chart), is a dark card saying what goes there.",
-    "Changes from the plan: the hook's coast footage became a North Sea map (the line is about oil, and the fjord footage is kept for the takeaway); the fund's growth chart (row 24) became a two-bar 'paid in against earned' split, which needs no extra data; the company name wall (row 26) became an icon row (phone, car, Norway), so no company is named without NBIM's holdings list; the budget share is a number card until `grid` exists; the US Capitol shot before the end card is left out (outro A sits on the `end` template).",
+    "Changes from the plan: the hook's oil line is a North Sea map (the plan had no picture for it); the Britain section opens on the map, not the Norway-against-Britain split of row 16 (the split is kept for the IPPR payoff); four part cards were added; the company name wall (row 26) is an icon row (phone, fuel, Norway), so no company is named before NBIM's holdings list is in; the US Capitol shot before the end card is left out (outro A sits on the `end` template); the tank is the existing one, not yet extended to show growth (row 23).",
+    "On-screen figures beyond the script, each from the fact sheet: next largest fund $1.69 trillion if SAFE is counted (row 38); UK oil revenue £7.8 billion in 1982-83 (row 10); budget share about 27% in 2026 (row 21).",
     "Dry-well positions on the map are illustrative and labelled so. The dividing line follows the 1965 agreement's eight points as recalled (point 8 checked); a schematic, not a chart.",
     "Draft 1's sample scenes, its Short and its thumbnail cut are in git history (before 24 November 2026). Thumbnails need redoing for draft 3."
   ],
   "scenes": [
     {
       "id": "h-fund",
-      "template": "number",
+      "template": "placeholder",
       "tone": "navy",
       "sound": "none",
       "props": {
-        "label": "Norway's sovereign wealth fund",
-        "value": 2.3,
-        "prefix": "$",
-        "decimals": 1,
-        "unit": "trillion",
-        "caption": "The largest in the world",
-        "at": 0.4,
-        "source": "Value at 30 June 2026, rounded"
+        "kind": "footage",
+        "label": "FOOTAGE: aerial over Norway's coast and fjords, slow and wide. The figure lands over it on the words",
+        "note": "Pixabay, specific searches (\"Norway fjord aerial\", \"Lofoten aerial\"). Owner picks from 2-3.",
+        "kicker": "Norway's sovereign wealth fund",
+        "title": "$2.3 trillion",
+        "titleCue": "hfund"
       },
       "lines": [
         {
@@ -70,13 +73,13 @@
             "cue": "hgap1"
           },
           {
-            "label": "Next largest (China, SAFE)",
+            "label": "Next largest",
             "value": 1.69,
             "display": "$1.7T",
             "cue": "hgap2"
           }
         ],
-        "note": "SAFE about $1.69 trillion; China Investment Corporation about $1.35 trillion. Mid-2026"
+        "note": "Norway at 30 June 2026. Next largest: China's SAFE, about $1.69 trillion, if it is counted; otherwise CIC, about $1.35 trillion"
       },
       "lines": [
         {
@@ -209,7 +212,7 @@
       "tone": "navy",
       "major": true,
       "sound": "reveal",
-      "hold": 2.6,
+      "hold": 2.0,
       "props": {
         "lines": [
           "How Norway built the",
@@ -249,9 +252,9 @@
         "kicker": "Norwegian waters, the 1960s",
         "center": [
           3.4,
-          59.0
+          58.4
         ],
-        "span": 16,
+        "span": 17,
         "countries": [
           {
             "name": "United Kingdom",
@@ -312,62 +315,62 @@
         ],
         "points": [
           {
-            "lon": 3.0,
+            "lon": 3.4,
             "lat": 56.9,
             "kind": "dot"
           },
           {
-            "lon": 2.6,
+            "lon": 3.0,
             "lat": 57.6,
             "kind": "dot"
           },
           {
-            "lon": 3.8,
-            "lat": 57.2,
+            "lon": 4.3,
+            "lat": 57.3,
             "kind": "dot"
           },
           {
-            "lon": 2.3,
+            "lon": 3.0,
             "lat": 58.6,
             "kind": "dot"
           },
           {
-            "lon": 3.4,
+            "lon": 3.9,
             "lat": 58.1,
             "kind": "dot"
           },
           {
-            "lon": 2.5,
-            "lat": 59.5,
-            "kind": "dot"
-          },
-          {
-            "lon": 3.1,
-            "lat": 60.3,
-            "kind": "dot"
-          },
-          {
-            "lon": 2.4,
-            "lat": 61.0,
-            "kind": "dot"
-          },
-          {
-            "lon": 4.2,
-            "lat": 59.0,
-            "kind": "dot"
-          },
-          {
-            "lon": 2.8,
-            "lat": 57.1,
+            "lon": 3.3,
+            "lat": 59.4,
             "kind": "dot"
           },
           {
             "lon": 3.6,
-            "lat": 60.8,
+            "lat": 60.2,
             "kind": "dot"
           },
           {
-            "lon": 2.2,
+            "lon": 3.1,
+            "lat": 60.9,
+            "kind": "dot"
+          },
+          {
+            "lon": 4.5,
+            "lat": 58.8,
+            "kind": "dot"
+          },
+          {
+            "lon": 4.7,
+            "lat": 57.7,
+            "kind": "dot"
+          },
+          {
+            "lon": 4.0,
+            "lat": 61.0,
+            "kind": "dot"
+          },
+          {
+            "lon": 2.9,
             "lat": 59.9,
             "kind": "dot"
           }
@@ -471,7 +474,7 @@
       "enter": "fade",
       "props": {
         "photo": "ekofisk",
-        "kicker": "Christmas 1969",
+        "kicker": "December 1969",
         "title": "Ekofisk",
         "caption": "Platforms on the Ekofisk field, photographed after 1985",
         "move": "out",
@@ -538,8 +541,8 @@
       "enter": "fade",
       "props": {
         "kind": "photo",
-        "label": "PHOTO: Farouk al-Kasim, only if a usable licence exists. Otherwise Oslo or the oil ministry in the late 1960s",
-        "note": "Licence check needed (public domain, CC0 or CC BY only).",
+        "label": "PHOTO: Farouk al-Kasim, only if a usable licence exists. Then a second photo for \"They hired him\": the oil ministry in Oslo around 1970",
+        "note": "Licence check needed (public domain, CC0 or CC BY only). Otherwise Oslo in the late 1960s.",
         "kicker": "1968",
         "title": "Farouk al-Kasim",
         "titleCue": "kasim"
@@ -552,6 +555,10 @@
         {
           "say": "He'd spent years working in Iraq's oil industry, | and with a family to support, | he went to the ministry in Oslo looking for work.",
           "show": "He'd spent years working in Iraq's oil industry, | and with a family to support, | he went to the ministry in Oslo looking for work."
+        },
+        {
+          "say": "They hired him, | and he went on to help write the plan | for how Norway would run its oil. | The principles were simple.",
+          "show": "They hired him, | and he went on to help write *the plan* | for how Norway would run its oil. | The principles were simple."
         }
       ]
     },
@@ -563,19 +570,19 @@
         "title": "The plan for Norway's oil",
         "items": [
           {
-            "icon": "classical-building",
+            "icon": "draw:people",
             "label": "The owner",
             "text": "The Norwegian people",
             "cue": "pr1"
           },
           {
-            "icon": "oil-drum",
+            "icon": "draw:rig",
             "label": "A company",
             "text": "The state's own oil company",
             "cue": "pr2"
           },
           {
-            "icon": "draw:contract",
+            "icon": "draw:barrel",
             "label": "A share",
             "text": "Of every field",
             "cue": "pr3"
@@ -583,10 +590,6 @@
         ]
       },
       "lines": [
-        {
-          "say": "They hired him, | and he went on to help write the plan | for how Norway would run its oil. | The principles were simple.",
-          "show": "They hired him, | and he went on to help write *the plan* | for how Norway would run its oil. | The principles were simple."
-        },
         {
           "say": "The {pr1}oil belonged to the Norwegian people, | the state would have {pr2}an oil company of its own, | and it would keep {pr3}a share of every field.",
           "show": "The oil belonged to *the Norwegian people,* | the state would have an oil company of its own, | and it would keep a share of every field."
@@ -793,6 +796,7 @@
       "id": "b-britoil",
       "template": "timeline",
       "tone": "navy",
+      "sound": "none",
       "props": {
         "title": "Britain's own oil company",
         "events": [
@@ -830,24 +834,55 @@
       ]
     },
     {
-      "id": "b-tax",
-      "template": "number",
-      "tone": "cream",
+      "id": "b-budget",
+      "template": "flow",
+      "tone": "navy",
       "props": {
-        "label": "UK oil tax, 1982",
-        "value": 8,
-        "prefix": "£",
-        "unit": "billion",
-        "caption": "About 8 pounds in every 100 the taxman collected",
-        "cue": "btax"
+        "title": "Britain's oil tax",
+        "links": [
+          "went into"
+        ],
+        "nodes": [
+          {
+            "icon": "oil-drum",
+            "label": "Oil tax",
+            "sub": "From the North Sea",
+            "cue": "bud1",
+            "color": "amber"
+          },
+          {
+            "icon": "classical-building",
+            "label": "The ordinary budget",
+            "sub": "With every other tax",
+            "cue": "bud2",
+            "color": "blue"
+          }
+        ]
       },
       "lines": [
         {
-          "say": "The tax money, meanwhile, went into the ordinary budget.",
+          "say": "{bud1}The tax money, meanwhile, went into the {bud2}ordinary budget.",
           "show": "The tax money, meanwhile, went into the *ordinary budget.*"
-        },
+        }
+      ]
+    },
+    {
+      "id": "b-tax",
+      "template": "number",
+      "tone": "navy",
+      "sound": "none",
+      "props": {
+        "label": "UK oil revenue, 1982-83",
+        "value": 8,
+        "prefix": "£",
+        "unit": "billion",
+        "caption": "About £8 in every £100 the taxman collected",
+        "cue": "btax",
+        "source": "Official figure: £7.8 billion"
+      },
+      "lines": [
         {
-          "say": "In nineteen eighty-two alone, | oil brought in {btax}close to eight billion pounds, | which was about eight pounds in every hundred | the taxman collected.",
+          "say": "In nineteen eighty-two alone, | {btax}oil brought in close to eight billion pounds, | which was about eight pounds in every hundred | the taxman collected.",
           "show": "In *1982* alone, | oil brought in close to *£8 billion,* | which was about £8 in every £100 | the taxman collected."
         },
         {
@@ -864,7 +899,7 @@
       "sound": "none",
       "props": {
         "kind": "photo",
-        "label": "PHOTO: Britain in the early 1980s recession, for example a queue outside an unemployment office or a closed factory",
+        "label": "PHOTO: Britain in the early 1980s recession, for example a queue outside an unemployment office or a closed factory. Or a British North Sea platform of the time",
         "note": "Licence check: public domain, CC0 or CC BY only (no CC BY-SA). Calm and dark.",
         "kicker": "Britain, early 1980s"
       },
@@ -876,6 +911,10 @@
         {
           "say": "Plenty of governments would have done the same.",
           "show": "Plenty of governments would have done the same."
+        },
+        {
+          "say": "Still, the money was spent as it came in.",
+          "show": "Still, the money was spent *as it came in.*"
         }
       ]
     },
@@ -899,6 +938,7 @@
           "unit": "billion+",
           "caption": "IPPR estimate, 2018",
           "cue": "bippr",
+          "labelCue": "bthink",
           "color": "green"
         },
         "right": {
@@ -912,11 +952,7 @@
       },
       "lines": [
         {
-          "say": "Still, the money was spent as it came in.",
-          "show": "Still, the money was spent *as it came in.*"
-        },
-        {
-          "say": "In twenty eighteen, the think tank I P P R worked out | what Britain's oil fund might have been worth | if it had saved like Norway. | It came to {bippr}more than five hundred billion pounds.",
+          "say": "{bthink}In twenty eighteen, the think tank I P P R worked out | what Britain's oil fund might have been worth | if it had saved like Norway. | It came to {bippr}more than five hundred billion pounds.",
           "show": "In *2018,* the think tank IPPR worked out | what Britain's oil fund might have been worth | if it had saved like Norway. | It came to more than *£500 billion.*"
         },
         {
@@ -997,7 +1033,22 @@
         {
           "say": "Then, in {crash}nineteen eighty-six, | the price of oil collapsed, | and Norway's boom collapsed with it.",
           "show": "Then, in *1986,* | the price of oil collapsed, | and Norway's boom collapsed with it."
-        },
+        }
+      ]
+    },
+    {
+      "id": "a2-banks",
+      "template": "placeholder",
+      "tone": "navy",
+      "enter": "fade",
+      "sound": "none",
+      "props": {
+        "kind": "photo",
+        "label": "PHOTO: Norway in the downturn after 1986, for example a big Oslo bank's head office of the time, or a shuttered shop",
+        "note": "Archive photo, licence check (public domain, CC0 or CC BY only). Sober, slow move.",
+        "kicker": "Norway, after 1986"
+      },
+      "lines": [
         {
           "say": "The years that followed were the bleakest | the country had seen since the nineteen thirties, | and the state ended up having to rescue | its biggest banks.",
           "show": "The years that followed were the bleakest | the country had seen since the *1930s,* | and the state ended up having to rescue | its biggest banks."
@@ -1072,7 +1123,7 @@
           {
             "icon": "globe-showing-europe-africa",
             "label": "Abroad",
-            "sub": "Never at home",
+            "sub": "Outside Norway",
             "cue": "ab3",
             "color": "green"
           }
@@ -1101,7 +1152,7 @@
       },
       "lines": [
         {
-          "say": "The second arrived in two thousand and one, | and it's the heart of the whole story. | {a2ask}It answers one question.",
+          "say": "The second arrived in two thousand and one, | and it's {a2ask}the heart of the whole story. | It answers one question.",
           "show": "The second arrived in *2001,* | and it's the heart of the whole story. | It answers one question."
         },
         {
@@ -1155,16 +1206,12 @@
             "cue": "ch2"
           }
         ],
-        "note": "A long-run guide: a little more or less in any one year"
+        "note": "The fund's expected long-run return, after inflation"
       },
       "lines": [
         {
           "say": "It {ch1}started at four percent | and was {ch2}lowered to three in twenty seventeen.",
           "show": "It started at *4%* | and was lowered to *3%* in *2017.*"
-        },
-        {
-          "say": "In any one year, | Norway can spend a little more or a little less, | depending on the economy.",
-          "show": "In any one year, | Norway can spend a little more or a little less, | depending on the economy."
         }
       ]
     },
@@ -1177,17 +1224,20 @@
         "inLabel": "Oil money in",
         "tankLabel": "The fund",
         "rate": "3%",
-        "outLabel": "spent each year",
-        "fillCue": "tfill",
+        "outLabel": "a year, more or less",
         "tapCue": "ttap"
       },
       "lines": [
+        {
+          "say": "In any one year, | Norway can {ttap}spend a little more or a little less, | depending on the economy.",
+          "show": "In any one year, | Norway can spend a little more or a little less, | depending on the economy."
+        },
         {
           "say": "But the idea is simple.",
           "show": "But the idea is simple."
         },
         {
-          "say": "Over time, | Norway {ttap}spends roughly what the money earns, | and leaves {tfill}the money itself to keep growing | for the generations to come.",
+          "say": "Over time, | Norway spends roughly what the money earns, | and leaves the money itself to keep growing | for the generations to come.",
           "show": "Over time, | Norway spends roughly *what the money earns,* | and leaves the money itself to keep growing | for the generations to come."
         }
       ]
@@ -1210,26 +1260,15 @@
     },
     {
       "id": "a3-earned",
-      "template": "bars",
+      "template": "placeholder",
       "tone": "navy",
       "props": {
-        "title": "Where today's fund came from",
-        "bars": [
-          {
-            "label": "Oil money paid in",
-            "value": 33,
-            "display": "33%",
-            "cue": "ea1"
-          },
-          {
-            "label": "What it has earned",
-            "value": 67,
-            "display": "67%",
-            "highlight": true,
-            "cue": "ea2"
-          }
-        ],
-        "note": "Share of the fund's value. NBIM, 30 June 2026"
+        "kind": "graphic",
+        "label": "CHART: the fund's value growing from almost nothing in 1996 to today, with the part that is investment return shaded: about two thirds",
+        "note": "Needs NBIM's year-end values (money paid in against return). The chart draws itself.",
+        "kicker": "The fund, 1996 to today",
+        "title": "Two thirds is earnings",
+        "titleCue": "ea2"
       },
       "lines": [
         {
@@ -1266,17 +1305,20 @@
         "items": [
           {
             "icon": "mobile-phone",
-            "label": "A new phone",
+            "label": "You buy",
+            "text": "A new phone",
             "cue": "ev1"
           },
           {
-            "icon": "automobile",
-            "label": "A tank of fuel",
+            "icon": "fuel-pump",
+            "label": "You fill up",
+            "text": "A tank of fuel",
             "cue": "ev2"
           },
           {
             "icon": "money-bag",
-            "label": "A little for Norway",
+            "label": "Norway earns",
+            "text": "A little, as a shareholder",
             "cue": "ev3"
           }
         ]
@@ -1293,7 +1335,7 @@
       "template": "number",
       "tone": "navy",
       "props": {
-        "label": "Shared out equally",
+        "label": "Shared out equally, around",
         "value": 400000,
         "prefix": "$",
         "caption": "for every person in Norway",
@@ -1336,22 +1378,38 @@
       ]
     },
     {
-      "id": "a3-budget",
-      "template": "number",
-      "tone": "cream",
+      "id": "a3-rule",
+      "template": "tank",
+      "tone": "navy",
       "props": {
-        "label": "Norway's national budget, 2026",
-        "value": 25,
-        "prefix": "Over ",
-        "suffix": "%",
-        "caption": "expected to be paid for by the fund",
-        "cue": "budget"
+        "title": "Built to last",
+        "inLabel": "Oil money in",
+        "tankLabel": "The fund",
+        "rate": "3%",
+        "outLabel": "a year, more or less",
+        "startLevel": 0.62,
+        "endLevel": 0.86
       },
       "lines": [
         {
           "say": "And because of the three percent rule, | the fund is built to last for generations.",
           "show": "And because of the 3% rule, | the fund is built to *last for generations.*"
-        },
+        }
+      ]
+    },
+    {
+      "id": "a3-budget",
+      "template": "placeholder",
+      "tone": "navy",
+      "props": {
+        "kind": "graphic",
+        "label": "GRID: Norway's national budget as 100 squares, 27 of them turning the fund's colour",
+        "note": "New `grid` template to build (or `bars`). About 27% in 2026.",
+        "kicker": "Norway's national budget, 2026",
+        "title": "More than a quarter",
+        "titleCue": "budget"
+      },
+      "lines": [
         {
           "say": "This year, it's expected to pay for {budget}more than a quarter | of Norway's entire national budget.",
           "show": "This year, it's expected to pay for *more than a quarter* | of Norway's entire national budget."
@@ -1395,6 +1453,10 @@
         {
           "say": "Britain had oil too, | and so have dozens of other countries.",
           "show": "Britain had oil too, | and so have dozens of other countries."
+        },
+        {
+          "say": "Norway got there by making three decisions | and then sticking to them for decades.",
+          "show": "Norway got there by making *three decisions* | and then sticking to them for decades."
         }
       ]
     },
@@ -1412,7 +1474,7 @@
             "cue": "d1"
           },
           {
-            "icon": "locked",
+            "icon": "draw:lock",
             "label": "Lock it away",
             "text": "Where it can't easily be spent",
             "cue": "d2"
@@ -1426,10 +1488,6 @@
         ]
       },
       "lines": [
-        {
-          "say": "Norway got there by making three decisions | and then sticking to them for decades.",
-          "show": "Norway got there by making *three decisions* | and then sticking to them for decades."
-        },
         {
           "say": "It {d1}kept hold of the oil money, | it {d2}put that money where it couldn't easily be spent, | and it {d3}agreed to live on what the money earned.",
           "show": "It kept hold of the oil money, | it put that money where it couldn't easily be spent, | and it agreed to live on *what the money earned.*"
@@ -1496,7 +1554,7 @@
       "tone": "navy",
       "props": {
         "kicker": "Next",
-        "title": "America owes $40 trillion. How does it get away with it?"
+        "title": "America owes over $40 trillion. How does it get away with it?"
       },
       "lines": [
         {

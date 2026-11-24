@@ -110,22 +110,54 @@ def plan_effects(tm, lib, cfg):
     return played, dropped
 
 
-def music_bed(tm, cfg, voice_lufs, n):
-    track = cfg.get("track")
-    path = os.path.join(LIB, "music", f"{track}.mp3") if track else None
-    if not path or not os.path.exists(path):
-        return np.zeros((n, 2), dtype=np.float32), f"none ({'file missing: ' + str(track) if track else 'no track chosen'})"
+def _track(track, start, n, level):
+    """One music track, looped to n samples (two-second crossfade at each loop) and set to the given loudness."""
+    path = os.path.join(LIB, "music", f"{track}.mp3")
     tmp = os.path.join(os.path.dirname(path), "_decode.wav")
-    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-ss", str(cfg.get("start", 0)), "-i", path, "-ar", str(SR), "-ac", "2", tmp], check=True)
+    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-ss", str(start), "-i", path, "-ar", str(SR), "-ac", "2", tmp], check=True)
     m = load(tmp)
     os.remove(tmp)
-    while len(m) < n:  # loop with a two-second crossfade
+    length = len(m) / SR
+    while len(m) < n:
         x = int(SR * 2)
         ramp = np.linspace(0, 1, x)[:, None]
         m = np.concatenate([m[:-x], m[-x:] * (1 - ramp) + m[:x] * ramp, m[x:]])
     m = m[:n]
-    lm = pyln.Meter(SR).integrated_loudness(m)
-    m = m * db(voice_lufs - cfg.get("underVoice", 22) - lm)
+    return m * db(level - pyln.Meter(SR).integrated_loudness(m)), length
+
+
+def _restarts(length, needed):
+    """How many times a track of this length starts again while covering the seconds needed."""
+    return 0 if needed <= length else int(np.ceil((needed - length) / (length - 2)))
+
+
+def music_bed(tm, cfg, voice_lufs, n):
+    """The quiet bed under the voice. "then": {"track": name, "at": scene id} switches once to a second track
+    at that scene, with a three-second crossfade, so a long video doesn't loop one track over and over."""
+    track = cfg.get("track")
+    exists = lambda k: bool(k) and os.path.exists(os.path.join(LIB, "music", f"{k}.mp3"))
+    if not exists(track):
+        return np.zeros((n, 2), dtype=np.float32), f"none ({'file missing: ' + str(track) if track else 'no track chosen'})"
+    level = voice_lufs - cfg.get("underVoice", 22)
+    m, len1 = _track(track, cfg.get("start", 0), n, level)
+    r1 = _restarts(len1, n / SR)
+    note = f"{track} at {cfg.get('underVoice', 22)} LU under the voice" + (f". It is {len1:.0f}s long, so it starts again {r1}x" if r1 else "")
+    then = cfg.get("then")
+    if then:
+        if not exists(then.get("track")):
+            raise SystemExit(f"music: the second track \"{then.get('track')}\" is not in the library")
+        at = next((sc["start"] for sc in tm["scenes"] if sc["id"] == then.get("at")), None)
+        if at is None:
+            raise SystemExit(f"music: \"then\" names the scene \"{then.get('at')}\", which is not in this cut")
+        x = int(SR * 3)
+        i0 = max(int(at * SR) - x // 2, 0)
+        m2, len2 = _track(then["track"], then.get("start", 0), n - i0, level)
+        ramp = np.clip((np.arange(n - i0) / x), 0, 1)[:, None]
+        m = np.concatenate([m[:i0], m[i0:] * (1 - ramp) + m2 * ramp])
+        r1, r2 = _restarts(len1, at + 1.5), _restarts(len2, (n - i0) / SR)
+        note = f"{track}, then {then['track']} from {at:.0f}s (scene {then['at']}), at {cfg.get('underVoice', 22)} LU under the voice"
+        if r1 or r2:
+            note += f". The tracks are {len1:.0f}s and {len2:.0f}s long, so the first starts again {r1}x and the second {r2}x"
     t = np.arange(n) / SR
     env = np.minimum(t / 1.5, 1) * np.minimum((t[-1] - t) / 2.5, 1)
     swell = np.zeros(n)
@@ -135,7 +167,7 @@ def music_bed(tm, cfg, voice_lufs, n):
     env = env * db(cfg.get("swell", 5) * swell)
     for b in tm.get("beats", []):  # silence for the beat: out as the last word ends, back as the payoff lands
         env = env * (1 - np.clip((t - (b["start"] - 0.05)) / 0.3, 0, 1) * np.clip((b["end"] + 0.5 - t) / 0.6, 0, 1))
-    return (m * env[:, None]).astype(np.float32), f"{track} at {cfg.get('underVoice', 22)} LU under the voice"
+    return (m * env[:, None]).astype(np.float32), note
 
 
 def main():

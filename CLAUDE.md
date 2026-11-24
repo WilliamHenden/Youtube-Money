@@ -19,7 +19,9 @@ A faceless YouTube business channel made with a code-based video pipeline. The o
 ## First thing next session: build the Norway draft video
 The owner approved script draft 3 on 24 November and wants the full video built now.
 
-**Progress (24 November, session 2):** steps 1 to 3 are done and pushed. `script.json` holds the whole of draft 3 (49 scenes, words checked word for word against `brief.md`), narrated by James: **9 min 4 s**, about 8,200 credits used. A `placeholder` template was added (12 placeholder scenes). The contact sheet (a frame every 2 seconds) is at `out/norway-fund-contact-sheet.jpg`, also split into four pages (`-1` to `-4`), and was sent to the owner for checking. Layout faults found on the first sheet were fixed (title width, split-screen text overflow, bar labels, tank label). **Next: wait for the owner's go-ahead on the contact sheet, then step 4's half-resolution draft render.** The voice is cached, so rebuilding costs nothing unless a line's words change. One line paused oddly according to the pacing check ("Oil companies came anyway...", scene `c-wells`): listen to it in the draft. Paid voice lines are kept in `projects/norway-fund/voice-cache/`. The Whisper listening check couldn't download its model this session, so nobody has checked the hard names by ear yet (Ekofisk, al-Kasim, kroner, IPPR). The storyboard's departures from `storyboard-plan.md` are listed in the `notes` of `script.json`.
+**Progress (24 November, session 2):** steps 1 to 3 are done and pushed. `script.json` holds the whole of draft 3 (52 scenes, words checked word for word against `brief.md`), narrated by James: **9 min 5 s**, about 8,200 credits used. A `placeholder` template was added (16 placeholder scenes). The storyboard was then reviewed against the script, `storyboard-plan.md` and the standards, and the clear problems fixed (see "As built in the draft" at the end of `storyboard-plan.md`, and the `notes` in `script.json`). The contact sheet (a frame every 2 seconds) is `out/norway-fund-contact-sheet.jpg`, also in four pages (`-1` to `-4`). **Next: the owner's go-ahead, then step 4's half-resolution draft render.** The voice is cached in `projects/norway-fund/voice-cache/`, so rebuilding costs nothing unless a line's words change. The listening check now works (the Whisper model had to be downloaded by hand with `curl`; `pipeline/setup.sh` does the same). It heard "kroner" as "corona" and "Ekofisk" as "echofisc": the owner should check those two and al-Kasim by ear in the draft. IPPR is read as letters.
+
+**Waiting on the owner (none blocks the draft render):** a third calm music track (the two tracks total 6:13, so each starts again once); whether to keep the four part cards; the name wall of real companies (needs NBIM's holdings list); the US shot before the end card.
 
 The task, in order:
 
@@ -39,7 +41,7 @@ The task, in order:
 - **Pixabay key:** the owner said to keep using the key they pasted in chat on 24 November. It was saved only on that session's machine (`~/.config/youtube-money/pixabay.key`), so a new machine won't have it. Ask the owner to add `PIXABAY_API_KEY` in the environment settings, or paste it again. Only step 5 needs it. Pexels keys are paused.
 - **Model:** the owner may use Fable for steps 2 and 3, then Opus for the rest.
 - **Still open, not blocking:** the title (working title "How Norway Built the Biggest Wealth Fund on Earth"); whether the sample's sound effects are fine; the channel name (idea: "Money Stories"); channel artwork.
-- **Music:** keep the quiet bed. The standard says to switch tracks once mid-video; `pipeline/audio/director.py` doesn't do that yet (a small addition).
+- **Music:** keep the quiet bed. It now switches once, at the "back to Norway" part card (`"then"` in the script's `music`).
 
 ## Standing instructions from the owner
 

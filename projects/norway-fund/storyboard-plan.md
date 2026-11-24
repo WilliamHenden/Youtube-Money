@@ -70,3 +70,17 @@ That's about **12 real photo or footage moments** in 8½ minutes, well above the
 3. **Data with sources:** NBIM's year-end fund values (scene 24), an oil price series covering 1986 (scene 20), and NBIM's list of holdings (scenes 3 and 26).
 4. **Build:** the `grid` and `document` templates, a dots option for the map, an old-film option for photos, and the three custom scenes (the drill, the three percent rule if the tank isn't enough, Regent Street).
 5. **The picker page** for the owner to choose every photo and clip.
+
+## As built in the draft (24 November 2026)
+
+The draft storyboard is `script.json`. Rows not built yet are labelled placeholder cards. Where the draft differs from the table above:
+
+- **Row 1:** the coast footage and the "$2.3 trillion" of row 2 share one scene (the figure lands over the footage), because both sit inside one spoken sentence.
+- **Hook, "It all started with…":** a North Sea map with the oil find marked. The plan had no picture for this line.
+- **Row 16:** the Britain section opens on the map of the dividing line, not a Norway-against-Britain split. The split is kept for the IPPR payoff (row 19).
+- **Row 17:** the photo slot is "Britain in the early 1980s recession, or a British North Sea platform of the time".
+- **Row 21 and 23:** the timeline stops at 1996. The 4% to 3% change is a two-bar chart, and the tank is the existing one (not yet extended to show growth). It is reused for five seconds in Act 3 ("built to last").
+- **Row 26:** an icon row (a phone, a tank of fuel, a little for Norway) stands in for the wall of company names, which needs NBIM's holdings list first.
+- **Row 32:** no US shot. The outro runs over the end card (outro A).
+- **Added:** four part cards (Who owns the oil? · Across the water · The fright, and the rule · What the rule built), a second photo slot in Act 2 (Norway after 1986) and one for the ministry in Act 1.
+

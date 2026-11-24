@@ -296,7 +296,7 @@ const Side: React.FC<{ s: SceneCtx; d: any; i: number }> = ({ s, d, i }) => {
   const col = d.color === "muted" ? sub(s.tone) : colour(d.color, C.yellow);
   const big = l.tall ? 160 : 220;
   const v = d.value !== undefined ? lerp(0, d.value, prog(t, at + 0.1, 1.4, ease.out5)) : 0;
-  const lit = clamp01((t - at + 0.15) * 4);
+  const lit = clamp01((t - (d.labelCue ? when(s, d.labelCue) : at) + 0.15) * 4); // labelCue: the heading lights up before the figure lands
   const shown: string = d.text ?? `${d.prefix ?? ""}${fmt(d.value ?? 0, d.decimals ?? 0)}${d.suffix ?? ""}`;
   const fit = Math.min(big, ((l.tall ? l.w : l.w / 2) - 60) / (Math.max(shown.length, 1) * 0.66)); // never wider than its half
   return (
@@ -306,6 +306,7 @@ const Side: React.FC<{ s: SceneCtx; d: any; i: number }> = ({ s, d, i }) => {
         <Kicker color={ink(s.tone)} size={l.tall ? 38 : 42}>{d.label}</Kicker>
       </div>
       <div style={{ minHeight: big * 1.02, display: "flex", alignItems: "center" }}>
+        {d.labelCue && t < at - 0.05 && <div style={{ fontFamily: F.head, fontWeight: 900, fontSize: big * 0.8, lineHeight: 1, color: sub(s.tone), opacity: 0.45 * lit }}>?</div>}
         {t >= at - 0.05 && (
           <Rise at={at} from="scale">
             <div style={{ fontFamily: F.head, fontWeight: 900, fontSize: fit, lineHeight: 1, letterSpacing: -4, color: col, fontVariantNumeric: "tabular-nums", textAlign: "center", whiteSpace: "nowrap" }}>

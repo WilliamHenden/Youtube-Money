@@ -189,7 +189,7 @@ export const Placeholder: Template = ({ s }) => {
         {p.note && <div style={{ fontFamily: F.body, fontWeight: 500, fontSize: l.tall ? 30 : 27, lineHeight: 1.35, color: C.muted, maxWidth: l.tall ? 860 : 1150, textWrap: "balance" as any }}>{p.note}</div>}
       </div>
       {(p.kicker || p.title) && (
-        <div style={{ position: "absolute", left: l.x0, width: l.w, bottom: l.tall ? l.H - l.y1 + 20 : 200, textAlign: l.tall ? "center" : "left" }}>
+        <div style={{ position: "absolute", left: l.x0, width: l.w, bottom: l.tall ? l.H - l.y1 + 20 : 235, textAlign: l.tall ? "center" : "left" }}>
           {p.kicker && <div style={{ opacity: prog(t, s.t0 + 0.4, 0.4) }}><Kicker size={l.tall ? 34 : 30}>{p.kicker}</Kicker></div>}
           {p.title && <div style={{ marginTop: 10, opacity: prog(t, titleAt, 0.4), fontFamily: F.head, fontWeight: 900, fontSize: l.tall ? 76 : 80, lineHeight: 1.04, letterSpacing: -2, color: C.white }}>{p.title}</div>}
         </div>
