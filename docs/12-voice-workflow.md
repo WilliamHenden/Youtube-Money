@@ -32,6 +32,8 @@ Plans, as reported for 2026 (check the official page): Starter about $6 a month 
 
 ## How Claude connects to ElevenLabs
 
+**Done (24 November 2026):** the owner saved a restricted API key in the environment, and `pipeline/voice/engines.py` has a working `elevenlabs` engine. The steps below are how it was set up.
+
 - The owner opens an account (Starter is enough to begin) and creates an API key.
 - Claude asks for the key through the secure form in this environment. It is never pasted in chat and never stored in the repo.
 - `api.elevenlabs.io` is added to the environment's allowed sites.

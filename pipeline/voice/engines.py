@@ -6,7 +6,7 @@ scripted pauses and the visuals re-time themselves whichever engine is used.
   kokoro      Kokoro v1.0, Apache 2.0. Fast (several times faster than real time on this machine). Clear, limited expression.
   chatterbox  Chatterbox by Resemble AI, MIT licence. More expressive, has an "exaggeration" control.
               Slow without a graphics card. Model files (about 3.3 GB) go in pipeline/voice/models/chatterbox/.
-  elevenlabs  Paid (not wired in). Would be a third engine here if the owner chooses it.
+  elevenlabs  Paid (owner's Starter plan). The channel's narrator: "James - English Story Teller", model eleven_v4.
 """
 import os, re
 import numpy as np
@@ -117,11 +117,45 @@ class Chatterbox:
         return x, self.SR
 
 
+class ElevenLabs:
+    """ElevenLabs text to speech over its API. The channel's narrator (see docs/12-voice-workflow.md).
+
+    The key is never in the code or the repo. In the cloud environment it is saved as a network secret for
+    api.elevenlabs.io and the proxy adds it to each request; ELEVENLABS_API_KEY is only for running elsewhere.
+    Costs about 1 credit per character; tts.py caches every line, so only new or changed lines cost credits.
+    """
+    name = "elevenlabs"
+    API = "https://api.elevenlabs.io/v1/text-to-speech/"
+
+    def __init__(self, voice="GrVxA7Ub86nJH91Viyiv", model="eleven_v4", speed=None, stability=None, **_):
+        self.voice, self.model = voice, model
+        self.settings = {k: v for k, v in (("speed", speed), ("stability", stability)) if v is not None}
+        self.id = f"elevenlabs:{voice}:{model}:{sorted(self.settings.items())}"
+
+    def synth(self, text):
+        import json, subprocess, tempfile, urllib.request, urllib.error, soundfile as sf
+        body = {"text": text, "model_id": self.model}
+        if self.settings:
+            body["voice_settings"] = self.settings
+        req = urllib.request.Request(self.API + self.voice + "?output_format=mp3_44100_128", data=json.dumps(body).encode(),
+                                     headers={"xi-api-key": os.environ.get("ELEVENLABS_API_KEY", "proxy-injected"),
+                                              "Content-Type": "application/json", "Accept": "audio/mpeg"})
+        try:
+            mp3 = urllib.request.urlopen(req, timeout=180).read()
+        except urllib.error.HTTPError as e:
+            raise SystemExit(f"ElevenLabs refused the request ({e.code}): {e.read()[:300].decode(errors='replace')}")
+        with tempfile.TemporaryDirectory() as td:
+            open(td + "/a.mp3", "wb").write(mp3)
+            subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", td + "/a.mp3", "-ac", "1", "-ar", "44100", td + "/a.wav"], check=True)
+            x, sr = sf.read(td + "/a.wav", dtype="float32")
+        return x, sr
+
+
 def make(engine="kokoro", **kw):
     if engine == "kokoro":
         return Kokoro(**kw)
     if engine == "chatterbox":
         return Chatterbox(**kw)
     if engine == "elevenlabs":
-        raise SystemExit("ElevenLabs is the paid option and is not wired in yet. It needs an API key from the owner.")
+        return ElevenLabs(**kw)
     raise SystemExit(f"Unknown voice engine: {engine}")
