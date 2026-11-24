@@ -35,6 +35,9 @@ _last = [0.0]
 
 def key():
     k = os.environ.get("PIXABAY_API_KEY", "").strip()
+    local = os.path.expanduser("~/.config/youtube-money/pixabay.key")  # outside the repo; lasts only as long as this machine
+    if not k and os.path.exists(local):
+        k = open(local).read().strip()
     if not k:
         raise SystemExit("No Pixabay key yet. The owner adds it as the environment variable PIXABAY_API_KEY in the cloud "
                          "environment's settings (environment menu, Edit), then starts a new session.")
