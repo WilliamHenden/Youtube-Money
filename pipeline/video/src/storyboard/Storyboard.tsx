@@ -8,7 +8,7 @@ import { Background, Captions, ChannelBug, Grain, Wipe } from "../components/ui"
 import { SceneCtx, Template, useL } from "./kit";
 import { Answer, Bars, BigNumber, ChapterCard, Chart, Icons, Question, Split, Timeline, TitleCard } from "./templates-a";
 import { EndCard, Flow, MapScene, NameWall, Photo, Quote, Subscribe } from "./templates-b";
-import { Ident, Mark, Tank, Thumb } from "./templates-c";
+import { Ident, Mark, Placeholder, Tank, Thumb } from "./templates-c";
 import { F } from "../lib/theme";
 import { ease, lerp } from "../lib/anim";
 
@@ -16,9 +16,9 @@ import { ease, lerp } from "../lib/anim";
 export const TEMPLATES: Record<string, Template> = {
   title: TitleCard, chapter: ChapterCard, number: BigNumber, bars: Bars, chart: Chart, timeline: Timeline, map: MapScene,
   photo: Photo, split: Split, icons: Icons, question: Question, answer: Answer, quote: Quote, names: NameWall, flow: Flow,
-  subscribe: Subscribe, end: EndCard, clip: Photo, ident: Ident, thumb: Thumb, tank: Tank,
+  subscribe: Subscribe, end: EndCard, clip: Photo, ident: Ident, thumb: Thumb, tank: Tank, placeholder: Placeholder,
 };
-const FULL_BLEED = new Set(["photo", "clip", "map", "thumb"]);
+const FULL_BLEED = new Set(["photo", "clip", "map", "thumb", "placeholder"]);
 const NO_BUG = new Set(["ident", "thumb"]); // these fill the frame, so the slow camera drift is left to them
 
 const SceneView: React.FC<{ sc: SceneT; timings: Timings; opacity?: number }> = ({ sc, timings, opacity = 1 }) => {

@@ -117,6 +117,7 @@ Each has a 16:9 and a 9:16 layout. Code: `video/src/storyboard/`.
 | `tank` | A pot that fills while a tap lets out a little: saving the capital, spending the return | `title`, `inLabel`, `tankLabel`, `rate`, `outLabel`, `fillCue`, `tapCue` |
 | `subscribe` | The five-second subscribe moment | `line`, `sub`, `cue` (same design every time) |
 | `end` | End card with room for YouTube's end-screen elements | `kicker`, `title` |
+| `placeholder` | Draft cuts only: a dark card standing in for footage, a photo or a graphic not made yet, with an icon and a label saying what goes there | `kind` (`footage`, `photo`, `graphic`, `custom`), `label`, `note`, `kicker`, `title`, `titleCue` |
 
 Drawn icons, in the channel's own style, are named `draw:rig`, `draw:contract`, `draw:fine`, `draw:barrel`, `draw:bank`, `draw:house` and `draw:clock` (add more in `storyboard/icons-drawn.tsx`). Other icons are Fluent Emoji. To use a new one, add its name to `video/src/icons/list.json` and run `node scripts/extract-icons.mjs` in `pipeline/video`. Flags available: `norway`, `uk`, `usa` (drawn in `storyboard/kit.tsx`).
 
