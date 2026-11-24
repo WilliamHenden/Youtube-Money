@@ -172,7 +172,7 @@ The PNGs land in `out/tmp/stills/`; the chosen ones are kept in `out/norway-fund
 |---|---|---|
 | `kokoro` | Free | Fast and clear, limited expression. Voices: `af_heart` (US), `bm_george` (UK) and others. |
 | `chatterbox` | Free | More expressive, with an `exaggeration` setting. About three times slower than real time here (an 8-minute video takes about 25 minutes to speak). Needs 3.3 GB of model files. |
-| `elevenlabs` | Owner's Starter plan (40,000 credits a month) | **The channel's narrator.** Voice "James" (`GrVxA7Ub86nJH91Viyiv`), model `eleven_v4`. About 1 credit per character; every line is cached, so rebuilding only pays for changed lines. The key is a network secret in the cloud environment, never in the repo. |
+| `elevenlabs` | Owner's Starter plan (40,000 credits a month) | **The channel's narrator.** Voice "James" (`GrVxA7Ub86nJH91Viyiv`), model `eleven_v4`. About 1 credit per character; every line is cached, so rebuilding only pays for changed lines. Paid lines are also kept in the repo as `projects/<id>/voice-cache/*.flac`, so a new machine doesn't pay for them again. The key is a network secret in the cloud environment, never in the repo. |
 
 Compare them on the same passage:
 
