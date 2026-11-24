@@ -16,11 +16,26 @@ A faceless YouTube business channel made with a code-based video pipeline. The o
 - `docs/14-footage-options.md`: free against paid footage (Pexels, Artlist, Storyblocks, AI clips), what can be automated, and the plan (free for video 1).
 - Background, only if needed: `docs/01` (strategy), `02` (tools), `04` (demo review), `06` (channel setup), `07` (topic shortlist).
 
-## First thing next session
-- **ElevenLabs is connected (24 November).** The owner saved a restricted key (text to speech, speech to speech, voices read, user read) as a network secret for `api.elevenlabs.io`. The pipeline's `elevenlabs` engine works: use `"voice": {"engine": "elevenlabs", "voice": "GrVxA7Ub86nJH91Viyiv", "model": "eleven_v4"}` in a script. Generating costs credits (Starter plan, 40,000 a month), so make the full narration only once the script is approved.
-- **Pixabay works (tested 24 November).** The owner asked to keep using the key they pasted in chat for now. It is stored outside the repo at `~/.config/youtube-money/pixabay.key`, which lasts only as long as this cloud machine. `pipeline/media/pixabay.py` reads it from there or from the environment variable `PIXABAY_API_KEY`. If both are missing in a new session, ask the owner to add the variable in the environment settings. Never commit the key. Search words need to be specific ("oil platform" returned train platforms; "norway fjord aerial" was good). **Pexels:** new keys paused.
-- **Still to ask the owner:** approve script draft 3 or not, the title, and whether the sample's sound effects are fine. Ask in chat; the owner won't use the decision page. Already decided in chat: keep the quiet music bed; the channel name idea is "Money Stories" (@MoneyStories was free on 18 November).
-- **Offered, not yet started:** channel artwork (profile picture, banner, watermark) and the channel description. Claude in Chrome, or the Claude desktop app's browser, could fill in YouTube Studio for the owner from a session on their computer.
+## First thing next session: build the Norway draft video
+The owner approved script draft 3 on 24 November and wants the full video built now. The task, in order:
+
+1. **Narration with James.** Use the `elevenlabs` engine (`"voice": {"engine": "elevenlabs", "voice": "GrVxA7Ub86nJH91Viyiv", "model": "eleven_v4"}`). The key is a network secret on the environment and already works. It costs about 8,200 credits (Starter plan, 40,000 a month, about 1,150 used). Lines are cached, so only changed lines cost again.
+2. **Storyboard.** Rewrite `projects/norway-fund/script.json` for the whole of draft 3 (in `brief.md`), following `projects/norway-fund/storyboard-plan.md` and the mood rules in `docs/05-production-standards.md`. Replace the old draft-1 scenes and cuts.
+   - Captions (`show`) use digits ("$2.3 trillion", "1965").
+   - Use cues `{name}` for anything that must land on a word.
+   - Opening order: hook, question, `[beat]`, the `ident` sting, title. Then the subscribe moment, and outro A on the `end` template.
+3. **Placeholders (owner's request).** Every real footage or photo slot, and every graphic not built yet (`grid`, `document`, map dots, the three custom scenes), is a plain dark screen with a small icon and a label saying what is meant to go there (for example "FOOTAGE: offshore oil rig in a storm"). A `placeholder` template may need adding. This lets the owner judge what imagery fits while watching.
+4. **Check one contact sheet,** then do a **draft render at half resolution** (`render.mjs --scale 0.5`, about 20 minutes) and send it to the owner. Line changes happen at this stage.
+5. **Then:**
+   - fetch real clips with `pipeline/media/pixabay.py`, using specific search words ("offshore oil rig", not "oil platform"), and let the owner pick
+   - build the remaining graphics
+   - one full-quality render, saved to the Google Drive folder
+
+**Also to know:**
+- **Pixabay key:** the owner said to keep using the key they pasted in chat on 24 November. It was saved only on that session's machine (`~/.config/youtube-money/pixabay.key`), so a new machine won't have it. Ask the owner to add `PIXABAY_API_KEY` in the environment settings, or paste it again. Only step 5 needs it. Pexels keys are paused.
+- **Model:** the owner may use Fable for steps 2 and 3, then Opus for the rest.
+- **Still open, not blocking:** the title (working title "How Norway Built the Biggest Wealth Fund on Earth"); whether the sample's sound effects are fine; the channel name (idea: "Money Stories"); channel artwork.
+- **Music:** keep the quiet bed. The standard says to switch tracks once mid-video; `pipeline/audio/director.py` doesn't do that yet (a small addition).
 
 ## Standing instructions from the owner
 
