@@ -316,11 +316,16 @@ def main():
             eng = engines.make(**v)
         key = hashlib.sha1(f"{eng.id}|{text}".encode()).hexdigest()[:16]
         path = os.path.join(cache, key + ".wav")
-        if os.path.exists(path):
-            x, sr = sf.read(path, dtype="float32")
-            return x, sr
+        kept = os.path.join(pdir, "voice-cache", key + ".flac")  # paid voices are kept in the repo, so a new machine doesn't pay again
+        for p in (path, kept):
+            if os.path.exists(p):
+                x, sr = sf.read(p, dtype="float32")
+                return x, sr
         x, sr = eng.synth(text)
         sf.write(path, x, sr, subtype="PCM_16")
+        if eng.name == "elevenlabs":
+            os.makedirs(os.path.dirname(kept), exist_ok=True)
+            sf.write(kept, x, sr, format="FLAC", subtype="PCM_16")
         return x, sr
 
     audio = [np.zeros(int(OUT_SR * lead_in), dtype=np.float32)]

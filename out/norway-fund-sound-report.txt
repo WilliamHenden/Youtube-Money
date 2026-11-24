@@ -1,0 +1,78 @@
+SOUND REPORT: norway-fund (full), 544.5 seconds
+
+Music: deliberate-thought at 22 LU under the voice
+Effects played: 42 (one every 13s on average). Requests dropped by the rules: 8.
+
+Played:
+    time  role       file                          level  scene
+     8.7  transition whoosh-medium-soft           -3.0dB  h-gap (scene change)
+    14.7  transition whoosh-slow-soft             -5.0dB  h-sea (scene change), under speech
+    28.5  transition reverse-whoosh-medium-soft   -6.0dB  h-nooil (scene change), under speech
+    37.5  transition whoosh-medium-medium         -3.0dB  h-question (scene change)
+    45.2  sting      sting-warm-short             -1.0dB  ident (scene change)
+    51.4  transition swish-soft                   -3.0dB  c-letter (scene change)
+    67.9  transition whoosh-medium-soft           -3.0dB  c-wells (scene change)
+    80.0  transition whoosh-slow-soft             -5.0dB  c-phillips (scene change), under speech
+    88.0  transition reverse-whoosh-medium-soft   -6.0dB  c-licence (scene change), under speech
+    98.7  impact     impact-medium-soft           -3.0dB  c-drill (scene change)
+   109.4  transition whoosh-medium-medium         -3.0dB  c-easy (scene change)
+   126.5  transition swish-soft                   -3.0dB  a1-chapter (scene change)
+   137.1  transition whoosh-medium-soft           -3.0dB  a1-kasim (scene change)
+   155.4  transition whoosh-slow-soft             -5.0dB  a1-principles (scene change), under speech
+   171.1  transition reverse-whoosh-medium-soft   -6.0dB  a1-commandments (scene change), under speech
+   179.5  transition whoosh-medium-medium         -3.0dB  a1-tax (scene change)
+   197.9  transition swish-soft                   -3.0dB  rehook (scene change)
+   209.3  transition whoosh-medium-soft           -3.0dB  b-map (scene change)
+   224.2  transition whoosh-slow-soft             -5.0dB  b-britoil (scene change), under speech
+   242.8  transition reverse-whoosh-medium-soft   -6.0dB  b-tax (scene change), under speech
+   275.6  transition whoosh-medium-medium         -3.0dB  b-ippr (scene change)
+   292.6  impact     impact-medium-firm           -6.0dB  b-ippr (bnone), under speech
+   301.8  transition swish-soft                   -3.0dB  a2-boom (scene change)
+   329.4  transition whoosh-medium-soft           -3.0dB  a2-law (scene change)
+   353.2  transition whoosh-slow-soft             -5.0dB  a2-abroad (scene change), under speech
+   368.2  transition reverse-whoosh-medium-soft   -6.0dB  a2-question (scene change), under speech
+   380.8  reveal     shimmer-medium-bright        -4.0dB  a2-answer (scene change), under speech
+   388.1  transition whoosh-medium-medium         -3.0dB  a2-change (scene change)
+   399.1  transition swish-soft                   -3.0dB  a2-tank (scene change)
+   409.1  transition whoosh-medium-soft           -3.0dB  a3-chapter (scene change)
+   416.8  transition whoosh-slow-soft             -5.0dB  a3-earned (scene change), under speech
+   423.7  transition reverse-whoosh-medium-soft   -6.0dB  a3-share (scene change), under speech
+   431.7  transition whoosh-medium-medium         -3.0dB  a3-everyday (scene change)
+   438.4  transition swish-soft                   -3.0dB  a3-each (scene change)
+   445.3  transition whoosh-medium-soft           -3.0dB  a3-regent (scene change)
+   468.2  transition whoosh-slow-soft             -5.0dB  a3-budget (scene change), under speech
+   479.5  transition reverse-whoosh-medium-soft   -6.0dB  t-question (scene change), under speech
+   486.4  reveal     boom-hit-medium              -9.0dB  t-answer (scene change), under speech
+   493.2  transition whoosh-medium-medium         -3.0dB  t-three (scene change)
+   507.1  transition swish-soft                   -3.0dB  t-choice (scene change)
+   517.9  transition whoosh-medium-soft           -3.0dB  t-split (scene change)
+   532.3  transition whoosh-slow-soft             -5.0dB  end (scene change), under speech
+
+How often each file played:
+  8x  whoosh-medium-soft
+  8x  whoosh-slow-soft
+  7x  reverse-whoosh-medium-soft
+  7x  whoosh-medium-medium
+  7x  swish-soft
+  1x  sting-warm-short
+  1x  impact-medium-soft
+  1x  impact-medium-firm
+  1x  shimmer-medium-bright
+  1x  boom-hit-medium
+
+Dropped:
+    17.6  pop        h-sea (hsea): within 6s of the transition at 14.7s
+    19.8  transition h-scale (scene change): within 6s of the transition at 14.7s
+    48.4  reveal     title (scene change): within 6s of the sting at 45.2s
+    94.2  pop        c-licence (rig): within 6s of the impact at 98.7s
+   104.3  transition c-ekofisk (scene change): within 6s of the impact at 98.7s
+   192.6  pop        subscribe (scene change): within 6s of the transition at 197.9s
+   213.9  draw       b-map (bline): within 6s of the transition at 209.3s
+   294.7  transition a2-chapter (scene change): within 6s of the impact at 292.6s
+
+Checks:
+  PASS  No file repeated within 30 seconds (closest repeat 36s apart)
+  PASS  At most one sound every 6 seconds (closest two sounds 6.0s apart)
+  PASS  Reveal sounds only on major moments (3 reveal(s): ident at 45.2s, a2-answer at 380.8s, t-answer at 486.4s)
+  PASS  Silence during every scripted beat (3 beat(s): 44.0-45.2s, 379.5-380.8s, 485.4-486.4s)
+  PASS  Counters silent (no tick sounds were asked for)

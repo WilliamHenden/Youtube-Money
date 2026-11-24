@@ -148,3 +148,52 @@ export const Tank: Template = ({ s }) => {
 };
 
 export { glide };
+
+/* =====================================================================================
+   PLACEHOLDER          props: kind "footage" | "photo" | "graphic" | "custom", label, note, kicker, title, titleCue
+   A plain dark screen standing in for imagery or a graphic that isn't made yet, with a small icon and a label
+   saying what is meant to go there. For draft cuts only: the owner watches the draft and judges what fits.
+   ===================================================================================== */
+const PH_KIND: Record<string, { word: string; color: string }> = {
+  footage: { word: "Footage", color: C.blue },
+  photo: { word: "Photo", color: C.green },
+  graphic: { word: "Graphic to build", color: C.yellow },
+  custom: { word: "Custom scene to build", color: C.red },
+};
+const PhIcon: React.FC<{ kind: string; size: number; color: string }> = ({ kind, size, color }) => {
+  const st = { fill: "none", stroke: color, strokeWidth: 1.6, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
+  return (
+    <svg viewBox="0 0 24 24" width={size} height={size} style={{ display: "block" }}>
+      {kind === "footage" && (<><rect x="2.5" y="6" width="13" height="12" rx="2" {...st} /><path d="M15.5 10.5 L21.5 7 V17 L15.5 13.5 Z" {...st} /></>)}
+      {kind === "photo" && (<><rect x="3" y="4.5" width="18" height="15" rx="2" {...st} /><circle cx="9" cy="10" r="1.8" {...st} /><path d="M3.5 17.5 L9.5 12.5 L13 15.5 L16 13 L20.5 17" {...st} /></>)}
+      {kind === "graphic" && (<><path d="M4 20 V4 M4 20 H20" {...st} /><rect x="7" y="12" width="3" height="6" {...st} /><rect x="12" y="8" width="3" height="10" {...st} /><rect x="17" y="5" width="3" height="13" {...st} /></>)}
+      {kind === "custom" && (<><path d="M12 3 L14.6 9 L21 9.5 L16.2 13.7 L17.6 20 L12 16.7 L6.4 20 L7.8 13.7 L3 9.5 L9.4 9 Z" {...st} /></>)}
+    </svg>
+  );
+};
+export const Placeholder: Template = ({ s }) => {
+  const l = useL();
+  const { t } = useT();
+  const p = s.props;
+  const kind: string = PH_KIND[p.kind] ? p.kind : "graphic";
+  const k = PH_KIND[kind];
+  const titleAt = p.titleCue ? when(s, p.titleCue) : s.t0 + 0.5;
+  const inset = l.tall ? 60 : 70;
+  return (
+    <AbsoluteFill style={{ background: "#0A121E" }}>
+      <div style={{ position: "absolute", left: inset, top: inset, right: inset, bottom: inset, border: `3px dashed rgba(244,239,230,0.16)`, borderRadius: 28 }} />
+      <div style={{ position: "absolute", left: l.x0 + 40, width: l.w - 80, top: l.tall ? l.cy - 260 : l.cy - 220, display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 22, opacity: prog(t, s.t0 + 0.1, 0.4) }}>
+        <PhIcon kind={kind} size={l.tall ? 96 : 88} color={k.color} />
+        <Kicker color={k.color} size={l.tall ? 32 : 28}>{k.word}</Kicker>
+        <div style={{ fontFamily: F.head, fontWeight: 700, fontSize: l.tall ? 50 : 46, lineHeight: 1.2, color: "rgba(244,239,230,0.92)", maxWidth: l.tall ? 900 : 1300, textWrap: "balance" as any }}>{p.label}</div>
+        {p.note && <div style={{ fontFamily: F.body, fontWeight: 500, fontSize: l.tall ? 30 : 27, lineHeight: 1.35, color: C.muted, maxWidth: l.tall ? 860 : 1150, textWrap: "balance" as any }}>{p.note}</div>}
+      </div>
+      {(p.kicker || p.title) && (
+        <div style={{ position: "absolute", left: l.x0, width: l.w, bottom: l.tall ? l.H - l.y1 + 20 : 200, textAlign: l.tall ? "center" : "left" }}>
+          {p.kicker && <div style={{ opacity: prog(t, s.t0 + 0.4, 0.4) }}><Kicker size={l.tall ? 34 : 30}>{p.kicker}</Kicker></div>}
+          {p.title && <div style={{ marginTop: 10, opacity: prog(t, titleAt, 0.4), fontFamily: F.head, fontWeight: 900, fontSize: l.tall ? 76 : 80, lineHeight: 1.04, letterSpacing: -2, color: C.white }}>{p.title}</div>}
+        </div>
+      )}
+    </AbsoluteFill>
+  );
+};
