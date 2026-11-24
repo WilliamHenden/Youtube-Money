@@ -306,6 +306,7 @@ const Side: React.FC<{ s: SceneCtx; d: any; i: number }> = ({ s, d, i }) => {
         <Kicker color={ink(s.tone)} size={l.tall ? 38 : 42}>{d.label}</Kicker>
       </div>
       <div style={{ minHeight: big * 1.02, display: "flex", alignItems: "center" }}>
+        {d.labelCue && t < at - 0.05 && <div style={{ fontFamily: F.head, fontWeight: 900, fontSize: big * 0.8, lineHeight: 1, color: sub(s.tone), opacity: 0.45 * lit }}>?</div>}
         {t >= at - 0.05 && (
           <Rise at={at} from="scale">
             <div style={{ fontFamily: F.head, fontWeight: 900, fontSize: fit, lineHeight: 1, letterSpacing: -4, color: col, fontVariantNumeric: "tabular-nums", textAlign: "center", whiteSpace: "nowrap" }}>

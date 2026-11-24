@@ -1152,7 +1152,7 @@
       },
       "lines": [
         {
-          "say": "The second arrived in two thousand and one, | and it's the heart of the whole story. | {a2ask}It answers one question.",
+          "say": "The second arrived in two thousand and one, | and it's {a2ask}the heart of the whole story. | It answers one question.",
           "show": "The second arrived in *2001,* | and it's the heart of the whole story. | It answers one question."
         },
         {
@@ -1305,17 +1305,20 @@
         "items": [
           {
             "icon": "mobile-phone",
-            "label": "A new phone",
+            "label": "You buy",
+            "text": "A new phone",
             "cue": "ev1"
           },
           {
             "icon": "fuel-pump",
-            "label": "A tank of fuel",
+            "label": "You fill up",
+            "text": "A tank of fuel",
             "cue": "ev2"
           },
           {
             "icon": "money-bag",
-            "label": "A little for Norway",
+            "label": "Norway earns",
+            "text": "A little, as a shareholder",
             "cue": "ev3"
           }
         ]
