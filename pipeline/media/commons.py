@@ -126,7 +126,7 @@ def fetch(project):
     credits = json.load(open(cpath)) if os.path.exists(cpath) else {}
     for key, spec in wanted.items():
         dest = os.path.join(out, key + ".jpg")
-        if "pexels" in spec or (os.path.exists(dest) and key in credits):  # Pexels photos are fetched by pexels.py
+        if "pexels" in spec or "pixabay" in spec or (os.path.exists(dest) and key in credits):  # fetched by pexels.py / pixabay.py
             continue
         if "file" in spec:
             info = lookup(spec["file"])
