@@ -30,6 +30,11 @@ def main():
     tracks = json.load(open(os.path.join(ROOT, "pipeline/audio/library/music/tracks.json")))
     if track and os.path.exists(os.path.join(ROOT, f"pipeline/audio/library/music/{track}.mp3")):
         L += ["", "Music:", f"- {tracks[track]['credit']}"]
+    srcs = " ".join(json.dumps(tm["photos"].get(k, {})) for k in used)
+    if "Pixabay" in srcs:
+        L += ["", "Stock footage and photos from Pixabay (pixabay.com)."]
+    if "Pexels" in srcs:
+        L += ["", "Stock footage and photos from Pexels (pexels.com)."]
     L += ["", "Sound effects: SFX Kit by Wyzowl (CC0, no credit required).", "Maps: made with Natural Earth (public domain)."]
     name = project if cut == "full" else f"{project}-{cut}"
     out = os.path.join(ROOT, "out", f"{name}-credits.txt")

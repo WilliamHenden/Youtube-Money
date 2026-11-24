@@ -18,7 +18,7 @@ A faceless YouTube business channel made with a code-based video pipeline. The o
 
 ## First thing next session
 - **ElevenLabs is connected (24 November).** The owner saved a restricted key (text to speech, speech to speech, voices read, user read) as a network secret for `api.elevenlabs.io`. The pipeline's `elevenlabs` engine works: use `"voice": {"engine": "elevenlabs", "voice": "GrVxA7Ub86nJH91Viyiv", "model": "eleven_v4"}` in a script. Generating costs credits (Starter plan, 40,000 a month), so make the full narration only once the script is approved.
-- **Footage keys still pending:** Pexels' new API keys are paused and Pixabay needs approval; the owner is applying (request text in `docs/14-footage-options.md`). Ask how that went. Plan B is the owner downloading clips into the Google Drive folder.
+- **Pixabay is approved (24 November)** and `pipeline/media/pixabay.py` is written but untested: it needs the owner to add the environment variable `PIXABAY_API_KEY` in the environment settings (after rotating the key, which was pasted into the chat once). Ask whether that's done, then test one search. **Pexels:** new keys paused; owner may email api@pexels.com.
 - **Still to ask the owner:** approve script draft 3 or not, the title, and whether the sample's sound effects are fine. Ask in chat; the owner won't use the decision page. Already decided in chat: keep the quiet music bed; the channel name idea is "Money Stories" (@MoneyStories was free on 18 November).
 - **Offered, not yet started:** channel artwork (profile picture, banner, watermark) and the channel description. Claude in Chrome, or the Claude desktop app's browser, could fill in YouTube Studio for the owner from a session on their computer.
 

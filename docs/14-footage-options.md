@@ -22,7 +22,7 @@
 ## API access status (19 November 2026)
 
 - **Pexels:** issuing of new API keys is paused (stated on Pexels' own API pages). The owner can email api@pexels.com to ask; the request text is below.
-- **Pixabay:** new accounts need approval before the API works. The owner is applying with the request text below.
+- **Pixabay: approved (24 November 2026).** Standard access: videos up to 4K, photos up to 1280px (1920px needs "full API access", requested separately). `pipeline/media/pixabay.py` follows Pixabay's rules: credit Pixabay, cache requests for 24 hours, human-paced searches only, no mass downloads, no hotlinking. The key goes in the environment variable `PIXABAY_API_KEY`, added by the owner in the environment settings (Pixabay puts the key in the web address, which the network-secret store can't handle).
 - **Plan B, which needs no API:** Claude writes a shot list with search words; the owner picks clips on pexels.com or pixabay.com (free, no watermark, monetisation allowed), downloads them and drops them into the Google Drive folder. Claude fetches them from Drive with the Google Drive connector. Slower for the owner, but it works for video 1.
 
 ### Request text (owner to fill in the channel name and link)

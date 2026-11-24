@@ -9,3 +9,4 @@ out/tmp/
 projects/*/build/
 .DS_Store
 out/*-raw.mp4
+projects/.media-cache/
