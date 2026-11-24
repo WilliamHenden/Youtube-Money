@@ -17,9 +17,10 @@ A faceless YouTube business channel made with a code-based video pipeline. The o
 - Background, only if needed: `docs/01` (strategy), `02` (tools), `04` (demo review), `06` (channel setup), `07` (topic shortlist).
 
 ## First thing next session
-- **Keys (owner, 18 November):** ElevenLabs' site wasn't working for the owner, so no keys are saved yet. Ask whether they've added them. The secure form was declined twice, so the owner may add them instead in the environment's settings (environment menu in the title bar, Edit, Network secrets): ElevenLabs as host `api.elevenlabs.io`, header `xi-api-key`; Pexels as host `api.pexels.com`, header `Authorization`, the bare key as the value. Then add an `elevenlabs` engine to `pipeline/voice/engines.py` and wire in `pipeline/media/pexels.py`.
-- **Without the ElevenLabs key**, narration can still be made through the ElevenLabs connector, in sections. The video machine then needs `elevenlabsusercontent.com` allowed in the environment to download the audio.
-- **Still to ask the owner:** approve script draft 3 or not, the title, and whether the sample's sound effects are fine. The owner said they won't complete the decision page, so ask in chat. Already decided in chat: keep the quiet music bed; the channel name idea is "Money Stories" (@MoneyStories was free on 18 November).
+- **ElevenLabs is connected (24 November).** The owner saved a restricted key (text to speech, speech to speech, voices read, user read) as a network secret for `api.elevenlabs.io`. The pipeline's `elevenlabs` engine works: use `"voice": {"engine": "elevenlabs", "voice": "GrVxA7Ub86nJH91Viyiv", "model": "eleven_v4"}` in a script. Generating costs credits (Starter plan, 40,000 a month), so make the full narration only once the script is approved.
+- **Footage keys still pending:** Pexels' new API keys are paused and Pixabay needs approval; the owner is applying (request text in `docs/14-footage-options.md`). Ask how that went. Plan B is the owner downloading clips into the Google Drive folder.
+- **Still to ask the owner:** approve script draft 3 or not, the title, and whether the sample's sound effects are fine. Ask in chat; the owner won't use the decision page. Already decided in chat: keep the quiet music bed; the channel name idea is "Money Stories" (@MoneyStories was free on 18 November).
+- **Offered, not yet started:** channel artwork (profile picture, banner, watermark) and the channel description. Claude in Chrome, or the Claude desktop app's browser, could fill in YouTube Studio for the owner from a session on their computer.
 
 ## Standing instructions from the owner
 
@@ -45,4 +46,4 @@ A faceless YouTube business channel made with a code-based video pipeline. The o
 - Wikimedia Commons throttles this machine's shared address hard. Search sparingly, and expect downloads to need retries.
 - Sound and music licences: `pipeline/audio/LICENCES.md`. Music is CC BY, so the credits file from each build must go in the video description.
 - Research tools: `tools/yt_search.py` (YouTube view counts for a topic) and `tools/yt_handle_check.sh` (handle availability).
-- Undecided: channel name, which ElevenLabs voice (the engine is decided: ElevenLabs). Parked: mascot, AI-generated cinematic clips.
+- Undecided: channel name. Narrator: ElevenLabs "James - English Story Teller" (the owner's choice; final once heard on the full script). Parked: mascot, AI-generated cinematic clips.
