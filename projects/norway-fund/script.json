@@ -45,7 +45,7 @@
         "decimals": 1,
         "unit": "trillion",
         "caption": "The largest in the world",
-        "cue": "hfund",
+        "at": 0.4,
         "source": "Value at 30 June 2026, rounded"
       },
       "lines": [
@@ -212,9 +212,9 @@
       "hold": 2.6,
       "props": {
         "lines": [
-          "How Norway built",
-          "the biggest wealth fund",
-          "on Earth"
+          "How Norway built the",
+          "biggest",
+          "wealth fund on Earth"
         ],
         "accent": 1
       }
@@ -824,7 +824,7 @@
           "show": "But in *1982,* | the government turned its oil-producing side | into a new company called *Britoil* | and sold it off to investors."
         },
         {
-          "say": "Six years later, {bt3}BP bought it.",
+          "say": "{bt3}Six years later, BP bought it.",
           "show": "Six years later, *BP* bought it."
         }
       ]
@@ -1101,11 +1101,11 @@
       },
       "lines": [
         {
-          "say": "The second arrived in two thousand and one, | and it's the heart of the whole story. | It answers one question.",
+          "say": "The second arrived in two thousand and one, | and it's the heart of the whole story. | {a2ask}It answers one question.",
           "show": "The second arrived in *2001,* | and it's the heart of the whole story. | It answers one question."
         },
         {
-          "say": "{a2ask}How much of this fortune | is Norway allowed to spend each year?",
+          "say": "How much of this fortune | is Norway allowed to spend each year?",
           "show": "How much of this fortune | is Norway allowed to *spend* each year?",
           "beat": 1.3
         }
@@ -1176,7 +1176,7 @@
         "title": "The three percent rule",
         "inLabel": "Oil money in",
         "tankLabel": "The fund",
-        "rate": "about 3%",
+        "rate": "3%",
         "outLabel": "spent each year",
         "fillCue": "tfill",
         "tapCue": "ttap"
@@ -1218,18 +1218,18 @@
           {
             "label": "Oil money paid in",
             "value": 33,
-            "display": "About 1/3",
+            "display": "33%",
             "cue": "ea1"
           },
           {
             "label": "What it has earned",
             "value": 67,
-            "display": "About 2/3",
+            "display": "67%",
             "highlight": true,
             "cue": "ea2"
           }
         ],
-        "note": "NBIM, 30 June 2026"
+        "note": "Share of the fund's value. NBIM, 30 June 2026"
       },
       "lines": [
         {
@@ -1363,8 +1363,9 @@
       "template": "question",
       "tone": "navy",
       "props": {
-        "text": "So how did 5.5 million people end up with the largest wealth fund on earth?",
-        "accent": "5.5 million people",
+        "kicker": "5.5 million people",
+        "text": "So how did they end up with the largest wealth fund on earth?",
+        "accent": "largest wealth fund",
         "cue": "task"
       },
       "lines": [

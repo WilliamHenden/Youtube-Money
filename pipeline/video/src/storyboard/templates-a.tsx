@@ -297,8 +297,10 @@ const Side: React.FC<{ s: SceneCtx; d: any; i: number }> = ({ s, d, i }) => {
   const big = l.tall ? 160 : 220;
   const v = d.value !== undefined ? lerp(0, d.value, prog(t, at + 0.1, 1.4, ease.out5)) : 0;
   const lit = clamp01((t - at + 0.15) * 4);
+  const shown: string = d.text ?? `${d.prefix ?? ""}${fmt(d.value ?? 0, d.decimals ?? 0)}${d.suffix ?? ""}`;
+  const fit = Math.min(big, ((l.tall ? l.w : l.w / 2) - 60) / (Math.max(shown.length, 1) * 0.66)); // never wider than its half
   return (
-    <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: l.tall ? 18 : 24, opacity: 0.32 + 0.68 * lit, transform: `scale(${0.96 + 0.04 * lit})` }}>
+    <div style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: l.tall ? 18 : 24, opacity: 0.32 + 0.68 * lit, transform: `scale(${0.96 + 0.04 * lit})` }}>
       <div style={{ display: "flex", alignItems: "center", gap: 22 }}>
         {d.flag && <Flag country={d.flag} w={l.tall ? 100 : 124} />}
         <Kicker color={ink(s.tone)} size={l.tall ? 38 : 42}>{d.label}</Kicker>
@@ -306,7 +308,7 @@ const Side: React.FC<{ s: SceneCtx; d: any; i: number }> = ({ s, d, i }) => {
       <div style={{ minHeight: big * 1.02, display: "flex", alignItems: "center" }}>
         {t >= at - 0.05 && (
           <Rise at={at} from="scale">
-            <div style={{ fontFamily: F.head, fontWeight: 900, fontSize: d.text && d.text.length > 8 ? big * 0.8 : big, lineHeight: 1, letterSpacing: -4, color: col, fontVariantNumeric: "tabular-nums", textAlign: "center", whiteSpace: "nowrap" }}>
+            <div style={{ fontFamily: F.head, fontWeight: 900, fontSize: fit, lineHeight: 1, letterSpacing: -4, color: col, fontVariantNumeric: "tabular-nums", textAlign: "center", whiteSpace: "nowrap" }}>
               {d.text ?? `${d.prefix ?? ""}${fmt(v, d.decimals ?? 0)}${d.suffix ?? ""}`}
             </div>
           </Rise>
