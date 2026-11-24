@@ -26,10 +26,11 @@ def main():
             if not c:
                 raise SystemExit(f"The photo \"{key}\" has no licence record. Run: python pipeline/media/commons.py fetch {project}")
             L.append(f"- {c['title'].replace('File:', '')}: {c['credit']}. {c['page']}")
-    track = {**script.get("music", {}), **script.get("cuts", {}).get(cut, {}).get("music", {})}.get("track")
+    mcfg = {**script.get("music", {}), **script.get("cuts", {}).get(cut, {}).get("music", {})}
     tracks = json.load(open(os.path.join(ROOT, "pipeline/audio/library/music/tracks.json")))
-    if track and os.path.exists(os.path.join(ROOT, f"pipeline/audio/library/music/{track}.mp3")):
-        L += ["", "Music:", f"- {tracks[track]['credit']}"]
+    played = [k for k in (mcfg.get("track"), (mcfg.get("then") or {}).get("track")) if k and os.path.exists(os.path.join(ROOT, f"pipeline/audio/library/music/{k}.mp3"))]
+    if played:
+        L += ["", "Music:"] + [f"- {tracks[k]['credit']}" for k in dict.fromkeys(played)]
     srcs = " ".join(json.dumps(tm["photos"].get(k, {})) for k in used)
     if "Pixabay" in srcs:
         L += ["", "Stock footage and photos from Pixabay (pixabay.com)."]

@@ -296,7 +296,7 @@ const Side: React.FC<{ s: SceneCtx; d: any; i: number }> = ({ s, d, i }) => {
   const col = d.color === "muted" ? sub(s.tone) : colour(d.color, C.yellow);
   const big = l.tall ? 160 : 220;
   const v = d.value !== undefined ? lerp(0, d.value, prog(t, at + 0.1, 1.4, ease.out5)) : 0;
-  const lit = clamp01((t - at + 0.15) * 4);
+  const lit = clamp01((t - (d.labelCue ? when(s, d.labelCue) : at) + 0.15) * 4); // labelCue: the heading lights up before the figure lands
   const shown: string = d.text ?? `${d.prefix ?? ""}${fmt(d.value ?? 0, d.decimals ?? 0)}${d.suffix ?? ""}`;
   const fit = Math.min(big, ((l.tall ? l.w : l.w / 2) - 60) / (Math.max(shown.length, 1) * 0.66)); // never wider than its half
   return (

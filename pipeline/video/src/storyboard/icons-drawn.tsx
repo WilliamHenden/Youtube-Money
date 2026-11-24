@@ -58,6 +58,24 @@ const DRAWN: Record<string, React.ReactNode> = {
       <rect x="22" y="31" width="8" height="13" fill={C.blue} {...P} />
     </>
   ),
+  people: (
+    <>
+      <circle cx="14" cy="20" r="6" fill={C.cream} {...P} />
+      <path d="M4 42 a10 10 0 0 1 20 0 Z" fill={C.blue} {...P} />
+      <circle cx="38" cy="20" r="6" fill={C.cream} {...P} />
+      <path d="M28 42 a10 10 0 0 1 20 0 Z" fill={C.blue} {...P} />
+      <circle cx="26" cy="15" r="7" fill={C.cream} {...P} />
+      <path d="M13 44 a13 13 0 0 1 26 0 Z" fill={C.red} {...P} />
+    </>
+  ),
+  lock: (
+    <>
+      <path d="M17 24 V17 a9 9 0 0 1 18 0 V24" fill="none" {...P} strokeWidth={3.4} />
+      <rect x="11" y="24" width="30" height="21" rx="4" fill={C.yellow} {...P} />
+      <circle cx="26" cy="33" r="3" fill={C.navy} />
+      <path d="M26 34 V39" {...P} strokeWidth={3} />
+    </>
+  ),
   clock: (
     <>
       <circle cx="26" cy="27" r="18" fill={C.cream} {...P} />

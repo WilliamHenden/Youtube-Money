@@ -35,7 +35,7 @@ Change only the sound of a video that is already rendered (a different music tra
 pipeline/remix.sh norway-fund --cut sample
 ```
 
-Music level is `"music": { "underVoice": 22 }` (bigger is quieter). Effects level is `"sound": { "trim": -3 }` in decibels (more negative is quieter).
+Music level is `"music": { "underVoice": 22 }` (bigger is quieter). A long video switches once to a second track at a scene of your choice, with a crossfade: `"music": { "track": "deliberate-thought", "then": { "track": "thinking-music", "at": "<scene id>" } }`. The sound report says if either track still has to start again. Effects level is `"sound": { "trim": -3 }` in decibels (more negative is quieter).
 
 ## What a build produces (in `out/`)
 
@@ -104,7 +104,7 @@ Each has a 16:9 and a 9:16 layout. Code: `video/src/storyboard/`.
 | `timeline` | Events along a line | `title`, `events[{label, text, cue, highlight}]` |
 | `map` | Countries, a drawn border, labelled points, zoom | `center`, `span`, `countries[{name, label, color, labelAt}]`, `lines[{points, cue, label}]`, `points[{lon, lat, label, cue, kind}]`, `zoomTo{center, span, at or cue, dur}` |
 | `photo` | A real photo with slow movement | `photo`, `kicker`, `title`, `titleCue`, `caption`, `move`, `focus`. The credit is added automatically. |
-| `split` | Two sides compared | `kicker`, `left{…}`, `right{…}`: `flag`, `label`, `value` or `text`, `unit`, `caption`, `cue`, `color` |
+| `split` | Two sides compared | `kicker`, `left{…}`, `right{…}`: `flag`, `label`, `value` or `text`, `unit`, `caption`, `cue`, `labelCue` (the heading lights up before the figure lands), `color` |
 | `icons` | 2–4 items appearing in turn | `title`, `items[{icon, label, text, cue}]` |
 | `question` | The question before a beat | `kicker`, `text`, `accent`, `cue` |
 | `answer` | The payoff after a beat | `kicker`, `text`, `sub`, `cue` |
@@ -119,7 +119,7 @@ Each has a 16:9 and a 9:16 layout. Code: `video/src/storyboard/`.
 | `end` | End card with room for YouTube's end-screen elements | `kicker`, `title` |
 | `placeholder` | Draft cuts only: a dark card standing in for footage, a photo or a graphic not made yet, with an icon and a label saying what goes there | `kind` (`footage`, `photo`, `graphic`, `custom`), `label`, `note`, `kicker`, `title`, `titleCue` |
 
-Drawn icons, in the channel's own style, are named `draw:rig`, `draw:contract`, `draw:fine`, `draw:barrel`, `draw:bank`, `draw:house` and `draw:clock` (add more in `storyboard/icons-drawn.tsx`). Other icons are Fluent Emoji. To use a new one, add its name to `video/src/icons/list.json` and run `node scripts/extract-icons.mjs` in `pipeline/video`. Flags available: `norway`, `uk`, `usa` (drawn in `storyboard/kit.tsx`).
+Drawn icons, in the channel's own style, are named `draw:rig`, `draw:contract`, `draw:fine`, `draw:barrel`, `draw:bank`, `draw:house`, `draw:people`, `draw:lock` and `draw:clock` (add more in `storyboard/icons-drawn.tsx`). Other icons are Fluent Emoji. To use a new one, add its name to `video/src/icons/list.json` and run `node scripts/extract-icons.mjs` in `pipeline/video`. Flags available: `norway`, `uk`, `usa` (drawn in `storyboard/kit.tsx`).
 
 A custom scene for a video's biggest moment is a new template: write the component, add it to the list in `storyboard/Storyboard.tsx`, and name it in the storyboard.
 
